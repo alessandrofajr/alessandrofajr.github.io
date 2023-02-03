@@ -2,6 +2,7 @@ let seeMore = document.querySelector('.see-more');
 let seeMoreDiv = document.querySelector('.see-more-button');
 let seeMoreButton = document.querySelector('#more');
 let projects = document.querySelectorAll('.project');
+let antepenultimateProjet = projects[projects.length - 3];
 let penultimateProject = projects[projects.length - 2];
 let lastProject = projects[projects.length - 1];
 
@@ -11,7 +12,7 @@ let mediaQuery = window.matchMedia('(min-width:200px) and (max-width:845px)')
 $('#more').click(function(displayMore) {
     displayMore.stopPropagation();
     $('.hidden-projects').animate({
-        'height': penultimateProject.offsetHeight+lastProject.offsetHeight+50
+        'height': antepenultimateProjet.offsetHeight + penultimateProject.offsetHeight + lastProject.offsetHeight + 80
     })
 });
 
