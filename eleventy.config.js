@@ -15,12 +15,6 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  eleventyConfig.addCollection("drawer", function(collection) {
-    return collection.getFilteredByGlob("src/drawer/*.md").filter(function(item) {
-      return !item.inputPath.endsWith("index.md");
-    });
-  });
-
   eleventyConfig.addCollection("links", function() {
     const links = require("./src/_data/links.json");
     return links;
