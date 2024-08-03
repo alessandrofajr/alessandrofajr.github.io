@@ -1,0 +1,19 @@
+{
+  "name": "alessandrofajr",
+  "version": "1.0.0",
+  "main": "index.md",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "watch": "eleventy --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alessandro Feitosa Jr.",
+  "license": "ISC",
+  "description": "Site, blog e jardim digital de Alessandro Feitosa Jr., ex-jornalista que aprendeu a programar e analisar dados.",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}
