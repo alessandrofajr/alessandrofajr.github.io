@@ -1,0 +1,82 @@
+[
+  {
+    "title": "How I search in 2024",
+    "link": "https://vickiboykis.com/2024/04/25/how-i-search-in-2024/",
+    "date": "2024-07-21",
+    "tags": ["personal", "interesting"],
+    "notes": "Um blog post sobre as ferramentas de busca utilizada por Vicki Boykis, destaque para Marginalia e Kagi",
+    "favorite": false
+  },
+  {
+    "title": "The Cheap Web",
+    "link": "https://potato.cheap/",
+    "date": "2024-07-19",
+    "tags": ["technical", "webdev"],
+    "notes": "Um manifesto em prol de uma web simples, 'barata'. O texto ressoou em mim na medida que quero tornar esse site um produto simples, que não me dê muito trabalho para manter.",
+    "favorite": false
+  },
+  {
+    "title": "The Age of Average",
+    "link": "https://www.alexmurrell.co.uk/articles/the-age-of-average",
+    "date": "2024-07-19",
+    "tags": ["personal", "interesting"],
+    "notes": "Uma reflexão sobre como as coisas ficaram uniformizadas, sem personalidade. Desde a aparência a produtos de mídia, arquitetura, projetos, entre outros.",
+    "favorite": true
+  },
+  {
+    "title": "The Wrong Abstraction",
+    "link": "https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction",
+    "date": "2024-07-19",
+    "tags": ["technical", "programming"],
+    "notes": "Uma reflexão sobre programação orientada a objetos e como abstrações podem se tornar complexas.",
+    "favorite": false
+  },
+  {
+    "title": "No Web Without Women",
+    "link": "https://nowebwithoutwomen.com/",
+    "date": "2024-07-19",
+    "tags": ["personal", "interesting"],
+    "notes": "Inovações criadas por mulheres que permitem que a internet exista como existe hoje.",
+    "favorite": false
+  },
+  {
+    "title": "Tools for better thinking",
+    "link": "https://untools.co/",
+    "date": "2024-07-19",
+    "tags": ["technical", "decision-making"],
+    "notes": "Frameworks para resolução de problemas",
+    "favorite": false
+  },
+  {
+    "title": "Rach Smith",
+    "link": "https://rachsmith.com/",
+    "date": "2024-07-19",
+    "tags": ["personal", "interesting"],
+    "notes": "Blog interessante de uma programadora australiana.",
+    "favorite": false
+  },
+  {
+    "title": "Artvee - Classical and Modern Art in Public Domain",
+    "link": "https://artvee.com/",
+    "date": "2022-07-17",
+    "tags": ["personal", "art"],
+    "notes": "Site com uma coletênea artística em domínio público",
+    "favorite": false
+  },
+  {
+    "title": "CSS One-Liners to Improve (Almost) Every Project",
+    "link": "https://alvaromontoro.com/blog/68055/ten-css-one-liners-for-almost-every-project",
+    "date": "2022-07-17",
+    "tags": ["technical", "webdev"],
+    "notes": "Coleção de códigos CSS de uma única linha",
+    "favorite": false
+  },
+  {
+    "title": "Plant Guides - How Many Plants",
+    "link": "https://howmanyplants.com/plant-guides",
+    "date": "2024-07-14",
+    "tags": ["personal", "plants", "hobbies"],
+    "notes": "Site interessante com informações sobre como cuidar de plantas",
+    "favorite": false
+  }
+]

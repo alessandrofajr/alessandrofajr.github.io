@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/quotes">citações, trechos e outros</a></h1>
+    </header>
+    <main>
+        <div class="quotes">
+            { {{ quote.quote }} ― {{ quote.author }} } 
+            <p>adicionado em {{ quote.date }}</p>
+        </div>
+        <div class="quote-breaker"></div>
+        <div class="quote-content">
+          {{ quote.thoughts | safe }}
+        </div>
+    </main>
+    {% include "partials/footer.njk" %}
+  </div>
+</body>
+</html>

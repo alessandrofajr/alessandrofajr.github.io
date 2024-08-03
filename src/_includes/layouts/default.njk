@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+  <body>
+    <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a></h1>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+  </body>
+</div> 
+</html>
