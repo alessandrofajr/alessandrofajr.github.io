@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As mentiras do ChatGPT e outras inteligências artificiais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">As mentiras do ChatGPT e outras inteligências artificiais</h1>
+        
+          <p class="post-date">2023-05-23</p>
+        
+        <div class="blog-content">
+          <p><em>Texto originalmente <a href="https://www.linkedin.com/posts/alessandrofajr_as-mentiras-do-chatgpt-e-outras-intelig%C3%AAncias-activity-7066919844620697601-qUEV?utm_source=share&amp;utm_medium=member_desktop">publicado no meu LinkedIn</a></em></p>
+<p>Recebi um convite do Marcus Bastos, coordenador do curso de Comunicação e Multimeios da PUC-SP, para depositar o meu TCC, que apresentei em 2019, no repositório digital da universidade. Foi interessante olhar para esse trabalho que produzi há praticamente 4 anos em um momento em que borbulha o interesse por ferramentas de inteligência artificial (IA). Meu TCC consistiu em uma <a href="https://www.youtube.com/playlist?list=PLUptFRM5DsTCj9W1HIBJwI4DSJ5IPZCtt">série de mini-documentários</a> sobre os perigos e vieses dessa tecnologia.</p>
+<p>E, vejam bem, sou entusiasta do ChatGPT. Uso e tenho pesquisado suas aplicações, e vejo um potencial muito bacana. Meu maior problema com o ChatGPT está relacionado às questões que eu começava a abordar em 2019: a falta de cuidado e a animação exagerada na recepção dessa tecnologia (e de muitas outras).</p>
+<p>O ChatGPT é fantástico para tirar você da inércia, dar o pontapé na ideia de um texto, trabalho ou código. Mas tenho percebido que muita gente acredita cegamente no que é produzido por ele. O ChatGPT é um ótimo mentiroso, muito convincente, porque temos essa tendência em acreditar nas máquinas, nas respostas e indicativos que elas nos dão.</p>
+<p>O que me leva de volta à série de mini-documentários. Na época em que a produzi, a tecnologia de reconhecimento facial era um subtópico de IAs muito mais quente do que os modelos como o GPT.</p>
+<p>Essa falta de cuidado também se reflete nessa tecnologia, com consequência muito mais graves. Me preocupa, por exemplo, a decisão da Justiça de São Paulo ter liberado a <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2023-05/justica-libera-edital-de-cameras-com-reconhecimento-facial-em-sp">licitação para o uso de um sistema desses no estado</a>.</p>
+<p>Se um juiz condena sem titubear uma pessoa por ela ter sido <a href="https://g1.globo.com/fantastico/noticia/2021/02/21/exclusivo-83percent-dos-presos-injustamente-por-reconhecimento-fotografico-no-brasil-sao-negros.ghtml">reconhecido por meio de um álbum de fotos</a>, imagina quando um algoritmo indicar para ele que tem 96% de certeza de que o cidadão em uma imagem de resolução e qualidade questionável teria cometido algum crime ou é um fugitivo.</p>
+<p>As evidências até aqui mostram um viés muito problemático dessa tecnologia em relação à minorias. É um erro adotar essa tecnologia. Reconhecimento facial pode ter aplicações interessantes, mas ainda não está pronto, muito menos para a segurança pública ou sistema judiciário.</p>
+<p>Voltando ao ChatGPT, é preciso uma educação e comunicação constante das limitações dos modelos de linguagem natural. Acho o esforço da OpenAI em colocar uma breve lista de &quot;limitações&quot; na tela inicial e uma nota pequena no rodapé muito pouco. Uma resposta ou outra ainda te lembra de que algumas informações precisam ser checadas, mas no geral, trata-se de um modelo que tenta te convencer de que está certo o tempo todo, mesmo quando está redondamente enganado.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/drawer/">gaveta</a></li>
+      <li><a href="/about/">sobre</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

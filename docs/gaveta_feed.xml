@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://alessandrofajr.com/">
+  <title>Alessandro Feitosa Jr</title>
+  <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
+  <link href="https://alessandrofajr.com/gaveta_feed.xml" rel="self"/>
+  <link href="https://alessandrofajr.com/"/>
+  <updated>2024-08-03T18:51:50Z</updated>
+  <id>https://alessandrofajr.com/</id>
+  <author>
+    <name>Alessandro Feitosa Jr</name>
+  </author>
+</feed>
