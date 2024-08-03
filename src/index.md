@@ -11,6 +11,4 @@ aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessad
 <li>{ <a href="/blog/">blog</a> }</li>
 <li>{ <a href="/links/">links interessantes</a> }</li>
 <li>{ <a href="/quotes/">citações</a> }</li>
-<li>{ <a href="/drawer/">gaveta</a> }</li>
-<li>{ <a href="/cv/">meu cv</a> }</li>
 </ul>
