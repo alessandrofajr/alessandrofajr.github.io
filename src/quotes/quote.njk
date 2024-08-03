@@ -1,6 +1,5 @@
 ---
 layout: quotes
-title: "{{ quote.title }}"
 pagination:
   data: collections.quotes
   size: 1
@@ -8,6 +7,8 @@ pagination:
   before: 0
   after: 0
 permalink: "/quotes/{{ quote.id }}/"
+eleventyComputed:
+  title: "{{ quote.title }}"
 ---
 
 
