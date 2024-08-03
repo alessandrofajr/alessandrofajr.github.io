@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
 
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+
   eleventyConfig.addCollection("blog", function(collection) {
     return collection.getFilteredByGlob("src/blog/*.md").filter(function(item) {
       return !item.inputPath.endsWith("index.md");
