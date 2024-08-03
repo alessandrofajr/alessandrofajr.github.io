@@ -1,0 +1,35 @@
+[
+  {
+    "id": "3",
+    "title": "Black Alien - Que nem o meu cachorro",
+    "quote": "Se custou a minha paz, já custou caro demais.",
+    "author": "Black Alien",
+    "source": null,
+    "thoughts": null,
+    "date": "2024-07-16",
+    "language": "pt-br",
+    "tags": ["life"]
+  },
+  {
+    "id": "2",
+    "title": "John Irving on courage to live",
+    "quote": "If you're lucky enough to find a way of life you love, you have to find the courage to live it.",
+    "author": "John Irving",
+    "source": null,
+    "thoughts": null,
+    "date": "2024-07-16",
+    "language": "en",
+    "tags": ["life"]
+  },
+  {
+    "id": "1",
+    "title": "Haruki Murakami on reading",
+    "quote": "If you only read the books that everyone else is reading, you can only think what everyone else is thinking.",
+    "author": "Haruki Murakami",
+    "source": "Norwegian Wood",
+    "thoughts": null,
+    "date": "2024-07-14",
+    "language": "en",
+    "tags": ["books"]
+  }
+]
