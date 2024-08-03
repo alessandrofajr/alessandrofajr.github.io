@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "As mentiras do ChatGPT e outras inteligências artificiais"
-permalink: /blog/mentiras-gpt
+permalink: /blog/mentiras-gpt/
 date: 2023-05-23
 updated: 2023-05-23
 tags: 
