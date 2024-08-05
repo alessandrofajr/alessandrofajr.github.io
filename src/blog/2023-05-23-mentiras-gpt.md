@@ -8,7 +8,7 @@ tags:
     - technical
 ---
 
-*Texto originalmente [publicado no meu LinkedIn](https://www.linkedin.com/posts/alessandrofajr_as-mentiras-do-chatgpt-e-outras-intelig%C3%AAncias-activity-7066919844620697601-qUEV?utm_source=share&utm_medium=member_desktop)*
+*Texto originalmente [publicado no meu LinkedIn](https://www.linkedin.com/posts/alessandrofajr_as-mentiras-do-chatgpt-e-outras-intelig%C3%AAncias-activity-7066919844620697601-qUEV?utm_source=share&utm_medium=member_desktop).*
 
 Recebi um convite do Marcus Bastos, coordenador do curso de Comunicação e Multimeios da PUC-SP, para depositar o meu TCC, que apresentei em 2019, no repositório digital da universidade. Foi interessante olhar para esse trabalho que produzi há praticamente 4 anos em um momento em que borbulha o interesse por ferramentas de inteligência artificial (IA). Meu TCC consistiu em uma [série de mini-documentários](https://www.youtube.com/playlist?list=PLUptFRM5DsTCj9W1HIBJwI4DSJ5IPZCtt) sobre os perigos e vieses dessa tecnologia. 
 
