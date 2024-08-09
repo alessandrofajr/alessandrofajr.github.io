@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como adicionar página 404 e favicon a um blog no 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como adicionar página 404 e favicon a um blog no 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-08-03</p>
+        
+        <div class="blog-content">
+          <p>Para encerrar os itens que considero os mais básicos para um site/blog, é uma boa ideia adicionar dois itens: um favicon (aquele ícone que aparece na barra de abas ou de favoritos do navegador) e uma página de erro 404, para quando um leitor cair em uma URL que não existe.</p>
+<h2>Como adicionar uma página 404</h2>
+<p>Mais simples do que isso, impossível: crie um arquivo <code>404.md</code> dentro da pasta <code>src</code>. A minha eu escrevi dessa forma:</p>
+<pre><code class="language-md">---
+title: Ops! Não encontrado
+layout: default
+permalink: 404.html
+---
+
+# 404
+
+Parece que a página que você estava procurando não existe. Que tal voltar para a [página inicial](/)?
+</code></pre>
+<p>Se você acessar uma URL que não existe, a página já deve estar funcionando. É importante que o <em>front matter</em> tenha o parâmetro <code>permalink: 404.html</code> para funcionar.</p>
+<h2>Como adicionar um favicon</h2>
+<p>Aqui, o primeiro passo é criar um favicon.</p>
+<ol>
+<li>Usei o <a href="https://favicon.io/favicon-generator/">Favicon.io</a> com um gerador por texto e coloquei um emoji. Baixe os arquivos, escolha aquele com a extensão <code>.ico</code> e cole na pasta <code>src</code>.</li>
+<li>Vá até <code>src/_includes/partials/head.njk</code> e inclua a referência ao ícone <code>&lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; sizes=&quot;any&quot;&gt;</code></li>
+<li>Navegue até <code>eleventy.config.js</code> e inclua a linha <code>eleventyConfig.addPassthroughCopy(&quot;src/favicon.ico&quot;);</code>, assim como tínhamos feito com o CSS.</li>
+</ol>
+<p>O próximo passo é <a href="/blog/publicar-site-11ty-github-pages/">publicar o site usando GitHub Pages (de graça)</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

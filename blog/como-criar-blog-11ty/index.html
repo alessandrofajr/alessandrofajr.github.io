@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como criar um blog no 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como criar um blog no 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-07-26</p>
+        
+        <div class="blog-content">
+          <p>Vamos criar uma seção dedicada ao blog e entender como podemos exibir uma lista de posts.</p>
+<h2>Criando o blog</h2>
+<ol>
+<li>Dentro de <code>src</code>, crie uma pasta chamada <code>blog</code>. Esse diretório irá funcionar como uma nova página no seu site e, portanto, será acessada em <code>localhost:8080/blog</code>;</li>
+<li>Dentro de <code>blog</code>, crie um arquivo chamado <code>index.md</code>, a principal página dessa seção. Nesse arquivo vamos incluir um <em>front matter</em> e a estrutura que desejamos, além de um loop que irá recuperar cada post. Esse arquivo terá uma <a href="/blog/como-usar-layouts-11ty/">referência ao layout que acabamos de criar</a>:</li>
+</ol>
+<pre><code class="language-md">---
+layout: default
+title: blog
+---
+
+## Blog
+&lt;ul&gt;
+{% for post in collections.blog reversed %}
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;{{ post.data.title }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+<p>Estamos dizendo que, para cada post na coleção &quot;blog&quot;, em ordem reversa, vamos listar cada um deles e recuperar a URL e o título. Por padrão, a URL será o título do arquivo que criamos, mas podemos inserir uma tag no <em>Front Matter</em> chamada <em>permalink</em> (lembre-se sempre de incluir uma barra ao final do permalink, que deve seguir uma estrutura de separação com traços: <code>/blog/seu-permalink/</code>). Podemos misturar elementos Markdown com HTML em nossos arquivos.</p>
+<ol start="3">
+<li>Nessa mesma pasta <code>blog</code>, adicione outros arquivos – que serão os seus posts – incluindo um nome e a extensão <code>.md</code>. Por exempo: <code>meu-primeiro-post.md</code>. Se estiver pouco inspirado, use o <a href="https://loremipsum.io/">Lorem Ipsum</a>. Dentro desse arquivo, você poderá escolher itens do seu <em>front matter</em>, mas neste guia manterei uma estrutura simples:</li>
+</ol>
+<pre><code class="language-md">---
+layout: post
+title: &quot;Como criar um blog no 11ty (eleventy)&quot;
+date: 2024-07-26
+---
+
+Seu texto aqui!
+</code></pre>
+<p>Para o <code>layout</code>, incluí algo diferente do padrão, porque quero seguir outra estrutura de página para o conteúdo do blog. No <a href="/blog/como-usar-layouts-11ty">último post</a> expliquei como eles funcionam e não vou me delongar por aqui. O código que usei para criar o layout <code>post.njk</code> foi esse:</p>
+<pre><code class="language-njk">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+  {% include &quot;partials/head.njk&quot; %}
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Meu site&lt;/a&gt; / &lt;a href=&quot;/blog&quot;&gt;blog&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;h2&gt;{{ title }}&lt;/h2&gt;
+        &lt;p&gt;{{ date }}&lt;/p&gt;
+        &lt;div class=&quot;blog-content&quot;&gt;
+          {{ content | safe }}
+        &lt;div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol start="4">
+<li>Não basta só criar a pasta e os arquivos, é preicso voltar ao arquivo <code>eleventy.config.js</code> e chamar a função <code>addCollection</code>. O arquivo vai ficar assim:</li>
+</ol>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+
+eleventyConfig.addCollection(&quot;blog&quot;, function(collection) {
+    return collection.getFilteredByGlob(&quot;src/blog/*.md&quot;).filter(function(item) {
+      return !item.inputPath.endsWith(&quot;index.md&quot;);
+    });
+  });
+
+  eleventyConfig.addPassthroughCopy(&quot;src/img&quot;);
+
+  return {
+    dir: {
+      input: &quot;src&quot;,
+      output: &quot;_site&quot;,
+      includes: &quot;_includes&quot;,
+      layouts: &quot;_includes/layouts&quot;
+    }
+  };
+};
+</code></pre>
+<p>Foram adicionadas cinco linhas entre a que começa com <code>module.exports</code> e o <code>return {</code>. Criamos uma coleção filtrada pelos arquivos que estão dentro do diretório <code>src/blog</code> que contenham a extensão <code>.md</code>, com exceção de <code>index.md</code>. Aproveitei para adicionar a linha <code>eleventyConfig.addPassthroughCopy(&quot;src/img&quot;);</code> que vai permitir que adicionemos imagens aos posts (desde que elas estejam dentro da pasta <code>src/img</code>).</p>
+<ol start="5">
+<li>Em seu Terminal, insira o comando <code>npm run serve</code>, se não tiver feito isso anteriormente. Se já tiver feito, o site atualiza sozinho e você poderá acessar <code>localhost:8080/blog</code>;</li>
+<li>Você pode voltar ao <code>index.md</code> da pasta <code>src</code> e editá-lo para incluir um link para o blog. Bastaria adicionar uma linha como <code>[blog](/blog)</code>, usando a notação do Markdown.</li>
+</ol>
+<p>A essa altura, você já conseguirá ver seus posts dentro na página do blog.</p>
+<p>O próximo passo é <a href="/blog/como-adicionar-paginacao-11ty/">adicionar paginação à lista de publicações</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como configurar um domínio personalizado no GitHub Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como configurar um domínio personalizado no GitHub Pages</h1>
+        
+          <p class="post-date">2024-08-08</p>
+        
+        <div class="blog-content">
+          <p>Ao hospedar um site no GitHub Pages, ganhanmos uma URL padrão até que maneirinha: <code>seu_usuario.github.io</code>. Mas domínio personalizado é mais legal.</p>
+<p>O próprio GitHub possui uma <a href="https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">documentação extensiva</a> sobre isso. Aqui, pretendo documentar de uma forma mais direta o processo.</p>
+<ol>
+<li>
+<p>Registre o seu domínio. Eu usei a CloudFlare Registrar, mas existem diversas outras opções;</p>
+</li>
+<li>
+<p>Na plataforma do Registrar escolhido, procure pela opção para realizar a configuração de DNS. O DNS é como um &quot;mapa&quot; que converte os endereços de IP para os nomes que acessamos. Se tiver curiosidade para entender como isso funciona, <a href="https://youtu.be/72snZctFFtA?si=r7OpZXc7RINKEthc">esse vídeo</a> (em inglês) explica muito bem. Essa <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name#how_does_a_dns_request_work">página da Mozilla</a> (em português) também é um ótimo recurso;</p>
+</li>
+<li>
+<p>Agora, aponte os endereços de IP do GitHub Pages para o nosso domínio &quot;apex&quot;, que é o domínio raiz, sem a parte do &quot;www&quot;. No meu caso, é o <code>alessandrofajr.com</code>. Criei 4 regras, todas com a opção de proxy desabilitada:</p>
+<ul>
+<li>Regra tipo <code>A</code> com o nome <code>@</code> (que no CloudFlare, pelo menos, aponta para a raiz) apontando para o endereço IPv4 185.199.110.153;</li>
+<li>Regra tipo <code>A</code> com o nome <code>@</code> apontando para o endereço IPv4 185.199.111.153</li>
+<li>Regra tipo <code>A</code> com o nome <code>@</code> apontando para o endereço IPv4 185.199.109.153</li>
+<li>Regra tipo <code>A</code> com o nome <code>@</code> apontando para o endereço IPv4 185.199.108.153</li>
+</ul>
+</li>
+<li>
+<p>Para que as pessoas qeu acessarem a versão com <code>www</code> também sejam enviadas para o site, crie outra regra, também com a opção de proxy desabilitada:</p>
+<ul>
+<li>Regra tipo <code>CNAME</code> com o alvo para <code>alessandrofajr.github.io</code></li>
+</ul>
+</li>
+<li>
+<p>A documentação do GitHub Pages indica que preciso criar um arquivo chamado <code>CNAME</code>. Eu coloquei ele dentro da pasta <code>src</code> e, dentro dele, escrevi o meu domínio <code>alessandrofajr.com</code>;</p>
+</li>
+<li>
+<p>Se estiver usando <strong>11ty</strong>, vá até o arquivo <code>eleventy.config.js</code> e adicione a linha <code>eleventyConfig.addPassthroughCopy(&quot;src/CNAME&quot;);</code>;</p>
+</li>
+<li>
+<p>Nas configurações do repositório no GitHub, acesse a opção &quot;Pages&quot; no menu à esquerda, inclua o domínio no campo &quot;Custom domain&quot; e tique a caixinha &quot;Enforce HTTPS&quot;.</p>
+</li>
+</ol>
+<p>Alguns minutos depois, o site deve estar acessível por meio do domínio. Sucesso.</p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

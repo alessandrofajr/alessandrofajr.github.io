@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entendendo como usar layouts no 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Entendendo como usar layouts no 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-07-25</p>
+        
+        <div class="blog-content">
+          <p>No último post, descrevi como <a href="/blog/criando-site-com-11ty/">iniciar o projeto com <strong>11ty</strong></a> e acessar o site pela primeira vez. Agora, vou dar um exemplo sobre como criar uma estrutura básica com uma página inicial e seção dedicada ao blog, com listagem de posts.</p>
+<p>Aqui, as coisas começam a ficar mais interessantes porque vamos começar a entender como o <strong>11ty</strong> funciona em termos de estrutura e visualizar algumas das suas capacidades. Assim como boa parte dos frameworks para criação de sites estáticos, o <strong>11ty</strong> converte automaticamente os arquivos Markdown <em>(.md)</em> para HTML.</p>
+<p>Mas ele vai além: é possível usar diversas linguagens de template para construir o site. A documentação lista 11 linguagens diferentes (daí o nome), que podem ser empregadas em conjunto. A documentação oficial costuma dar exemplos com Nunjucks <em>(.nkj)</em>, que é a que eu vou descrever nos exemplos abaixo. Vale a pena dar uma passadinha na <a href="https://mozilla.github.io/nunjucks/">documentação própria do Nunjucks</a>.</p>
+<p>Com esses arquivos, conseguimos criar módulos reaproveitáveis para o nosso site. Imagine o cenário: em todo o meu projeto, o cabeçalho e o rodapé vão se repetir. Se eu precisar copiar e colar o código desses elementos em cada página que eu for criar, vai dar um trabalhão. Se eu quiser editar esses elementos no futuro, a dor de cabeça de multiplica.</p>
+<p>Por isso, criamos layouts modulares que podem ser facilmente integrados pelo framework. Mão na massa:</p>
+<h2>Criando a estrutura de layouts</h2>
+<ol>
+<li>No diretório do seu projeto, dentro de <code>src</code>, crie outra pasta chamada <code>_includes</code> (com underline mesmo). Os nomes das pastas que descrevo ao longo desse guia são convenções;</li>
+<li>Dentro de <code>_includes</code>, crie mais duas pastas: uma chamada <code>layouts</code> e outra chamada <code>partials</code>;</li>
+<li>Agora, crie um arquivo chamado <code>default.njk</code> dentro de <code>layouts</code>. Esse arquivo terá o esqueleto base do HTML do site:</li>
+</ol>
+<pre><code class="language-njk">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Meu site&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      {{ content | safe }}
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>A gente põe os elementos com duas chaves, como se fôssemos chamar variáveis. É assim que o <strong>11ty</strong> vai puxar o título do seu arquivo Markdown e o conteúdo. Para esse layout funcionar precisamos fazer outras <strong>duas coisas</strong>.</p>
+<ol start="4">
+<li>Abra o seu arquivo <code>eleventy.config.js</code> e o edite incluindo as linhas <code>includes: &quot;_includes&quot;,</code> e <code>layouts: &quot;_includes/layouts&quot;</code>:</li>
+</ol>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+
+  return {
+    dir: {
+      input: &quot;src&quot;,
+      output: &quot;_site&quot;,
+      includes: &quot;_includes&quot;,
+      layouts: &quot;_includes/layouts&quot;
+    }
+  };
+};
+</code></pre>
+<p>Isso fará com que o nosso framework saiba onde procurar os diretórios que criamos e os respectivos layouts. Para isso fazer sentido, precisamos indicar o layout a ser utilizado.</p>
+<ol start="5">
+<li>Volte ao <code>index.md</code> e no <em>front matter</em>, adicione mais uma especificação com a linha <code>layout: default</code>:</li>
+</ol>
+<pre><code class="language-md">---
+title: Meu site
+layout: default
+---
+Hello World!
+</code></pre>
+<p>Agora, a página inicial do nosso site herda o layout que criamos. Como falei, uma das coisas interessantes do <strong>11ty</strong> é a capacidade de construir o site de forma modular. Vamos colocar isso em prática.</p>
+<ol start="6">
+<li>Dentro da pasta <code>partials</code>, crie um arquivo <code>head.njk</code> e inclua o trecho da tag <code>&lt;head&gt;</code>que escrevemos template padrão:</li>
+</ol>
+<pre><code class="language-njk">  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;{{ title }}&lt;/title&gt;
+</code></pre>
+<ol start="7">
+<li>Volte ao arquivo <code>default.njk</code> e substitua o conteúdo que está dentro das tags <code>&lt;head&gt; &lt;/head&gt;</code> por <code>{% include &quot;partials/head.njk&quot; %}</code>. Ficará assim:</li>
+</ol>
+<pre><code class="language-njk">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+  {% include &quot;partials/head.njk&quot; %}
+&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Meu site&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      {{ content | safe }}
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>A vantagem de fazer isso é que, sempre que você precisar adicionar algo dentro do seu header, como incluir a <a href="blog/como-adicionar-css-11ty/">referência para o seu CSS</a>, para o seu <a href="/blog/adicionar-pagina-404-favicon-11ty/">favicon</a> ou para uma fonte específica, basta editar o arquivo <code>head.njk</code> para refletir a alteração em todos os seus layouts (para além do default, já que criaremos outros adiante).</p>
+<p>O próximo passo é <a href="/blog/como-criar-blog-11ty/">como criar um blog e listar seus posts em uma página</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

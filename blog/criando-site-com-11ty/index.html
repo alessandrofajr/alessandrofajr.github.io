@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como criar um site usando 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como criar um site usando 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-07-24</p>
+        
+        <div class="blog-content">
+          <p>Quando decidi criar esse site, passei um bom tempo pesquisando opções de frameworks que pudessem atender às minhas necessidades: algo fácil, flexível e leve. De cara, pulei algumas ferramentas mais robustas como <a href="https://wordpress.com/">WordPress</a> e <a href="https://ghost.org/">Ghost</a>. Me deparei com diversas opções: <a href="https://jekyllrb.com/">Jekyll</a>, <a href="https://astro.build/">Astro</a> (que quero testar em algum momento) e, claro, o <strong><a href="https://www.11ty.dev/">11ty</a></strong>.</p>
+<p>Optei por esse último por me parecer aquele que atendia melhor às necessidades mencionadas. Pesou a favor o fato de um site superleve que admiro ter sido desenvolvido com esse framework, a página pessoal do designer de produtos <a href="https://www.interroban.gg/">Luke Mitchell</a>.</p>
+<p>Nesse post, vou explicar como dei os primeiros passos na criação do site/blog. Aqui dá ver o básico do básico e, em posts seguintes, vou detalhar outras particularidades e desafios que encontrei no desenvolvimento (veja no pé do texto os links para as etapas seguintes).</p>
+<h2>Requisitos</h2>
+<p>O <strong>11ty</strong> é um gerador de sites estáticos (daqueles que não dependem de um banco de dados) escrito em JavaScript, baseado em NodeJS.</p>
+<p>Por isso, é preciso instalar essa ferramenta na máquina. Não é preciso saber nada sobre NodeJS para fazer um site com 11ty <em>(mas é bom ter uma familiaridade básica com HTML, CSS e JavaScript)</em>:</p>
+<ul>
+<li>Acesse o site do <a href="https://nodejs.org/en/">NodeJS</a> e instale a versão LTS disponível;</li>
+</ul>
+<h2>Primeiros passos</h2>
+<p>Com o NodeJS instalado, vamos iniciar o desenvolvimento:</p>
+<ol>
+<li>Crie uma pasta para o seu projeto, preferencialmente clone um repositório do Git;</li>
+<li>Abra um Terminal na pasta do seu projeto e rode o comando <code>npm init -y</code>;</li>
+<li>Instale o <strong>11ty</strong> usando o comando <code>npm install @11ty/eleventy --save-dev</code> <em>(essa flag <code>--save-dev</code> serve para incluir, automaticamente, o 11ty nas dependências do projeto que são listadas no arquivo <code>package.json</code>. Se você tem alguma familiaridade com Python, é um equivalente ao <code>requirements.txt</code>. Recomendo <a href="https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev">essa explicação, em inglês,</a> sobre a parte <code>-dev</code>)</em>;</li>
+<li>Crie uma pasta, dentro do diretório do seu projeto, chamada <code>src</code>. Essa pasta pode ter outro nome, mas convencionalmente costuma de chamar assim;</li>
+<li>Dentro de <code>src</code>, crie um arquivo chamado <code>index.md</code> e escreva qualquer coisa, como um clássico &quot;Hello World!&quot;;</li>
+<li>Fora de <code>src</code>, no diretório raiz do seu projeto, crie um arquivo chamado <code>eleventy.config.js</code>;</li>
+<li>Dentro de <code>eleventy.config.js</code>, escreva o seguinte código:</li>
+</ol>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+
+  return {
+    dir: {
+      input: &quot;src&quot;,
+      output: &quot;_site&quot;
+    }
+  };
+};
+</code></pre>
+<p>O arquivo <code>eleventy.config.js</code> é, como o próprio nome diz, um arquivo de configuração que nos permitirá adicionar e ajustar algumas funcionalidades no nosso site/blog. A documentação do <strong>11ty</strong> reforça que ele é opcional, mas vale a pena criá-lo desde o começo do projeto.</p>
+<p>O que as linhas acima estão fazendo é, basicamente, invocando a função de configuração do framework e definindo os diretórios de input e output. Quando o <strong>11ty</strong> roda, ele escreve os arquivos dentro dessa pasta <code>_site</code> especificada em <code>output</code> e as fornece para o servidor.</p>
+<ol start="8">
+<li>No diretório raiz, procure o seu arquivo <code>package.json</code> e adicione dentro da chave <code>scripts</code>, logo acima de <code>tests</code>, o trecho para que possamos passar um comando no Terminal para construir o site. Vamos incluir os atalhos para <code>build</code>, <code>serve</code> e <code>watch</code>:</li>
+</ol>
+<pre><code class="language-json">  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;eleventy&quot;,
+    &quot;serve&quot;: &quot;eleventy --serve&quot;,
+    &quot;watch&quot;: &quot;eleventy --watch&quot;,
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+</code></pre>
+<ol start="9">
+<li>Agora, em seu Terminal, insira o comando <code>npm run serve</code>;</li>
+<li>Acesse o endereço indicado, geralmente <code>localhost:8080</code> e <em>voilà</em>, você verá o que escreveu no <code>index.md</code>.</li>
+<li>Para finalizar, vamos editar o <code>index.md</code> com o <em>front matter</em>, um bloco de metadados colocado no início do documento Markdown, cercado por três traços <code>---</code>, usado para definir informações como título, data, tags e outros dados específicos.</li>
+</ol>
+<pre><code class="language-md">---
+title: Meu site
+---
+Hello World!
+</code></pre>
+<p>Você pode notar que a informação colocada em <code>title</code> é aquilo que é exibido no navegador como título da página.</p>
+<p>Vamos considerar esses os passos necessários para <em>criar</em> um site no 11ty. O próximo passo é <a href="/blog/como-usar-layouts-11ty/">entender como funcionam os layouts</a>.</p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

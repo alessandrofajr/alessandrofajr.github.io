@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como ajustar deslocamento de datas no 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como ajustar deslocamento de datas no 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-07-27</p>
+        
+        <div class="blog-content">
+          <p>O problema que eu mais bati cabeça ao criar esse site com o <strong>11ty</strong> teve a ver com a maneira que o framework lida com as datas. Por mais que eu incluísse a data desejada no <em>front matter</em> do arquivo, a página sempre exibia o dia anterior.</p>
+<p>A documentação do projeto lista essa como &quot;uma das ciladas comuns&quot; – isso porque o <strong>11ty</strong> assume o fuso horário como UTC e, se você escrever a data sem um horário, como <code>2024-07-27</code>, ele interpretará isso como &quot;a zero hora do dia 27 de julho de 2024 no fuso UTC&quot;. O fato de estarmos atrás do horário gera essa divergência.</p>
+<p><strong>Importante:</strong> no Brasil, costumamos escrever a data ao contrário, começando pelo dia e terminando com o ano. O framework espera que escrevemos no padrão utilizado nos Estados Unidos.</p>
+<p>Existem algumas maneiras de contornar esse problema. A mais direta, que não exige código, <a href="https://jackofalltrad.es/posts/writing-dates-for-an-11ty-blog-post/">encontrei no blog Jack of all trad.es, de Will Bjorn</a>: usar o formato completo da data, incluindo a diferença de horário. Tomei a liberade de traduzir a explicação dele.</p>
+<h2>Resolvendo o problema sem código</h2>
+<p>No campo <code>date</code> do nosso <em>front matter</em>, devemos seguir o formato <code>YYYY-MM-DDTHH:mm:ss.sssZ</code>:</p>
+<pre><code class="language-txt">YYYY -&gt; Ano
+MM -&gt; Mês
+DD -&gt; Dia
+T -&gt; Um caractere semântico que indica o fim da data e o início do horário.
+HH -&gt; Hora
+: -&gt; Dois pontos
+mm -&gt; Minuto
+ss -&gt; Segundo
+. -&gt; Um ponto.
+sss -&gt; Milissegundos, caso você se importe com essa precisão. Escreva 000 se não se importar.
+Z -&gt; Z significa o horário UTC. Podemos substuí-lo com um número inteiro positivo ou negativo.
+</code></pre>
+<p>No caso do horário de Brasília, colocaríamos -3 ao final: <code>2024-07-27T14:30:00.000-3</code></p>
+<h2>Resolvendo o problema com código, usando filtros</h2>
+<p>Embora a solução acima seja bastante simples e eficaz, tive problemas quando quis especificar em templates <code>.njk</code> o formato que queria exibir a data.</p>
+<p>No meu caso particular, não queria mostrar o horário das publicações, somente o dia, mês e ano. Na versão atual desse site, quis manter a data no formato dos Estados Unidos, mas creio que a maioria dos brasileiros vão querer modificar essa exibição. É aqui que entra a capacidade de utilização de filtros do <strong>11ty</strong>.</p>
+<p>Esse <a href="https://www.justus.ws/tech/eleventy-utc-dates/">post do blog de Justus Grunow</a> explica como resolver o problema usando a biblioteca Moment.js. Como eu queria que esse projeto dependesse do mínimo de bibliotecas possíveis, resolvi escrever o código na mão:</p>
+<ol>
+<li>Criei, dentro da pasta <code>src</code>, um arquivo chamado <code>filters.js</code>;</li>
+<li>Nele, escrevi o seguinte código:</li>
+</ol>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+    eleventyConfig.addFilter('date', function(date, format) {
+      const dateObj = new Date(date);
+      return formatDate(dateObj, format);
+    });
+  };
+  
+  function formatDate(date, format) {
+
+    date.setHours(date.getHours() + 3);
+
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    
+    switch (format) {
+      case 'YYYY-MM-DD':
+        return `${day}-${month}-${year}`;
+      default:
+        return `${day}-${month}-${year}`;
+    }
+  }
+</code></pre>
+<p>A partir do método de filtros nativos do <strong>11ty</strong>, recebe uma string com a data do nosso <em>front matter</em>, faz um parsing dessa string em um objeto de data do JavaScript, e retorna esse objeto no formato estabelecido pela função <code>formatDate</code>.</p>
+<p>A primeira coisa que a função <code>formatDate</code> faz é adicionar três horas à data, para fazer o ajuste de fuso horário.</p>
+<p>Por que adicionar três horas? Ao escrever uma data qualquer, o fuso UTC será considerado. No meu navegador, ocorrerá uma <em>subtração</em> de três horas, pelo fuso GMT-3. Então eu estou compensando a subtração para exibir o horário. É o jeito ideal? Provavelmente não. Mas funciona.</p>
+<p>Depois, o código separada cada item do objeto de data, obtendo individualmente o ano, o mês e o dia. Por fim, caso a data esteja escrita como <code>YYYY-MM-DD</code>, ela irá retornar como <code>DD-MM-YYYY</code> (e definimos esse formato como o padrão). É possível modificar essa função para que ela exiba o mês por extenso, por exemplo.</p>
+<p>Para que ela funcione, é preciso ainda adicionar o filtro ao nosso <code>eleventy.config.js</code> e aplicá-lo.</p>
+<ol start="3">
+<li>No <code>eleventy.config.js</code> vamos adicionar, logo no início do arquivo, a chamada para o arquivo de filtros e usar o método <code>addPlugin</code>:</li>
+</ol>
+<pre><code class="language-js">const filters = require('./filters');
+
+module.exports = function(eleventyConfig) {
+
+eleventyConfig.addCollection(&quot;blog&quot;, function(collection) {
+    return collection.getFilteredByGlob(&quot;src/blog/*.md&quot;).filter(function(item) {
+      return !item.inputPath.endsWith(&quot;index.md&quot;);
+    });
+  });
+
+  eleventyConfig.addPlugin(filters);
+
+  return {
+    dir: {
+      input: &quot;src&quot;,
+      output: &quot;_site&quot;,
+      includes: &quot;_includes&quot;,
+      layouts: &quot;_includes/layouts&quot;
+    }
+  };
+};
+</code></pre>
+<ol start="4">
+<li>Vamos aplicar o filtro na lista de publicações, modificando o arquivo <code>blog/index.md</code>. Adicionaremos a data para cada post:</li>
+</ol>
+<pre><code class="language-md">---
+layout: default
+title: blog
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+## Blog
+&lt;ul&gt;
+{% for post in pagination.items %}
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;{{ post.data.title }}&lt;/a&gt; - {{ post.date | date: &quot;%d-%m-%Y&quot; }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+
+&lt;nav&gt;
+  {% if pagination.href.previous %}
+    &lt;a href=&quot;&quot;&gt;Página anterior&lt;/a&gt;
+  {% else %}
+  {% endif %}
+  {% if pagination.href.next %}
+    &lt;a href=&quot;&quot;&gt;Próxima página&lt;/a&gt;
+  {% else %}
+  {% endif %}
+&lt;/nav&gt;
+</code></pre>
+<p>A <strong>sintaxe usada para aplicar esse mesmo filtro em arquivos de layout <code>.njk</code> é ligeiramente diferente</strong>.</p>
+<p>Em vez de colocarmos <code>date | date: &quot;%Y-%m-%d&quot;</code>, usaremos <code>{{ date | date(&quot;YYYY-MM-DD&quot;) }}</code>. Note que o filtro vem sempre depois do pipe <code>|</code>.</p>
+<ol start="5">
+<li>Vamos voltar ao layout <code>post.njk</code> que criamos quando <a href="/blog/como-criar-blog-11ty/">configuramos o blog</a>, modificando a linha que contém <code>&lt;p&gt;{{ date }}&lt;/p&gt;</code> para incluir o filtro com <code>{{ date | date(&quot;DD-MM-YYYY&quot;) }}</code>.</li>
+</ol>
+<pre><code class="language-njk">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+  {% include &quot;partials/head.njk&quot; %}
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;&lt;a href=&quot;/&quot;&gt;Meu site&lt;/a&gt; / &lt;a href=&quot;/blog&quot;&gt;blog&lt;/a&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;h2&gt;{{ title }}&lt;/h2&gt;
+        &lt;p&gt;{{ date | date(&quot;DD-MM-YYYY&quot;) }}&lt;/p&gt;
+        &lt;div class=&quot;blog-content&quot;&gt;
+          {{ content | safe }}
+        &lt;div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Pronto! Essa lógica do filtro pode ser aplicada em outros contextos do <strong>11ty</strong>.</p>
+<p>O próximo passo é <a href="/blog/como-adicionar-css-11ty/">deixar o site bonito, usando CSS</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

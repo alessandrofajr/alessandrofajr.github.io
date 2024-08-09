@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como publicar site 11ty (eleventy) no GitHub Pages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como publicar site 11ty (eleventy) no GitHub Pages</h1>
+        
+          <p class="post-date">2024-08-05</p>
+        
+        <div class="blog-content">
+          <p>Com o site criado, chegou a hora de colocá-lo no ar. Eu escolhi o GitHub Pages e achei o processo relativamente fácil. Digo &quot;relativamente&quot; porque precisei superar alguns obstáculos, fazer vários testes e entender o que estava acontecendo por de trás dos panos.</p>
+<p>O que quero dizer aqui é que: é fácil, depois que pega a manha. E acho que expliquei direitinho nesse post.</p>
+<p>Existem duas opções: usar ou não o GitHub Actions. Se você optar por essa ferramenta, vai dar um pouco mais de trabalho agora e ficará mais fácil conforme você decidir atualizar o site.</p>
+<h2>Colocando o site no ar usando GitHub Pages + GitHub Actions</h2>
+<ol>
+<li>Crie seu repositório no GitHub. Eu escolhi fazer no repositório com <code>alessandrofajr.github.io</code>, que permite acessar o site nesse mesmo endereço, sem precisar acessar especificando um diretório (ex: <code>alessandrofajr.github.io/nome_do_repo</code>).</li>
+</ol>
+<p>Se você ainda não está familiarizado com o GitHub Pages, vale a pena dar uma <a href="https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site">lida rápida na documentação</a>. De forma muito direta, o repositório precisa ser chamado <code>&lt;seu_nome_de_usuário&gt;.github.io</code>;</p>
+<ol start="2">
+<li>Caso você tenha iniciado o projeto <strong>11ty</strong> em outro repositório, é preciso mesclá-los. Aqui tem um <a href="https://horadecodar.com.br/como-fazer-o-merge-de-dois-repositorios-em-git/">guia de como fazer isso</a>.</li>
+<li>É necessário sinalizar para o GitHub Pages que não estamos criando um projeto com o <a href="https://jekyllrb.com/">framework Jekyll</a>. Basta criar, no diretório raiz do repositório, um arquivo chamado <code>.nojekyll</code>, sem nada escrito nele;</li>
+<li>Hora de criar o workflow do GitHub Actions, responsável por instalar as dependências no lado do GitHub. No diretório raiz do repositório, crie uma pasta chamada <code>.github</code> (com ponto e tudo) e, dentro dela, crie outra pasta chamada <code>workflows</code>;</li>
+<li>Dentro de <code>.github/workflows</code>, crie um arquivo chamado <code>eleventy_build.yml</code>, com o seguinte conteúdo:</li>
+</ol>
+<pre><code class="language-yml">name: Eleventy Build
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.15.1'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: $
+          publish_dir: ./_site
+</code></pre>
+<p>Esse arquivo diz ao GitHub Actions para que, quando houver um push para a branch <code>main</code>, ele deve instalar o NodeJS, rodar o comando <code>npm ci</code> que instala as dependências definidas no arquivo <code>package-lock.json</code> e, em seguida, rodar o comando <code>npm run build</code> para criar o site. Ele usa uma espécie de pacote específico chamado <code>actions-gh_pages</code> para abstrair parte desse deploy e permitir a criação de uma branch chamada <code>gh_pages</code>.</p>
+<p>Parte importante desse arquivo YML está no trecho <code>github_token: $</code>. Precisamos dessa chave para permitir que, ao realizar o deploy, o GitHub Actions possa escrever os conteúdos na branch <code>gh_pages</code>.</p>
+<ol start="6">
+<li>
+<p>Gere as chaves para fazer o deploy, conforme a <a href="https://github.com/peaceiris/actions-gh-pages/tree/main?tab=readme-ov-file#%EF%B8%8F-create-ssh-deploy-key">documentação</a> do <code>actions-gh-pages</code>:</p>
+<ol>
+<li>Abra o seu Terminal e rode o comando <code>ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;</code>. Troque o trecho <code>email</code> pelo seu email cadastrado no GitHub. Ao rodar isso, você deve ver que duas chaves foram geradas, uma pública e uma privada;</li>
+<li>Copie a chave pública com o comando <code>cat gh-pages.pub | pbcopy</code> (isso vale para Linux e macOS, a linha de comando no Windows provavelmente é outra);</li>
+<li>Vá até o seu repositório do GitHub, clique em &quot;Settings&quot; &gt; &quot;Deploy Keys&quot; &gt; &quot;Add deploy key&quot;. Dê um nome a essa chave, cole o conteúdo e salve, marcando a caixinha &quot;Allow write access&quot;;</li>
+<li>Agora, copie a chave privada com o comando <code>cat gh-pages | pbcopy</code>;</li>
+<li>Nas configurações do repositório, escolha &quot;Secrets and Variables&quot; &gt; &quot;Actions&quot; &gt; &quot;New repository secret&quot;. Dê o nome de <code>ACTIONS_DEPLOY_KEY</code> e cole a chave.</li>
+</ol>
+</li>
+<li>
+<p>Agora é só fazer commit das alterações e um push para a branch <code>main</code> do repositório. Eu costumo fazer todo o desenvolvimento em uma branch <code>dev</code> e abrir um Pull Request para mesclar com a <code>main</code>.</p>
+</li>
+<li>
+<p>Assim que <code>main</code> receber um push, o GitHub Actions vai entrar em ação. Depois de alguns segundos, você pode atualizar o seu repositório e procurar pela branch <code>gh-pages</code> que será criada automaticamente. Nela, deverá encontrar todo o conteúdo do site que foi construído (são os mesmos arquivos que aparecem na pasta <code>_site</code> localmente).</p>
+</li>
+<li>
+<p>Se você acessar a URL do seu GitHub Pages e o site não estiver no ar, vá até &quot;Settings&quot; no repositório, procure por &quot;Pages&quot; no menu lateral e escolha &quot;Deploy from a branch&quot; na opção &quot;Source&quot;. Logo abaixo, escolha a branch &quot;gh-pages&quot; e a pasta &quot;/(root)&quot;. Salve e espere alguns segundos (tive uma certa dor de cabeça nessa etapa e, em algum momento, troquei a branch e a pasta para que essas alterações pegassem no tranco).</p>
+</li>
+</ol>
+<p><img src="/img/gh-pages-deploy.png" alt="Opção para fazer deploy no GitHub Pages"></p>
+<p>Seu site deve estar disponível na web! O que essa configuração toda está fazendo é automatizar o <em>build</em> do site, escrevendo os arquivos no repositório <code>gh-pages</code> sempre que fazemos um push para <code>main</code>. Por de trás dos panos, o GitHub Pages faz o <em>deploy</em>, publicando nosso site na internet. Demorou um tempo para eu entender essa segunda parte e bati cabeça tentando deixar a opção &quot;GitHub Actions&quot; marcada no menu da imagem acima.</p>
+<p><strong>Uma dica importante:</strong> se você estiver usando o parâmetro <code>permalink</code> no seu <em>front matter</em>, certifique-se se colocar uma <code>/</code> ao final do link. Do contrário, ao clicar para abrir um post, o navegador irá pedir para baixar um arquivo em vez de acessar a página. Isso porque o <strong>11ty</strong> não vai entender que é para gerar uma página HTML se não houver a barra no final.</p>
+<h2>Colocando o site no ar sem o GitHub Actions</h2>
+<p>A primeira vez que coloquei o meu site no ar, consegui fazê-lo sem depender do GitHub Actions (ainda que eu tenha feito isso sem querer). Os primeiros passos são os mesmos:</p>
+<ol>
+<li>Crie o repositório no GitHub (leia acima para saber como utilizar uma URL <code>usuario.github.io</code>);</li>
+<li>Mescle com o repositório que você estava usando para o desenvolvimento, caso seja necessário;</li>
+<li>Crie, na raiz do projeto, um arquivo chamado <code>.nojekyll</code>, sem nada escrito nele;</li>
+<li>Aqui o processo muda: vá até o arquivo <code>eleventy.config.js</code> e mude a linha <code>output: &quot;docs&quot;</code>, trocando <code>&quot;_site</code> por <code>&quot;docs&quot;</code>;</li>
+<li>Feito isso, rode <strong>localmente</strong> o comando <code>npm run build</code>, o que irá construir a pasta <code>docs</code> no diretório raiz;</li>
+<li>Adicione a pasta <code>docs</code> usando <code>git add docs</code> e faça o commit para <code>main</code>;</li>
+<li>Vá até as Configurações do repositório, navegue até &quot;Pages&quot; e escolha &quot;Deploy from a branch&quot; na opção &quot;Source&quot;. Logo abaixo, escolha a branch &quot;main&quot; e a pasta &quot;/docs&quot;. Salve e espere alguns segundos. Essa é a mesma opção indicada na imagem acima. Em alguns segundos o seu site deve estar no ar.</li>
+</ol>
+<p>O pulo do gato nesse método é que, toda vez que você quiser publicar algum conteúdo ou atualizar o site, é preciso fazer o build <strong>localmente</strong> e enviar as modificações para o GitHub na sequência. O GitHub Actions, por sua vez, cuida do build sozinho.</p>
+<p>O próximo passo é <a href="/blog/como-configurar-dominio-github-pages/">configurar um domínio personalizado</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como adicionar CSS ao 11ty (eleventy) e deixar site estiloso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como adicionar CSS ao 11ty (eleventy) e deixar site estiloso</h1>
+        
+          <p class="post-date">2024-07-31</p>
+        
+        <div class="blog-content">
+          <p>Agora que temos nosso blog bem estruturado, com alguns conteúdos já listados, vamos dar um visual básico ao site. Não irei me aprofundar no CSS - a ideia é mostrar como aplicar os estilos no <strong>11ty</strong>.</p>
+<p>Os meus objetivos serão:</p>
+<ul>
+<li>Colocar uma nova cor de fundo;</li>
+<li>Centralizar o conteúdo;</li>
+<li>Definir uma nova fonte.</li>
+</ul>
+<ol>
+<li>Crie, dentro do diretório <code>src</code> um arquivo chamado <code>styles.css</code>;</li>
+<li>Escolhi uma cor de fundo pastel e apliquei às tags <code>html</code> e <code>body</code>. Aproveitei também para definir uma nova fonte (no passo 3, detalho que é preciso fazer uma referência à fonte para completar a mudança da tipografia):</li>
+</ol>
+<pre><code class="language-css">html, body {
+    background-color: #fbf5e4;
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scrollbar-gutter: stable;
+}
+
+header {
+    max-width: 550px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+main {
+    max-width: 550px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    flex: 1;
+}
+</code></pre>
+<ol start="3">
+<li>Somente criar esse arquivo não é o suficiente. Faça uma referência a ele no HTML. Volte ao arquivo em <code>src/layouts/partials/head.njk</code> e adicione duas linhas:</li>
+</ol>
+<pre><code class="language-njk">&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/styles.css&quot;&gt;
+</code></pre>
+<p>Aproveite para incluir o link que faz referência à fonte escolhida para o site. Nesse caso, usei o <a href="https://fonts.google.com/selection/embed">Google Fonts</a> para isso.</p>
+<ol start="4">
+<li>O novo visual ainda não será aplicado. Modifique o arquivo <code>eleventy.config.js</code> e adicione o método <code>addPassthroughCopy</code> dentro da função <code>eleventyConfig</code> (suprimi parte do código para simplificar):</li>
+</ol>
+<pre><code class="language-js">module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addPassthroughCopy(&quot;src/styles.css&quot;);
+
+}
+</code></pre>
+<p>Agora nosso site tem um visual. Tire proveito dos layouts do <strong>11ty</strong> para criar classes especifícas para cada página, ajustando o CSS conforme o seu gosto. No próximo post, vamos ver como <a href="(/blog/configurar-feed-rss-11ty/)">adicionar um feed RSS ao blog</a>.</p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>

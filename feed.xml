@@ -4,11 +4,904 @@
   <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
   <link href="https://alessandrofajr.com/feed.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2023-05-23T00:00:00Z</updated>
+  <updated>2024-08-09T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+  <entry>
+    <title>Guia: criando um site com blog usando 11ty</title>
+    <link href="https://alessandrofajr.com/blog/guia-criar-site-blog-11ty/"/>
+    <updated>2024-08-09T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/guia-criar-site-blog-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Minha ideia ao criar esse blog é, para além de compartilhar reflexões pessoais, criar uma espécie de documentação dos meus projetos. O blog em si era um projeto que estava no papel há bastante tempo.&lt;/p&gt;
+&lt;p&gt;Pois bem, escrevi uma série de posts explicando o processo de criar um site usando o framework &lt;strong&gt;11ty&lt;/strong&gt;, que me encantou pela facilidade e leveza. O guia não reproduz exatamente todos os elementos presentes &lt;em&gt;neste&lt;/em&gt; site, mas quis escrevê-lo de uma forma a dar autonomia para quem segui-lo.&lt;/p&gt;
+&lt;p&gt;Ao longo do tempo, posso atualizar essa publicação para incluir mais trechos.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Você também pode acessar o código-fonte &lt;em&gt;deste&lt;/em&gt; blog &lt;a href=&quot;https://github.com/alessandrofajr/alessandrofajr.github.io&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como configurar um domínio personalizado no GitHub Pages</title>
+    <link href="https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/"/>
+    <updated>2024-08-08T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Ao hospedar um site no GitHub Pages, ganhanmos uma URL padrão até que maneirinha: &lt;code&gt;seu_usuario.github.io&lt;/code&gt;. Mas domínio personalizado é mais legal.&lt;/p&gt;
+&lt;p&gt;O próprio GitHub possui uma &lt;a href=&quot;https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site&quot;&gt;documentação extensiva&lt;/a&gt; sobre isso. Aqui, pretendo documentar de uma forma mais direta o processo.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Registre o seu domínio. Eu usei a CloudFlare Registrar, mas existem diversas outras opções;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na plataforma do Registrar escolhido, procure pela opção para realizar a configuração de DNS. O DNS é como um &amp;quot;mapa&amp;quot; que converte os endereços de IP para os nomes que acessamos. Se tiver curiosidade para entender como isso funciona, &lt;a href=&quot;https://youtu.be/72snZctFFtA?si=r7OpZXc7RINKEthc&quot;&gt;esse vídeo&lt;/a&gt; (em inglês) explica muito bem. Essa &lt;a href=&quot;https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name#how_does_a_dns_request_work&quot;&gt;página da Mozilla&lt;/a&gt; (em português) também é um ótimo recurso;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Agora, aponte os endereços de IP do GitHub Pages para o nosso domínio &amp;quot;apex&amp;quot;, que é o domínio raiz, sem a parte do &amp;quot;www&amp;quot;. No meu caso, é o &lt;code&gt;alessandrofajr.com&lt;/code&gt;. Criei 4 regras, todas com a opção de proxy desabilitada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regra tipo &lt;code&gt;A&lt;/code&gt; com o nome &lt;code&gt;@&lt;/code&gt; (que no CloudFlare, pelo menos, aponta para a raiz) apontando para o endereço IPv4 185.199.110.153;&lt;/li&gt;
+&lt;li&gt;Regra tipo &lt;code&gt;A&lt;/code&gt; com o nome &lt;code&gt;@&lt;/code&gt; apontando para o endereço IPv4 185.199.111.153&lt;/li&gt;
+&lt;li&gt;Regra tipo &lt;code&gt;A&lt;/code&gt; com o nome &lt;code&gt;@&lt;/code&gt; apontando para o endereço IPv4 185.199.109.153&lt;/li&gt;
+&lt;li&gt;Regra tipo &lt;code&gt;A&lt;/code&gt; com o nome &lt;code&gt;@&lt;/code&gt; apontando para o endereço IPv4 185.199.108.153&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Para que as pessoas qeu acessarem a versão com &lt;code&gt;www&lt;/code&gt; também sejam enviadas para o site, crie outra regra, também com a opção de proxy desabilitada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regra tipo &lt;code&gt;CNAME&lt;/code&gt; com o alvo para &lt;code&gt;alessandrofajr.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A documentação do GitHub Pages indica que preciso criar um arquivo chamado &lt;code&gt;CNAME&lt;/code&gt;. Eu coloquei ele dentro da pasta &lt;code&gt;src&lt;/code&gt; e, dentro dele, escrevi o meu domínio &lt;code&gt;alessandrofajr.com&lt;/code&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Se estiver usando &lt;strong&gt;11ty&lt;/strong&gt;, vá até o arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e adicione a linha &lt;code&gt;eleventyConfig.addPassthroughCopy(&amp;quot;src/CNAME&amp;quot;);&lt;/code&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nas configurações do repositório no GitHub, acesse a opção &amp;quot;Pages&amp;quot; no menu à esquerda, inclua o domínio no campo &amp;quot;Custom domain&amp;quot; e tique a caixinha &amp;quot;Enforce HTTPS&amp;quot;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Alguns minutos depois, o site deve estar acessível por meio do domínio. Sucesso.&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como publicar site 11ty (eleventy) no GitHub Pages</title>
+    <link href="https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/"/>
+    <updated>2024-08-05T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Com o site criado, chegou a hora de colocá-lo no ar. Eu escolhi o GitHub Pages e achei o processo relativamente fácil. Digo &amp;quot;relativamente&amp;quot; porque precisei superar alguns obstáculos, fazer vários testes e entender o que estava acontecendo por de trás dos panos.&lt;/p&gt;
+&lt;p&gt;O que quero dizer aqui é que: é fácil, depois que pega a manha. E acho que expliquei direitinho nesse post.&lt;/p&gt;
+&lt;p&gt;Existem duas opções: usar ou não o GitHub Actions. Se você optar por essa ferramenta, vai dar um pouco mais de trabalho agora e ficará mais fácil conforme você decidir atualizar o site.&lt;/p&gt;
+&lt;h2&gt;Colocando o site no ar usando GitHub Pages + GitHub Actions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie seu repositório no GitHub. Eu escolhi fazer no repositório com &lt;code&gt;alessandrofajr.github.io&lt;/code&gt;, que permite acessar o site nesse mesmo endereço, sem precisar acessar especificando um diretório (ex: &lt;code&gt;alessandrofajr.github.io/nome_do_repo&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Se você ainda não está familiarizado com o GitHub Pages, vale a pena dar uma &lt;a href=&quot;https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site&quot;&gt;lida rápida na documentação&lt;/a&gt;. De forma muito direta, o repositório precisa ser chamado &lt;code&gt;&amp;lt;seu_nome_de_usuário&amp;gt;.github.io&lt;/code&gt;;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Caso você tenha iniciado o projeto &lt;strong&gt;11ty&lt;/strong&gt; em outro repositório, é preciso mesclá-los. Aqui tem um &lt;a href=&quot;https://horadecodar.com.br/como-fazer-o-merge-de-dois-repositorios-em-git/&quot;&gt;guia de como fazer isso&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;É necessário sinalizar para o GitHub Pages que não estamos criando um projeto com o &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;framework Jekyll&lt;/a&gt;. Basta criar, no diretório raiz do repositório, um arquivo chamado &lt;code&gt;.nojekyll&lt;/code&gt;, sem nada escrito nele;&lt;/li&gt;
+&lt;li&gt;Hora de criar o workflow do GitHub Actions, responsável por instalar as dependências no lado do GitHub. No diretório raiz do repositório, crie uma pasta chamada &lt;code&gt;.github&lt;/code&gt; (com ponto e tudo) e, dentro dela, crie outra pasta chamada &lt;code&gt;workflows&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Dentro de &lt;code&gt;.github/workflows&lt;/code&gt;, crie um arquivo chamado &lt;code&gt;eleventy_build.yml&lt;/code&gt;, com o seguinte conteúdo:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-yml&quot;&gt;name: Eleventy Build
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: &#39;20.15.1&#39;
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: $
+          publish_dir: ./_site
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Esse arquivo diz ao GitHub Actions para que, quando houver um push para a branch &lt;code&gt;main&lt;/code&gt;, ele deve instalar o NodeJS, rodar o comando &lt;code&gt;npm ci&lt;/code&gt; que instala as dependências definidas no arquivo &lt;code&gt;package-lock.json&lt;/code&gt; e, em seguida, rodar o comando &lt;code&gt;npm run build&lt;/code&gt; para criar o site. Ele usa uma espécie de pacote específico chamado &lt;code&gt;actions-gh_pages&lt;/code&gt; para abstrair parte desse deploy e permitir a criação de uma branch chamada &lt;code&gt;gh_pages&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Parte importante desse arquivo YML está no trecho &lt;code&gt;github_token: $&lt;/code&gt;. Precisamos dessa chave para permitir que, ao realizar o deploy, o GitHub Actions possa escrever os conteúdos na branch &lt;code&gt;gh_pages&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;Gere as chaves para fazer o deploy, conforme a &lt;a href=&quot;https://github.com/peaceiris/actions-gh-pages/tree/main?tab=readme-ov-file#%EF%B8%8F-create-ssh-deploy-key&quot;&gt;documentação&lt;/a&gt; do &lt;code&gt;actions-gh-pages&lt;/code&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Abra o seu Terminal e rode o comando &lt;code&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;$(git config user.email)&amp;quot; -f gh-pages -N &amp;quot;&amp;quot;&lt;/code&gt;. Troque o trecho &lt;code&gt;email&lt;/code&gt; pelo seu email cadastrado no GitHub. Ao rodar isso, você deve ver que duas chaves foram geradas, uma pública e uma privada;&lt;/li&gt;
+&lt;li&gt;Copie a chave pública com o comando &lt;code&gt;cat gh-pages.pub | pbcopy&lt;/code&gt; (isso vale para Linux e macOS, a linha de comando no Windows provavelmente é outra);&lt;/li&gt;
+&lt;li&gt;Vá até o seu repositório do GitHub, clique em &amp;quot;Settings&amp;quot; &amp;gt; &amp;quot;Deploy Keys&amp;quot; &amp;gt; &amp;quot;Add deploy key&amp;quot;. Dê um nome a essa chave, cole o conteúdo e salve, marcando a caixinha &amp;quot;Allow write access&amp;quot;;&lt;/li&gt;
+&lt;li&gt;Agora, copie a chave privada com o comando &lt;code&gt;cat gh-pages | pbcopy&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Nas configurações do repositório, escolha &amp;quot;Secrets and Variables&amp;quot; &amp;gt; &amp;quot;Actions&amp;quot; &amp;gt; &amp;quot;New repository secret&amp;quot;. Dê o nome de &lt;code&gt;ACTIONS_DEPLOY_KEY&lt;/code&gt; e cole a chave.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Agora é só fazer commit das alterações e um push para a branch &lt;code&gt;main&lt;/code&gt; do repositório. Eu costumo fazer todo o desenvolvimento em uma branch &lt;code&gt;dev&lt;/code&gt; e abrir um Pull Request para mesclar com a &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assim que &lt;code&gt;main&lt;/code&gt; receber um push, o GitHub Actions vai entrar em ação. Depois de alguns segundos, você pode atualizar o seu repositório e procurar pela branch &lt;code&gt;gh-pages&lt;/code&gt; que será criada automaticamente. Nela, deverá encontrar todo o conteúdo do site que foi construído (são os mesmos arquivos que aparecem na pasta &lt;code&gt;_site&lt;/code&gt; localmente).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Se você acessar a URL do seu GitHub Pages e o site não estiver no ar, vá até &amp;quot;Settings&amp;quot; no repositório, procure por &amp;quot;Pages&amp;quot; no menu lateral e escolha &amp;quot;Deploy from a branch&amp;quot; na opção &amp;quot;Source&amp;quot;. Logo abaixo, escolha a branch &amp;quot;gh-pages&amp;quot; e a pasta &amp;quot;/(root)&amp;quot;. Salve e espere alguns segundos (tive uma certa dor de cabeça nessa etapa e, em algum momento, troquei a branch e a pasta para que essas alterações pegassem no tranco).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://alessandrofajr.com/img/gh-pages-deploy.png&quot; alt=&quot;Opção para fazer deploy no GitHub Pages&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Seu site deve estar disponível na web! O que essa configuração toda está fazendo é automatizar o &lt;em&gt;build&lt;/em&gt; do site, escrevendo os arquivos no repositório &lt;code&gt;gh-pages&lt;/code&gt; sempre que fazemos um push para &lt;code&gt;main&lt;/code&gt;. Por de trás dos panos, o GitHub Pages faz o &lt;em&gt;deploy&lt;/em&gt;, publicando nosso site na internet. Demorou um tempo para eu entender essa segunda parte e bati cabeça tentando deixar a opção &amp;quot;GitHub Actions&amp;quot; marcada no menu da imagem acima.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Uma dica importante:&lt;/strong&gt; se você estiver usando o parâmetro &lt;code&gt;permalink&lt;/code&gt; no seu &lt;em&gt;front matter&lt;/em&gt;, certifique-se se colocar uma &lt;code&gt;/&lt;/code&gt; ao final do link. Do contrário, ao clicar para abrir um post, o navegador irá pedir para baixar um arquivo em vez de acessar a página. Isso porque o &lt;strong&gt;11ty&lt;/strong&gt; não vai entender que é para gerar uma página HTML se não houver a barra no final.&lt;/p&gt;
+&lt;h2&gt;Colocando o site no ar sem o GitHub Actions&lt;/h2&gt;
+&lt;p&gt;A primeira vez que coloquei o meu site no ar, consegui fazê-lo sem depender do GitHub Actions (ainda que eu tenha feito isso sem querer). Os primeiros passos são os mesmos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie o repositório no GitHub (leia acima para saber como utilizar uma URL &lt;code&gt;usuario.github.io&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Mescle com o repositório que você estava usando para o desenvolvimento, caso seja necessário;&lt;/li&gt;
+&lt;li&gt;Crie, na raiz do projeto, um arquivo chamado &lt;code&gt;.nojekyll&lt;/code&gt;, sem nada escrito nele;&lt;/li&gt;
+&lt;li&gt;Aqui o processo muda: vá até o arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e mude a linha &lt;code&gt;output: &amp;quot;docs&amp;quot;&lt;/code&gt;, trocando &lt;code&gt;&amp;quot;_site&lt;/code&gt; por &lt;code&gt;&amp;quot;docs&amp;quot;&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Feito isso, rode &lt;strong&gt;localmente&lt;/strong&gt; o comando &lt;code&gt;npm run build&lt;/code&gt;, o que irá construir a pasta &lt;code&gt;docs&lt;/code&gt; no diretório raiz;&lt;/li&gt;
+&lt;li&gt;Adicione a pasta &lt;code&gt;docs&lt;/code&gt; usando &lt;code&gt;git add docs&lt;/code&gt; e faça o commit para &lt;code&gt;main&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Vá até as Configurações do repositório, navegue até &amp;quot;Pages&amp;quot; e escolha &amp;quot;Deploy from a branch&amp;quot; na opção &amp;quot;Source&amp;quot;. Logo abaixo, escolha a branch &amp;quot;main&amp;quot; e a pasta &amp;quot;/docs&amp;quot;. Salve e espere alguns segundos. Essa é a mesma opção indicada na imagem acima. Em alguns segundos o seu site deve estar no ar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O pulo do gato nesse método é que, toda vez que você quiser publicar algum conteúdo ou atualizar o site, é preciso fazer o build &lt;strong&gt;localmente&lt;/strong&gt; e enviar as modificações para o GitHub na sequência. O GitHub Actions, por sua vez, cuida do build sozinho.&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;configurar um domínio personalizado&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como adicionar página 404 e favicon a um blog no 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/"/>
+    <updated>2024-08-03T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Para encerrar os itens que considero os mais básicos para um site/blog, é uma boa ideia adicionar dois itens: um favicon (aquele ícone que aparece na barra de abas ou de favoritos do navegador) e uma página de erro 404, para quando um leitor cair em uma URL que não existe.&lt;/p&gt;
+&lt;h2&gt;Como adicionar uma página 404&lt;/h2&gt;
+&lt;p&gt;Mais simples do que isso, impossível: crie um arquivo &lt;code&gt;404.md&lt;/code&gt; dentro da pasta &lt;code&gt;src&lt;/code&gt;. A minha eu escrevi dessa forma:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+title: Ops! Não encontrado
+layout: default
+permalink: 404.html
+---
+
+# 404
+
+Parece que a página que você estava procurando não existe. Que tal voltar para a [página inicial](/)?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se você acessar uma URL que não existe, a página já deve estar funcionando. É importante que o &lt;em&gt;front matter&lt;/em&gt; tenha o parâmetro &lt;code&gt;permalink: 404.html&lt;/code&gt; para funcionar.&lt;/p&gt;
+&lt;h2&gt;Como adicionar um favicon&lt;/h2&gt;
+&lt;p&gt;Aqui, o primeiro passo é criar um favicon.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Usei o &lt;a href=&quot;https://favicon.io/favicon-generator/&quot;&gt;Favicon.io&lt;/a&gt; com um gerador por texto e coloquei um emoji. Baixe os arquivos, escolha aquele com a extensão &lt;code&gt;.ico&lt;/code&gt; e cole na pasta &lt;code&gt;src&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Vá até &lt;code&gt;src/_includes/partials/head.njk&lt;/code&gt; e inclua a referência ao ícone &lt;code&gt;&amp;lt;link rel=&amp;quot;icon&amp;quot; href=&amp;quot;/favicon.ico&amp;quot; sizes=&amp;quot;any&amp;quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Navegue até &lt;code&gt;eleventy.config.js&lt;/code&gt; e inclua a linha &lt;code&gt;eleventyConfig.addPassthroughCopy(&amp;quot;src/favicon.ico&amp;quot;);&lt;/code&gt;, assim como tínhamos feito com o CSS.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;publicar o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como configurar um feed RSS em um blog 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/configurar-feed-rss-11ty/"/>
+    <updated>2024-08-01T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/configurar-feed-rss-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Embora seja um recurso praticamente minguante na web moderna, gosto da ideia de ter um feed RSS (Rich Site Summary) para o blog. Poucas pessoas vão se inscrever? Provavelmente. Mas há quem use, e é simples de implementar no &lt;strong&gt;11ty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Apesar da simplicidade, teve um detalhe que me custou uns bons minutos na primeira vez que tentei fazer isso: é preciso especificar a versão do &lt;a href=&quot;https://www.11ty.dev/docs/plugins/rss/&quot;&gt;plugin de RSS&lt;/a&gt; para evitar problemas de compatibilidade.&lt;/p&gt;
+&lt;p&gt;A versão estável do &lt;strong&gt;11ty&lt;/strong&gt; que estou usando nesse projeto é a 2.0.1, mas a opção mais recente do plugin de RSS do &lt;strong&gt;11ty&lt;/strong&gt; espera que estejamos na versão 3.0.0.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Por isso, o primeiro passo é instalar o plugin com o comando &lt;code&gt;npm install @11ty/eleventy-plugin-rss@1.2.0 --save-dev&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Depois, volte ao arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e adicione duas linhas: uma logo no início do arquivo e outra dentro da função &lt;code&gt;eleventyConfig&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const pluginRss = require(&amp;quot;@11ty/eleventy-plugin-rss&amp;quot;);
+
+module.exports = function(eleventyConfig) {
+
+    eleventyConfig.addPlugin(pluginRss);
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para ser breve, não incluí o código completo com as outras funções que já foram escritas.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Agora, em &lt;code&gt;src&lt;/code&gt;, crie um arquivo &lt;code&gt;feed.njk&lt;/code&gt;. O &lt;em&gt;front matter&lt;/em&gt; desse arquivo vai conter detalhes do site, enquanto a segunda parte constrói a estrutura para criar o arquivo &lt;code&gt;xml&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;---json
+{
+  &amp;quot;permalink&amp;quot;: &amp;quot;feed.xml&amp;quot;,
+  &amp;quot;eleventyExcludeFromCollections&amp;quot;: true,
+  &amp;quot;metadata&amp;quot;: {
+    &amp;quot;title&amp;quot;: &amp;quot;Blog&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;Insira uma descrição&amp;quot;,
+    &amp;quot;language&amp;quot;: &amp;quot;pt-br&amp;quot;,
+    &amp;quot;url&amp;quot;: &amp;quot;https://seusite.com/&amp;quot;,
+    &amp;quot;author&amp;quot;: {
+      &amp;quot;name&amp;quot;: &amp;quot;Seu Nome&amp;quot;,
+      &amp;quot;email&amp;quot;: &amp;quot;seuemail@seusite.com&amp;quot;
+    }
+  }
+}
+---
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+&amp;lt;feed xmlns=&amp;quot;http://www.w3.org/2005/Atom&amp;quot; xml:base=&amp;quot;{{ metadata.url }}&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;{{ metadata.title }}&amp;lt;/title&amp;gt;
+  &amp;lt;subtitle&amp;gt;{{ metadata.description }}&amp;lt;/subtitle&amp;gt;
+  &amp;lt;link href=&amp;quot;{{ permalink | absoluteUrl(metadata.url) }}&amp;quot; rel=&amp;quot;self&amp;quot;/&amp;gt;
+  &amp;lt;link href=&amp;quot;{{ metadata.url }}&amp;quot;/&amp;gt;
+  &amp;lt;updated&amp;gt;{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}&amp;lt;/updated&amp;gt;
+  &amp;lt;id&amp;gt;{{ metadata.url }}&amp;lt;/id&amp;gt;
+  &amp;lt;author&amp;gt;
+    &amp;lt;name&amp;gt;{{ metadata.author.name }}&amp;lt;/name&amp;gt;
+  &amp;lt;/author&amp;gt;
+  {%- for post in collections.blog | reverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+  &amp;lt;entry&amp;gt;
+    &amp;lt;title&amp;gt;{{ post.data.title }}&amp;lt;/title&amp;gt;
+    &amp;lt;link href=&amp;quot;{{ absolutePostUrl }}&amp;quot;/&amp;gt;
+    &amp;lt;updated&amp;gt;{{ post.date | dateToRfc3339 }}&amp;lt;/updated&amp;gt;
+    &amp;lt;id&amp;gt;{{ absolutePostUrl }}&amp;lt;/id&amp;gt;
+    &amp;lt;content xml:lang=&amp;quot;{{ metadata.language }}&amp;quot; type=&amp;quot;html&amp;quot;&amp;gt;{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}&amp;lt;/content&amp;gt;
+  &amp;lt;/entry&amp;gt;
+  {%- endfor %}
+&amp;lt;/feed&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Não vou entrar nos pormenores do que cada linha está fazendo, mas há aqui uma série de referências aos metadados que construímos no &lt;em&gt;front matter&lt;/em&gt; e alguns loops para recuperar as publicações na nossa coleção de blog.&lt;/p&gt;
+&lt;p&gt;Esse modelo, inclusive, é o &lt;a href=&quot;https://v2-0-1.11ty.dev/docs/plugins/rss/#sample-feed-templates&quot;&gt;mesmo que aparece na documentação oficial do &lt;strong&gt;11ty&lt;/strong&gt;&lt;/a&gt; para a versão mais antiga do plugin de RSS.&lt;/p&gt;
+&lt;p&gt;Você pode acessar o seu feed RSS em &lt;code&gt;http://localhost:8080/feed.xml&lt;/code&gt;. Geralmente é uma boa ideia incluir o link para o feed em algum canto do site, no rodapé, por exemplo. Se quiser, pode &lt;a href=&quot;https://validator.w3.org/feed/&quot;&gt;validar o resultado no site da W3&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;adicionar uma página 404 e favicon&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como adicionar CSS ao 11ty (eleventy) e deixar site estiloso</title>
+    <link href="https://alessandrofajr.com/blog/como-adicionar-css-11ty/"/>
+    <updated>2024-07-31T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/como-adicionar-css-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Agora que temos nosso blog bem estruturado, com alguns conteúdos já listados, vamos dar um visual básico ao site. Não irei me aprofundar no CSS - a ideia é mostrar como aplicar os estilos no &lt;strong&gt;11ty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Os meus objetivos serão:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Colocar uma nova cor de fundo;&lt;/li&gt;
+&lt;li&gt;Centralizar o conteúdo;&lt;/li&gt;
+&lt;li&gt;Definir uma nova fonte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie, dentro do diretório &lt;code&gt;src&lt;/code&gt; um arquivo chamado &lt;code&gt;styles.css&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Escolhi uma cor de fundo pastel e apliquei às tags &lt;code&gt;html&lt;/code&gt; e &lt;code&gt;body&lt;/code&gt;. Aproveitei também para definir uma nova fonte (no passo 3, detalho que é preciso fazer uma referência à fonte para completar a mudança da tipografia):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-css&quot;&gt;html, body {
+    background-color: #fbf5e4;
+    font-family: &#39;Open Sans&#39;, sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scrollbar-gutter: stable;
+}
+
+header {
+    max-width: 550px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+main {
+    max-width: 550px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    flex: 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Somente criar esse arquivo não é o suficiente. Faça uma referência a ele no HTML. Volte ao arquivo em &lt;code&gt;src/layouts/partials/head.njk&lt;/code&gt; e adicione duas linhas:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;{{ title }}&amp;lt;/title&amp;gt;
+&amp;lt;link href=&amp;quot;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;amp;display=swap&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;
+&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/styles.css&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aproveite para incluir o link que faz referência à fonte escolhida para o site. Nesse caso, usei o &lt;a href=&quot;https://fonts.google.com/selection/embed&quot;&gt;Google Fonts&lt;/a&gt; para isso.&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;O novo visual ainda não será aplicado. Modifique o arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e adicione o método &lt;code&gt;addPassthroughCopy&lt;/code&gt; dentro da função &lt;code&gt;eleventyConfig&lt;/code&gt; (suprimi parte do código para simplificar):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addPassthroughCopy(&amp;quot;src/styles.css&amp;quot;);
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora nosso site tem um visual. Tire proveito dos layouts do &lt;strong&gt;11ty&lt;/strong&gt; para criar classes especifícas para cada página, ajustando o CSS conforme o seu gosto. No próximo post, vamos ver como &lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/(/blog/configurar-feed-rss-11ty/)&quot;&gt;adicionar um feed RSS ao blog&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como ajustar deslocamento de datas no 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/lidando-com-datas-11ty/"/>
+    <updated>2024-07-27T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/lidando-com-datas-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;O problema que eu mais bati cabeça ao criar esse site com o &lt;strong&gt;11ty&lt;/strong&gt; teve a ver com a maneira que o framework lida com as datas. Por mais que eu incluísse a data desejada no &lt;em&gt;front matter&lt;/em&gt; do arquivo, a página sempre exibia o dia anterior.&lt;/p&gt;
+&lt;p&gt;A documentação do projeto lista essa como &amp;quot;uma das ciladas comuns&amp;quot; – isso porque o &lt;strong&gt;11ty&lt;/strong&gt; assume o fuso horário como UTC e, se você escrever a data sem um horário, como &lt;code&gt;2024-07-27&lt;/code&gt;, ele interpretará isso como &amp;quot;a zero hora do dia 27 de julho de 2024 no fuso UTC&amp;quot;. O fato de estarmos atrás do horário gera essa divergência.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Importante:&lt;/strong&gt; no Brasil, costumamos escrever a data ao contrário, começando pelo dia e terminando com o ano. O framework espera que escrevemos no padrão utilizado nos Estados Unidos.&lt;/p&gt;
+&lt;p&gt;Existem algumas maneiras de contornar esse problema. A mais direta, que não exige código, &lt;a href=&quot;https://jackofalltrad.es/posts/writing-dates-for-an-11ty-blog-post/&quot;&gt;encontrei no blog Jack of all trad.es, de Will Bjorn&lt;/a&gt;: usar o formato completo da data, incluindo a diferença de horário. Tomei a liberade de traduzir a explicação dele.&lt;/p&gt;
+&lt;h2&gt;Resolvendo o problema sem código&lt;/h2&gt;
+&lt;p&gt;No campo &lt;code&gt;date&lt;/code&gt; do nosso &lt;em&gt;front matter&lt;/em&gt;, devemos seguir o formato &lt;code&gt;YYYY-MM-DDTHH:mm:ss.sssZ&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;YYYY -&amp;gt; Ano
+MM -&amp;gt; Mês
+DD -&amp;gt; Dia
+T -&amp;gt; Um caractere semântico que indica o fim da data e o início do horário.
+HH -&amp;gt; Hora
+: -&amp;gt; Dois pontos
+mm -&amp;gt; Minuto
+ss -&amp;gt; Segundo
+. -&amp;gt; Um ponto.
+sss -&amp;gt; Milissegundos, caso você se importe com essa precisão. Escreva 000 se não se importar.
+Z -&amp;gt; Z significa o horário UTC. Podemos substuí-lo com um número inteiro positivo ou negativo.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No caso do horário de Brasília, colocaríamos -3 ao final: &lt;code&gt;2024-07-27T14:30:00.000-3&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Resolvendo o problema com código, usando filtros&lt;/h2&gt;
+&lt;p&gt;Embora a solução acima seja bastante simples e eficaz, tive problemas quando quis especificar em templates &lt;code&gt;.njk&lt;/code&gt; o formato que queria exibir a data.&lt;/p&gt;
+&lt;p&gt;No meu caso particular, não queria mostrar o horário das publicações, somente o dia, mês e ano. Na versão atual desse site, quis manter a data no formato dos Estados Unidos, mas creio que a maioria dos brasileiros vão querer modificar essa exibição. É aqui que entra a capacidade de utilização de filtros do &lt;strong&gt;11ty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Esse &lt;a href=&quot;https://www.justus.ws/tech/eleventy-utc-dates/&quot;&gt;post do blog de Justus Grunow&lt;/a&gt; explica como resolver o problema usando a biblioteca Moment.js. Como eu queria que esse projeto dependesse do mínimo de bibliotecas possíveis, resolvi escrever o código na mão:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Criei, dentro da pasta &lt;code&gt;src&lt;/code&gt;, um arquivo chamado &lt;code&gt;filters.js&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Nele, escrevi o seguinte código:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = function(eleventyConfig) {
+    eleventyConfig.addFilter(&#39;date&#39;, function(date, format) {
+      const dateObj = new Date(date);
+      return formatDate(dateObj, format);
+    });
+  };
+  
+  function formatDate(date, format) {
+
+    date.setHours(date.getHours() + 3);
+
+    const year = date.getFullYear();
+    const month = (&#39;0&#39; + (date.getMonth() + 1)).slice(-2);
+    const day = (&#39;0&#39; + date.getDate()).slice(-2);
+    
+    switch (format) {
+      case &#39;YYYY-MM-DD&#39;:
+        return `${day}-${month}-${year}`;
+      default:
+        return `${day}-${month}-${year}`;
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A partir do método de filtros nativos do &lt;strong&gt;11ty&lt;/strong&gt;, recebe uma string com a data do nosso &lt;em&gt;front matter&lt;/em&gt;, faz um parsing dessa string em um objeto de data do JavaScript, e retorna esse objeto no formato estabelecido pela função &lt;code&gt;formatDate&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A primeira coisa que a função &lt;code&gt;formatDate&lt;/code&gt; faz é adicionar três horas à data, para fazer o ajuste de fuso horário.&lt;/p&gt;
+&lt;p&gt;Por que adicionar três horas? Ao escrever uma data qualquer, o fuso UTC será considerado. No meu navegador, ocorrerá uma &lt;em&gt;subtração&lt;/em&gt; de três horas, pelo fuso GMT-3. Então eu estou compensando a subtração para exibir o horário. É o jeito ideal? Provavelmente não. Mas funciona.&lt;/p&gt;
+&lt;p&gt;Depois, o código separada cada item do objeto de data, obtendo individualmente o ano, o mês e o dia. Por fim, caso a data esteja escrita como &lt;code&gt;YYYY-MM-DD&lt;/code&gt;, ela irá retornar como &lt;code&gt;DD-MM-YYYY&lt;/code&gt; (e definimos esse formato como o padrão). É possível modificar essa função para que ela exiba o mês por extenso, por exemplo.&lt;/p&gt;
+&lt;p&gt;Para que ela funcione, é preciso ainda adicionar o filtro ao nosso &lt;code&gt;eleventy.config.js&lt;/code&gt; e aplicá-lo.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;No &lt;code&gt;eleventy.config.js&lt;/code&gt; vamos adicionar, logo no início do arquivo, a chamada para o arquivo de filtros e usar o método &lt;code&gt;addPlugin&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const filters = require(&#39;./filters&#39;);
+
+module.exports = function(eleventyConfig) {
+
+eleventyConfig.addCollection(&amp;quot;blog&amp;quot;, function(collection) {
+    return collection.getFilteredByGlob(&amp;quot;src/blog/*.md&amp;quot;).filter(function(item) {
+      return !item.inputPath.endsWith(&amp;quot;index.md&amp;quot;);
+    });
+  });
+
+  eleventyConfig.addPlugin(filters);
+
+  return {
+    dir: {
+      input: &amp;quot;src&amp;quot;,
+      output: &amp;quot;_site&amp;quot;,
+      includes: &amp;quot;_includes&amp;quot;,
+      layouts: &amp;quot;_includes/layouts&amp;quot;
+    }
+  };
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Vamos aplicar o filtro na lista de publicações, modificando o arquivo &lt;code&gt;blog/index.md&lt;/code&gt;. Adicionaremos a data para cada post:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+layout: default
+title: blog
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+## Blog
+&amp;lt;ul&amp;gt;
+{% for post in pagination.items %}
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;{{ post.data.title }}&amp;lt;/a&amp;gt; - {{ post.date | date: &amp;quot;%d-%m-%Y&amp;quot; }}&amp;lt;/li&amp;gt;
+{% endfor %}
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;nav&amp;gt;
+  {% if pagination.href.previous %}
+    &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;Página anterior&amp;lt;/a&amp;gt;
+  {% else %}
+  {% endif %}
+  {% if pagination.href.next %}
+    &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;Próxima página&amp;lt;/a&amp;gt;
+  {% else %}
+  {% endif %}
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A &lt;strong&gt;sintaxe usada para aplicar esse mesmo filtro em arquivos de layout &lt;code&gt;.njk&lt;/code&gt; é ligeiramente diferente&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Em vez de colocarmos &lt;code&gt;date | date: &amp;quot;%Y-%m-%d&amp;quot;&lt;/code&gt;, usaremos &lt;code&gt;{{ date | date(&amp;quot;YYYY-MM-DD&amp;quot;) }}&lt;/code&gt;. Note que o filtro vem sempre depois do pipe &lt;code&gt;|&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Vamos voltar ao layout &lt;code&gt;post.njk&lt;/code&gt; que criamos quando &lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;configuramos o blog&lt;/a&gt;, modificando a linha que contém &lt;code&gt;&amp;lt;p&amp;gt;{{ date }}&amp;lt;/p&amp;gt;&lt;/code&gt; para incluir o filtro com &lt;code&gt;{{ date | date(&amp;quot;DD-MM-YYYY&amp;quot;) }}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;pt-br&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  {% include &amp;quot;partials/head.njk&amp;quot; %}
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;header&amp;gt;
+      &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Meu site&amp;lt;/a&amp;gt; / &amp;lt;a href=&amp;quot;/blog&amp;quot;&amp;gt;blog&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;/header&amp;gt;
+    &amp;lt;main&amp;gt;
+        &amp;lt;h2&amp;gt;{{ title }}&amp;lt;/h2&amp;gt;
+        &amp;lt;p&amp;gt;{{ date | date(&amp;quot;DD-MM-YYYY&amp;quot;) }}&amp;lt;/p&amp;gt;
+        &amp;lt;div class=&amp;quot;blog-content&amp;quot;&amp;gt;
+          {{ content | safe }}
+        &amp;lt;div&amp;gt;
+    &amp;lt;/main&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pronto! Essa lógica do filtro pode ser aplicada em outros contextos do &lt;strong&gt;11ty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;deixar o site bonito, usando CSS&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como adicionar paginação a um blog no 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/"/>
+    <updated>2024-07-27T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Com a &lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;seção do nosso blog pronta&lt;/a&gt;, a tendência é que a lista a lista de publicações fique extensa com o passar do tempo. O &lt;strong&gt;11ty&lt;/strong&gt; tem uma solução de paginação integrada que é muito simples de implementar.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Volte ao arquivo &lt;code&gt;blog/index.md&lt;/code&gt; e altere o &lt;em&gt;front matter&lt;/em&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+layout: default
+title: blog
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: posts
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ao incluir a especificação de &lt;code&gt;pagination&lt;/code&gt;, apontamos para uma coleção de dados do blog, o tamanho da página, definimos que queremos ordenar essa coleção de trás para frente e um sinônimo.&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;É preciso alterar outro trecho do &lt;code&gt;blog/index.md&lt;/code&gt;, modificando o loop que criamos anteriormente, pedindo para que o código recupere cada post a partir dos itens de paginação. Além disso, adicione links para permitir a navegação. O arquivo completo ficará assim:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+layout: default
+title: blog
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+## Blog
+&amp;lt;ul&amp;gt;
+{% for post in pagination.items %}
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;{{ post.data.title }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+{% endfor %}
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;nav&amp;gt;
+  {% if pagination.href.previous %}
+    &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;Página anterior&amp;lt;/a&amp;gt;
+  {% else %}
+  {% endif %}
+  {% if pagination.href.next %}
+    &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;Próxima página&amp;lt;/a&amp;gt;
+  {% else %}
+  {% endif %}
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O código dentro das tags &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt; possuem uma condicional para exibir os links de &amp;quot;próxima página&amp;quot; e &amp;quot;página anterior&amp;quot; somente se esses links existirem. Dessa forma, evitamos de criar um link que não leva para lugar nenhum.&lt;/p&gt;
+&lt;p&gt;Crie alguns posts para testar a paginação e brinque com o tamanho da paginação. Dois passos bem simples.&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;entender o deslocamento de datas no 11ty&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como criar um blog no 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/como-criar-blog-11ty/"/>
+    <updated>2024-07-26T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/como-criar-blog-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Vamos criar uma seção dedicada ao blog e entender como podemos exibir uma lista de posts.&lt;/p&gt;
+&lt;h2&gt;Criando o blog&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Dentro de &lt;code&gt;src&lt;/code&gt;, crie uma pasta chamada &lt;code&gt;blog&lt;/code&gt;. Esse diretório irá funcionar como uma nova página no seu site e, portanto, será acessada em &lt;code&gt;localhost:8080/blog&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Dentro de &lt;code&gt;blog&lt;/code&gt;, crie um arquivo chamado &lt;code&gt;index.md&lt;/code&gt;, a principal página dessa seção. Nesse arquivo vamos incluir um &lt;em&gt;front matter&lt;/em&gt; e a estrutura que desejamos, além de um loop que irá recuperar cada post. Esse arquivo terá uma &lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;referência ao layout que acabamos de criar&lt;/a&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+layout: default
+title: blog
+---
+
+## Blog
+&amp;lt;ul&amp;gt;
+{% for post in collections.blog reversed %}
+&amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;{{ post.data.title }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+{% endfor %}
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Estamos dizendo que, para cada post na coleção &amp;quot;blog&amp;quot;, em ordem reversa, vamos listar cada um deles e recuperar a URL e o título. Por padrão, a URL será o título do arquivo que criamos, mas podemos inserir uma tag no &lt;em&gt;Front Matter&lt;/em&gt; chamada &lt;em&gt;permalink&lt;/em&gt; (lembre-se sempre de incluir uma barra ao final do permalink, que deve seguir uma estrutura de separação com traços: &lt;code&gt;/blog/seu-permalink/&lt;/code&gt;). Podemos misturar elementos Markdown com HTML em nossos arquivos.&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Nessa mesma pasta &lt;code&gt;blog&lt;/code&gt;, adicione outros arquivos – que serão os seus posts – incluindo um nome e a extensão &lt;code&gt;.md&lt;/code&gt;. Por exempo: &lt;code&gt;meu-primeiro-post.md&lt;/code&gt;. Se estiver pouco inspirado, use o &lt;a href=&quot;https://loremipsum.io/&quot;&gt;Lorem Ipsum&lt;/a&gt;. Dentro desse arquivo, você poderá escolher itens do seu &lt;em&gt;front matter&lt;/em&gt;, mas neste guia manterei uma estrutura simples:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+layout: post
+title: &amp;quot;Como criar um blog no 11ty (eleventy)&amp;quot;
+date: 2024-07-26
+---
+
+Seu texto aqui!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para o &lt;code&gt;layout&lt;/code&gt;, incluí algo diferente do padrão, porque quero seguir outra estrutura de página para o conteúdo do blog. No &lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty&quot;&gt;último post&lt;/a&gt; expliquei como eles funcionam e não vou me delongar por aqui. O código que usei para criar o layout &lt;code&gt;post.njk&lt;/code&gt; foi esse:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;pt-br&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  {% include &amp;quot;partials/head.njk&amp;quot; %}
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;header&amp;gt;
+      &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Meu site&amp;lt;/a&amp;gt; / &amp;lt;a href=&amp;quot;/blog&amp;quot;&amp;gt;blog&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;/header&amp;gt;
+    &amp;lt;main&amp;gt;
+        &amp;lt;h2&amp;gt;{{ title }}&amp;lt;/h2&amp;gt;
+        &amp;lt;p&amp;gt;{{ date }}&amp;lt;/p&amp;gt;
+        &amp;lt;div class=&amp;quot;blog-content&amp;quot;&amp;gt;
+          {{ content | safe }}
+        &amp;lt;div&amp;gt;
+    &amp;lt;/main&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Não basta só criar a pasta e os arquivos, é preicso voltar ao arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e chamar a função &lt;code&gt;addCollection&lt;/code&gt;. O arquivo vai ficar assim:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = function(eleventyConfig) {
+
+eleventyConfig.addCollection(&amp;quot;blog&amp;quot;, function(collection) {
+    return collection.getFilteredByGlob(&amp;quot;src/blog/*.md&amp;quot;).filter(function(item) {
+      return !item.inputPath.endsWith(&amp;quot;index.md&amp;quot;);
+    });
+  });
+
+  eleventyConfig.addPassthroughCopy(&amp;quot;src/img&amp;quot;);
+
+  return {
+    dir: {
+      input: &amp;quot;src&amp;quot;,
+      output: &amp;quot;_site&amp;quot;,
+      includes: &amp;quot;_includes&amp;quot;,
+      layouts: &amp;quot;_includes/layouts&amp;quot;
+    }
+  };
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Foram adicionadas cinco linhas entre a que começa com &lt;code&gt;module.exports&lt;/code&gt; e o &lt;code&gt;return {&lt;/code&gt;. Criamos uma coleção filtrada pelos arquivos que estão dentro do diretório &lt;code&gt;src/blog&lt;/code&gt; que contenham a extensão &lt;code&gt;.md&lt;/code&gt;, com exceção de &lt;code&gt;index.md&lt;/code&gt;. Aproveitei para adicionar a linha &lt;code&gt;eleventyConfig.addPassthroughCopy(&amp;quot;src/img&amp;quot;);&lt;/code&gt; que vai permitir que adicionemos imagens aos posts (desde que elas estejam dentro da pasta &lt;code&gt;src/img&lt;/code&gt;).&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Em seu Terminal, insira o comando &lt;code&gt;npm run serve&lt;/code&gt;, se não tiver feito isso anteriormente. Se já tiver feito, o site atualiza sozinho e você poderá acessar &lt;code&gt;localhost:8080/blog&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Você pode voltar ao &lt;code&gt;index.md&lt;/code&gt; da pasta &lt;code&gt;src&lt;/code&gt; e editá-lo para incluir um link para o blog. Bastaria adicionar uma linha como &lt;code&gt;[blog](/blog)&lt;/code&gt;, usando a notação do Markdown.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A essa altura, você já conseguirá ver seus posts dentro na página do blog.&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;adicionar paginação à lista de publicações&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Entendendo como usar layouts no 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/como-usar-layouts-11ty/"/>
+    <updated>2024-07-25T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/como-usar-layouts-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;No último post, descrevi como &lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;iniciar o projeto com &lt;strong&gt;11ty&lt;/strong&gt;&lt;/a&gt; e acessar o site pela primeira vez. Agora, vou dar um exemplo sobre como criar uma estrutura básica com uma página inicial e seção dedicada ao blog, com listagem de posts.&lt;/p&gt;
+&lt;p&gt;Aqui, as coisas começam a ficar mais interessantes porque vamos começar a entender como o &lt;strong&gt;11ty&lt;/strong&gt; funciona em termos de estrutura e visualizar algumas das suas capacidades. Assim como boa parte dos frameworks para criação de sites estáticos, o &lt;strong&gt;11ty&lt;/strong&gt; converte automaticamente os arquivos Markdown &lt;em&gt;(.md)&lt;/em&gt; para HTML.&lt;/p&gt;
+&lt;p&gt;Mas ele vai além: é possível usar diversas linguagens de template para construir o site. A documentação lista 11 linguagens diferentes (daí o nome), que podem ser empregadas em conjunto. A documentação oficial costuma dar exemplos com Nunjucks &lt;em&gt;(.nkj)&lt;/em&gt;, que é a que eu vou descrever nos exemplos abaixo. Vale a pena dar uma passadinha na &lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot;&gt;documentação própria do Nunjucks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Com esses arquivos, conseguimos criar módulos reaproveitáveis para o nosso site. Imagine o cenário: em todo o meu projeto, o cabeçalho e o rodapé vão se repetir. Se eu precisar copiar e colar o código desses elementos em cada página que eu for criar, vai dar um trabalhão. Se eu quiser editar esses elementos no futuro, a dor de cabeça de multiplica.&lt;/p&gt;
+&lt;p&gt;Por isso, criamos layouts modulares que podem ser facilmente integrados pelo framework. Mão na massa:&lt;/p&gt;
+&lt;h2&gt;Criando a estrutura de layouts&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;No diretório do seu projeto, dentro de &lt;code&gt;src&lt;/code&gt;, crie outra pasta chamada &lt;code&gt;_includes&lt;/code&gt; (com underline mesmo). Os nomes das pastas que descrevo ao longo desse guia são convenções;&lt;/li&gt;
+&lt;li&gt;Dentro de &lt;code&gt;_includes&lt;/code&gt;, crie mais duas pastas: uma chamada &lt;code&gt;layouts&lt;/code&gt; e outra chamada &lt;code&gt;partials&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Agora, crie um arquivo chamado &lt;code&gt;default.njk&lt;/code&gt; dentro de &lt;code&gt;layouts&lt;/code&gt;. Esse arquivo terá o esqueleto base do HTML do site:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;pt-br&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+  &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;{{ title }}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;header&amp;gt;
+      &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Meu site&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;/header&amp;gt;
+    &amp;lt;main&amp;gt;
+      {{ content | safe }}
+    &amp;lt;/main&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A gente põe os elementos com duas chaves, como se fôssemos chamar variáveis. É assim que o &lt;strong&gt;11ty&lt;/strong&gt; vai puxar o título do seu arquivo Markdown e o conteúdo. Para esse layout funcionar precisamos fazer outras &lt;strong&gt;duas coisas&lt;/strong&gt;.&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Abra o seu arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; e o edite incluindo as linhas &lt;code&gt;includes: &amp;quot;_includes&amp;quot;,&lt;/code&gt; e &lt;code&gt;layouts: &amp;quot;_includes/layouts&amp;quot;&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = function(eleventyConfig) {
+
+  return {
+    dir: {
+      input: &amp;quot;src&amp;quot;,
+      output: &amp;quot;_site&amp;quot;,
+      includes: &amp;quot;_includes&amp;quot;,
+      layouts: &amp;quot;_includes/layouts&amp;quot;
+    }
+  };
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Isso fará com que o nosso framework saiba onde procurar os diretórios que criamos e os respectivos layouts. Para isso fazer sentido, precisamos indicar o layout a ser utilizado.&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Volte ao &lt;code&gt;index.md&lt;/code&gt; e no &lt;em&gt;front matter&lt;/em&gt;, adicione mais uma especificação com a linha &lt;code&gt;layout: default&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+title: Meu site
+layout: default
+---
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Agora, a página inicial do nosso site herda o layout que criamos. Como falei, uma das coisas interessantes do &lt;strong&gt;11ty&lt;/strong&gt; é a capacidade de construir o site de forma modular. Vamos colocar isso em prática.&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;Dentro da pasta &lt;code&gt;partials&lt;/code&gt;, crie um arquivo &lt;code&gt;head.njk&lt;/code&gt; e inclua o trecho da tag &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;que escrevemos template padrão:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+  &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;{{ title }}&amp;lt;/title&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;7&quot;&gt;
+&lt;li&gt;Volte ao arquivo &lt;code&gt;default.njk&lt;/code&gt; e substitua o conteúdo que está dentro das tags &lt;code&gt;&amp;lt;head&amp;gt; &amp;lt;/head&amp;gt;&lt;/code&gt; por &lt;code&gt;{% include &amp;quot;partials/head.njk&amp;quot; %}&lt;/code&gt;. Ficará assim:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-njk&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;pt-br&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  {% include &amp;quot;partials/head.njk&amp;quot; %}
+&amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;header&amp;gt;
+      &amp;lt;h1&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Meu site&amp;lt;/a&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;/header&amp;gt;
+    &amp;lt;main&amp;gt;
+      {{ content | safe }}
+    &amp;lt;/main&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A vantagem de fazer isso é que, sempre que você precisar adicionar algo dentro do seu header, como incluir a &lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/blog/como-adicionar-css-11ty/&quot;&gt;referência para o seu CSS&lt;/a&gt;, para o seu &lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;favicon&lt;/a&gt; ou para uma fonte específica, basta editar o arquivo &lt;code&gt;head.njk&lt;/code&gt; para refletir a alteração em todos os seus layouts (para além do default, já que criaremos outros adiante).&lt;/p&gt;
+&lt;p&gt;O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Como criar um site usando 11ty (eleventy)</title>
+    <link href="https://alessandrofajr.com/blog/criando-site-com-11ty/"/>
+    <updated>2024-07-24T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/criando-site-com-11ty/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Quando decidi criar esse site, passei um bom tempo pesquisando opções de frameworks que pudessem atender às minhas necessidades: algo fácil, flexível e leve. De cara, pulei algumas ferramentas mais robustas como &lt;a href=&quot;https://wordpress.com/&quot;&gt;WordPress&lt;/a&gt; e &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;. Me deparei com diversas opções: &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; (que quero testar em algum momento) e, claro, o &lt;strong&gt;&lt;a href=&quot;https://www.11ty.dev/&quot;&gt;11ty&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Optei por esse último por me parecer aquele que atendia melhor às necessidades mencionadas. Pesou a favor o fato de um site superleve que admiro ter sido desenvolvido com esse framework, a página pessoal do designer de produtos &lt;a href=&quot;https://www.interroban.gg/&quot;&gt;Luke Mitchell&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nesse post, vou explicar como dei os primeiros passos na criação do site/blog. Aqui dá ver o básico do básico e, em posts seguintes, vou detalhar outras particularidades e desafios que encontrei no desenvolvimento (veja no pé do texto os links para as etapas seguintes).&lt;/p&gt;
+&lt;h2&gt;Requisitos&lt;/h2&gt;
+&lt;p&gt;O &lt;strong&gt;11ty&lt;/strong&gt; é um gerador de sites estáticos (daqueles que não dependem de um banco de dados) escrito em JavaScript, baseado em NodeJS.&lt;/p&gt;
+&lt;p&gt;Por isso, é preciso instalar essa ferramenta na máquina. Não é preciso saber nada sobre NodeJS para fazer um site com 11ty &lt;em&gt;(mas é bom ter uma familiaridade básica com HTML, CSS e JavaScript)&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acesse o site do &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS&lt;/a&gt; e instale a versão LTS disponível;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Primeiros passos&lt;/h2&gt;
+&lt;p&gt;Com o NodeJS instalado, vamos iniciar o desenvolvimento:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Crie uma pasta para o seu projeto, preferencialmente clone um repositório do Git;&lt;/li&gt;
+&lt;li&gt;Abra um Terminal na pasta do seu projeto e rode o comando &lt;code&gt;npm init -y&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Instale o &lt;strong&gt;11ty&lt;/strong&gt; usando o comando &lt;code&gt;npm install @11ty/eleventy --save-dev&lt;/code&gt; &lt;em&gt;(essa flag &lt;code&gt;--save-dev&lt;/code&gt; serve para incluir, automaticamente, o 11ty nas dependências do projeto que são listadas no arquivo &lt;code&gt;package.json&lt;/code&gt;. Se você tem alguma familiaridade com Python, é um equivalente ao &lt;code&gt;requirements.txt&lt;/code&gt;. Recomendo &lt;a href=&quot;https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev&quot;&gt;essa explicação, em inglês,&lt;/a&gt; sobre a parte &lt;code&gt;-dev&lt;/code&gt;)&lt;/em&gt;;&lt;/li&gt;
+&lt;li&gt;Crie uma pasta, dentro do diretório do seu projeto, chamada &lt;code&gt;src&lt;/code&gt;. Essa pasta pode ter outro nome, mas convencionalmente costuma de chamar assim;&lt;/li&gt;
+&lt;li&gt;Dentro de &lt;code&gt;src&lt;/code&gt;, crie um arquivo chamado &lt;code&gt;index.md&lt;/code&gt; e escreva qualquer coisa, como um clássico &amp;quot;Hello World!&amp;quot;;&lt;/li&gt;
+&lt;li&gt;Fora de &lt;code&gt;src&lt;/code&gt;, no diretório raiz do seu projeto, crie um arquivo chamado &lt;code&gt;eleventy.config.js&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Dentro de &lt;code&gt;eleventy.config.js&lt;/code&gt;, escreva o seguinte código:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;module.exports = function(eleventyConfig) {
+
+  return {
+    dir: {
+      input: &amp;quot;src&amp;quot;,
+      output: &amp;quot;_site&amp;quot;
+    }
+  };
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O arquivo &lt;code&gt;eleventy.config.js&lt;/code&gt; é, como o próprio nome diz, um arquivo de configuração que nos permitirá adicionar e ajustar algumas funcionalidades no nosso site/blog. A documentação do &lt;strong&gt;11ty&lt;/strong&gt; reforça que ele é opcional, mas vale a pena criá-lo desde o começo do projeto.&lt;/p&gt;
+&lt;p&gt;O que as linhas acima estão fazendo é, basicamente, invocando a função de configuração do framework e definindo os diretórios de input e output. Quando o &lt;strong&gt;11ty&lt;/strong&gt; roda, ele escreve os arquivos dentro dessa pasta &lt;code&gt;_site&lt;/code&gt; especificada em &lt;code&gt;output&lt;/code&gt; e as fornece para o servidor.&lt;/p&gt;
+&lt;ol start=&quot;8&quot;&gt;
+&lt;li&gt;No diretório raiz, procure o seu arquivo &lt;code&gt;package.json&lt;/code&gt; e adicione dentro da chave &lt;code&gt;scripts&lt;/code&gt;, logo acima de &lt;code&gt;tests&lt;/code&gt;, o trecho para que possamos passar um comando no Terminal para construir o site. Vamos incluir os atalhos para &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;serve&lt;/code&gt; e &lt;code&gt;watch&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;build&amp;quot;: &amp;quot;eleventy&amp;quot;,
+    &amp;quot;serve&amp;quot;: &amp;quot;eleventy --serve&amp;quot;,
+    &amp;quot;watch&amp;quot;: &amp;quot;eleventy --watch&amp;quot;,
+    &amp;quot;test&amp;quot;: &amp;quot;echo &#92;&amp;quot;Error: no test specified&#92;&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;
+  },
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;9&quot;&gt;
+&lt;li&gt;Agora, em seu Terminal, insira o comando &lt;code&gt;npm run serve&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Acesse o endereço indicado, geralmente &lt;code&gt;localhost:8080&lt;/code&gt; e &lt;em&gt;voilà&lt;/em&gt;, você verá o que escreveu no &lt;code&gt;index.md&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Para finalizar, vamos editar o &lt;code&gt;index.md&lt;/code&gt; com o &lt;em&gt;front matter&lt;/em&gt;, um bloco de metadados colocado no início do documento Markdown, cercado por três traços &lt;code&gt;---&lt;/code&gt;, usado para definir informações como título, data, tags e outros dados específicos.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&quot;language-md&quot;&gt;---
+title: Meu site
+---
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode notar que a informação colocada em &lt;code&gt;title&lt;/code&gt; é aquilo que é exibido no navegador como título da página.&lt;/p&gt;
+&lt;p&gt;Vamos considerar esses os passos necessários para &lt;em&gt;criar&lt;/em&gt; um site no 11ty. O próximo passo é &lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;entender como funcionam os layouts&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Guia 11ty&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-usar-layouts-11ty/&quot;&gt;Entendendo como funcionam os layouts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-criar-blog-11ty/&quot;&gt;Como criar um blog e listar seus posts em uma página&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-paginacao-11ty/&quot;&gt;Adicionando paginação à lista de publicações&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/lidando-com-datas-11ty/&quot;&gt;Como consertar o deslocamento de datas no 11ty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-adicionar-css-11ty/&quot;&gt;Deixando o site bonito com CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/configurar-feed-rss-11ty/&quot;&gt;Como configurar um feed RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/adicionar-pagina-404-favicon-11ty/&quot;&gt;Adicionando página 404 e favicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/publicar-site-11ty-github-pages/&quot;&gt;Publicando o site usando GitHub Pages (de graça)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/como-configurar-dominio-github-pages/&quot;&gt;Como configurar um domínio personalizado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo o código produzido ao longo dos posts pode ser acessado &lt;a href=&quot;https://github.com/alessandrofajr/11ty-starter-blog&quot;&gt;neste repositório&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>As mentiras do ChatGPT e outras inteligências artificiais</title>
     <link href="https://alessandrofajr.com/blog/mentiras-gpt/"/>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como configurar um feed RSS em um blog 11ty (eleventy)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Como configurar um feed RSS em um blog 11ty (eleventy)</h1>
+        
+          <p class="post-date">2024-08-01</p>
+        
+        <div class="blog-content">
+          <p>Embora seja um recurso praticamente minguante na web moderna, gosto da ideia de ter um feed RSS (Rich Site Summary) para o blog. Poucas pessoas vão se inscrever? Provavelmente. Mas há quem use, e é simples de implementar no <strong>11ty</strong>.</p>
+<p>Apesar da simplicidade, teve um detalhe que me custou uns bons minutos na primeira vez que tentei fazer isso: é preciso especificar a versão do <a href="https://www.11ty.dev/docs/plugins/rss/">plugin de RSS</a> para evitar problemas de compatibilidade.</p>
+<p>A versão estável do <strong>11ty</strong> que estou usando nesse projeto é a 2.0.1, mas a opção mais recente do plugin de RSS do <strong>11ty</strong> espera que estejamos na versão 3.0.0.</p>
+<ol>
+<li>Por isso, o primeiro passo é instalar o plugin com o comando <code>npm install @11ty/eleventy-plugin-rss@1.2.0 --save-dev</code>;</li>
+<li>Depois, volte ao arquivo <code>eleventy.config.js</code> e adicione duas linhas: uma logo no início do arquivo e outra dentro da função <code>eleventyConfig</code>:</li>
+</ol>
+<pre><code class="language-js">const pluginRss = require(&quot;@11ty/eleventy-plugin-rss&quot;);
+
+module.exports = function(eleventyConfig) {
+
+    eleventyConfig.addPlugin(pluginRss);
+
+}
+</code></pre>
+<p>Para ser breve, não incluí o código completo com as outras funções que já foram escritas.</p>
+<ol start="3">
+<li>Agora, em <code>src</code>, crie um arquivo <code>feed.njk</code>. O <em>front matter</em> desse arquivo vai conter detalhes do site, enquanto a segunda parte constrói a estrutura para criar o arquivo <code>xml</code>:</li>
+</ol>
+<pre><code class="language-njk">---json
+{
+  &quot;permalink&quot;: &quot;feed.xml&quot;,
+  &quot;eleventyExcludeFromCollections&quot;: true,
+  &quot;metadata&quot;: {
+    &quot;title&quot;: &quot;Blog&quot;,
+    &quot;description&quot;: &quot;Insira uma descrição&quot;,
+    &quot;language&quot;: &quot;pt-br&quot;,
+    &quot;url&quot;: &quot;https://seusite.com/&quot;,
+    &quot;author&quot;: {
+      &quot;name&quot;: &quot;Seu Nome&quot;,
+      &quot;email&quot;: &quot;seuemail@seusite.com&quot;
+    }
+  }
+}
+---
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot; xml:base=&quot;{{ metadata.url }}&quot;&gt;
+  &lt;title&gt;{{ metadata.title }}&lt;/title&gt;
+  &lt;subtitle&gt;{{ metadata.description }}&lt;/subtitle&gt;
+  &lt;link href=&quot;{{ permalink | absoluteUrl(metadata.url) }}&quot; rel=&quot;self&quot;/&gt;
+  &lt;link href=&quot;{{ metadata.url }}&quot;/&gt;
+  &lt;updated&gt;{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}&lt;/updated&gt;
+  &lt;id&gt;{{ metadata.url }}&lt;/id&gt;
+  &lt;author&gt;
+    &lt;name&gt;{{ metadata.author.name }}&lt;/name&gt;
+  &lt;/author&gt;
+  {%- for post in collections.blog | reverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+  &lt;entry&gt;
+    &lt;title&gt;{{ post.data.title }}&lt;/title&gt;
+    &lt;link href=&quot;{{ absolutePostUrl }}&quot;/&gt;
+    &lt;updated&gt;{{ post.date | dateToRfc3339 }}&lt;/updated&gt;
+    &lt;id&gt;{{ absolutePostUrl }}&lt;/id&gt;
+    &lt;content xml:lang=&quot;{{ metadata.language }}&quot; type=&quot;html&quot;&gt;{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}&lt;/content&gt;
+  &lt;/entry&gt;
+  {%- endfor %}
+&lt;/feed&gt;
+</code></pre>
+<p>Não vou entrar nos pormenores do que cada linha está fazendo, mas há aqui uma série de referências aos metadados que construímos no <em>front matter</em> e alguns loops para recuperar as publicações na nossa coleção de blog.</p>
+<p>Esse modelo, inclusive, é o <a href="https://v2-0-1.11ty.dev/docs/plugins/rss/#sample-feed-templates">mesmo que aparece na documentação oficial do <strong>11ty</strong></a> para a versão mais antiga do plugin de RSS.</p>
+<p>Você pode acessar o seu feed RSS em <code>http://localhost:8080/feed.xml</code>. Geralmente é uma boa ideia incluir o link para o feed em algum canto do site, no rodapé, por exemplo. Se quiser, pode <a href="https://validator.w3.org/feed/">validar o resultado no site da W3</a>.</p>
+<p>O próximo passo é <a href="/blog/adicionar-pagina-404-favicon-11ty/">adicionar uma página 404 e favicon</a></p>
+<h1>Guia 11ty</h1>
+<ul>
+<li><a href="/blog/criando-site-com-11ty/">Iniciando um projeto 11ty: como criar um site usando o framework</a></li>
+<li><a href="/blog/como-usar-layouts-11ty/">Entendendo como funcionam os layouts</a></li>
+<li><a href="/blog/como-criar-blog-11ty/">Como criar um blog e listar seus posts em uma página</a></li>
+<li><a href="/blog/como-adicionar-paginacao-11ty/">Adicionando paginação à lista de publicações</a></li>
+<li><a href="/blog/lidando-com-datas-11ty/">Como consertar o deslocamento de datas no 11ty</a></li>
+<li><a href="/blog/como-adicionar-css-11ty/">Deixando o site bonito com CSS</a></li>
+<li><a href="/blog/configurar-feed-rss-11ty/">Como configurar um feed RSS</a></li>
+<li><a href="/blog/adicionar-pagina-404-favicon-11ty/">Adicionando página 404 e favicon</a></li>
+<li><a href="/blog/publicar-site-11ty-github-pages/">Publicando o site usando GitHub Pages (de graça)</a></li>
+<li><a href="/blog/como-configurar-dominio-github-pages/">Como configurar um domínio personalizado</a></li>
+</ul>
+<p>Todo o código produzido ao longo dos posts pode ser acessado <a href="https://github.com/alessandrofajr/11ty-starter-blog">neste repositório</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feed.xml/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+  </div>
+</body>
+</html>
