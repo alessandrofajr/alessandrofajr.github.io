@@ -17,3 +17,7 @@ devo colocar no blog uma variedade de temas, desde reflexões pessoais, passando
 não espere nenhum padrão temático ou estilístico. por mais que me considere uma pessoa bem organizada, aqui vai ter uma certa bagunça. aproveite a estadia e volte sempre. 
 
 se quiser, me mande um email: alessandrofajr@protonmail.com
+
+**outros contatos:**
+[github](https://github.com/alessandrofajr/)
+[linkedin](https://www.linkedin.com/in/alessandrofajr/)
