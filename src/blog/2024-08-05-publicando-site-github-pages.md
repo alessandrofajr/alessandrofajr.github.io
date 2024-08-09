@@ -68,7 +68,7 @@ Parte importante desse arquivo YML está no trecho `github_token: ${{ secrets.GI
 8. Assim que `main` receber um push, o GitHub Actions vai entrar em ação. Depois de alguns segundos, você pode atualizar o seu repositório e procurar pela branch `gh-pages` que será criada automaticamente. Nela, deverá encontrar todo o conteúdo do site que foi construído (são os mesmos arquivos que aparecem na pasta `_site` localmente).
 9. Se você acessar a URL do seu GitHub Pages e o site não estiver no ar, vá até "Settings" no repositório, procure por "Pages" no menu lateral e escolha "Deploy from a branch" na opção "Source". Logo abaixo, escolha a branch "gh-pages" e a pasta "/(root)". Salve e espere alguns segundos (tive uma certa dor de cabeça nessa etapa e, em algum momento, troquei a branch e a pasta para que essas alterações pegassem no tranco).
 
-![Opção para fazer deploy no GitHub Pages](/imgs/gh-pages-deploy.png)
+![Opção para fazer deploy no GitHub Pages](/img/gh-pages-deploy.png)
 
 Seu site deve estar disponível na web! O que essa configuração toda está fazendo é automatizar o *build* do site, escrevendo os arquivos no repositório `gh-pages` sempre que fazemos um push para `main`. Por de trás dos panos, o GitHub Pages faz o *deploy*, publicando nosso site na internet. Demorou um tempo para eu entender essa segunda parte e bati cabeça tentando deixar a opção "GitHub Actions" marcada no menu da imagem acima.
 
