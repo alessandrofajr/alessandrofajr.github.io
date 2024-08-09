@@ -1,5 +1,29 @@
 [
   {
+    "title": "100r",
+    "link": "https://100r.co/site/about_us.html",
+    "date": "2024-08-09",
+    "tags": ["personal", "interesting"],
+    "notes": "Site de um coletivo artístico com um pé na tecnologia e código open-source",
+    "favorite": false
+  },
+  {
+    "title": "reasons to read",
+    "link": "https://www.youtube.com/playlist?list=PLZpKwDwO5HwPrGyF9_Py_-BHcxbp_Co2c",
+    "date": "2024-08-09",
+    "tags": ["personal", "interesting"],
+    "notes": "Série de vídeos superinteressantes de Tim DeMoss com razões para lermos mais",
+    "favorite": false
+  },
+  {
+    "title": "Art But Make It Sports",
+    "link": "https://www.instagram.com/artbutmakeitsports/",
+    "date": "2024-08-09",
+    "tags": ["personal", "interesting", "fun"],
+    "notes": "Página genial que compara fotografias de eventos esportivos com arte.",
+    "favorite": true
+  },
+  {
     "title": "How I search in 2024",
     "link": "https://vickiboykis.com/2024/04/25/how-i-search-in-2024/",
     "date": "2024-07-21",
