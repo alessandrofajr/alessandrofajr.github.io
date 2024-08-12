@@ -4,18 +4,32 @@
   <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
   <link href="https://alessandrofajr.com/feed.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2024-08-09T00:00:00Z</updated>
+  <updated>2024-08-12T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
   <entry>
+    <title>Ressaca dopaminérgica. Ou como eu me cansei dessa internet</title>
+    <link href="https://alessandrofajr.com/blog/ressaca-dopaminergica/"/>
+    <updated>2024-08-12T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/ressaca-dopaminergica/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;às vezes sou tomado pelo sentimento de que a internet era mais interessante antigamente. essa sensação saudosista pode ser questionada por diversos ângulos e dá para tentar encontrar culpados desse processo que um &lt;a href=&quot;https://sol2070.in/2024/02/bostifica%C3%A7%C3%A3o-enshittification-cory-doctorow/&quot;&gt;gringo batizou de &amp;quot;enshittification&amp;quot;&lt;/a&gt; (ou a bostificação).&lt;/p&gt;
+&lt;p&gt;recentemente, se tornou claro para mim que a internet mediada por algoritmos de recomendações e por conteúdos cada vez mais curtos, rápidos e dinâmicos &lt;strong&gt;me&lt;/strong&gt; estragou: fiquei tão acostumado com isso que deixei a busca ativa de lado.&lt;/p&gt;
+&lt;p&gt;se antes a descoberta de coisas legais na internet era mais manual e com muito boca a boca, aquele processo de ir seguindo link atrás de link em blogs e fóruns, seguindo uma interminável toca de coelho, hoje ficamos totalmente passivos na esperança de que o tiktok calibre direitinho os seus datacenters para oferecer aquilo que desejamos sem esforço algum. e como os caras são bons nisso, viu?&lt;/p&gt;
+&lt;p&gt;são bons até sermos tomados pela frustração de estar consumindo muito &amp;quot;conteúdo&amp;quot; de pouca qualidade. quando encontramos um blog post interessante, uma newsletter bem escrita ou um site de um coletivo artístico questionador, esse contraponto se torna inescapável.&lt;/p&gt;
+&lt;p&gt;é claro que as próprias plataformas foram se desenhando de uma maneira de prender as pessoas por lá, mas no final das contas, quem decide ficar ou não nesse emaranhado somos nós. tenho tornado meu consumo mais lento e ativo e esse blog faz parte desse objetivo.&lt;/p&gt;
+&lt;p&gt;se quiser acompanhar, seja bem-vindo ou bem-vinda. de repente, adicione o &lt;a href=&quot;https://alessandrofajr.com/feed.xml&quot;&gt;feed&lt;/a&gt; em um leitor rss, entenda &lt;a href=&quot;https://alessandrofajr.com/about/&quot;&gt;por que eu criei esse site&lt;/a&gt; (pra além de tudo isso que escrevi aqui) e acompanhe uns &lt;a href=&quot;https://alessandrofajr.com/bookmarks/&quot;&gt;links interessantes&lt;/a&gt; que ando encontrando por aí (afinal, a internet tem muita coisa legal, mas parece que não estão necessariamente nas grandes plataformas)&lt;/p&gt;
+&lt;p&gt;em breve devo criar uma newsletter pra avisar sobre novos posts.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Guia: criando um site com blog usando 11ty</title>
     <link href="https://alessandrofajr.com/blog/guia-criar-site-blog-11ty/"/>
     <updated>2024-08-09T00:00:00Z</updated>
     <id>https://alessandrofajr.com/blog/guia-criar-site-blog-11ty/</id>
-    <content xml:lang="pt-br" type="html">&lt;p&gt;Minha ideia ao criar esse blog é, para além de compartilhar reflexões pessoais, criar uma espécie de documentação dos meus projetos. O blog em si era um projeto que estava no papel há bastante tempo.&lt;/p&gt;
-&lt;p&gt;Pois bem, escrevi uma série de posts explicando o processo de criar um site usando o framework &lt;strong&gt;11ty&lt;/strong&gt;, que me encantou pela facilidade e leveza. O guia não reproduz exatamente todos os elementos presentes &lt;em&gt;neste&lt;/em&gt; site, mas quis escrevê-lo de uma forma a dar autonomia para quem segui-lo.&lt;/p&gt;
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Minha ideia ao publicar esse blog é, para além de compartilhar reflexões pessoais, criar uma espécie de documentação dos meus projetos.&lt;/p&gt;
+&lt;p&gt;Pois bem, escrevi uma série de posts explicando o processo de criar um site usando o framework &lt;strong&gt;11ty&lt;/strong&gt;, que me encantou pela facilidade e leveza. O guia não reproduz exatamente todos os elementos presentes &lt;em&gt;neste&lt;/em&gt; site, mas quis escrevê-lo de uma forma que quem quisesse segui-lo pudesse ter bastante autonomia.&lt;/p&gt;
 &lt;p&gt;Ao longo do tempo, posso atualizar essa publicação para incluir mais trechos.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;https://alessandrofajr.com/blog/criando-site-com-11ty/&quot;&gt;Iniciando um projeto 11ty: como criar um site usando o framework&lt;/a&gt;&lt;/li&gt;
