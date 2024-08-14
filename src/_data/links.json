@@ -51,7 +51,7 @@
     "title": "The Cheap Web",
     "link": "https://potato.cheap/",
     "date": "2024-07-19",
-    "tags": ["technical", "webdev"],
+    "tags": ["tech", "webdev"],
     "notes": "Um manifesto em prol de uma web simples, 'barata'. O texto ressoou em mim na medida que quero tornar esse site um produto simples, que não me dê muito trabalho para manter.",
     "favorite": false
   },
@@ -67,7 +67,7 @@
     "title": "The Wrong Abstraction",
     "link": "https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction",
     "date": "2024-07-19",
-    "tags": ["technical", "programming"],
+    "tags": ["tech", "programming"],
     "notes": "Uma reflexão sobre programação orientada a objetos e como abstrações podem se tornar complexas.",
     "favorite": false
   },
@@ -83,7 +83,7 @@
     "title": "Tools for better thinking",
     "link": "https://untools.co/",
     "date": "2024-07-19",
-    "tags": ["technical", "decision-making"],
+    "tags": ["tech", "decision-making"],
     "notes": "Frameworks para resolução de problemas",
     "favorite": false
   },
@@ -107,7 +107,7 @@
     "title": "CSS One-Liners to Improve (Almost) Every Project",
     "link": "https://alvaromontoro.com/blog/68055/ten-css-one-liners-for-almost-every-project",
     "date": "2022-07-17",
-    "tags": ["technical", "webdev"],
+    "tags": ["tech", "webdev"],
     "notes": "Coleção de códigos CSS de uma única linha",
     "favorite": false
   },
