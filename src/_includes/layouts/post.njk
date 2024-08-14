@@ -15,7 +15,8 @@
         {% endif %}
         <div class="blog-content">
           {{ content | safe }}
-        <div>
+        </div>
+        <a href="mailto:{{ meta.authorEmail}}?subject={{ title }}"><button class="button-email">@ responda por email @</button></a>
     </main>
     {% include "partials/footer.njk" %}
   </div>
