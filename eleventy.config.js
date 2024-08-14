@@ -7,6 +7,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
 
+  eleventyConfig.addPassthroughCopy("content-filter.js");
+
   eleventyConfig.addPassthroughCopy("src/img");
 
   eleventyConfig.addPassthroughCopy("src/CNAME");

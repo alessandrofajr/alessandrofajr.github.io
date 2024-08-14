@@ -5,7 +5,7 @@ permalink: /blog/mentiras-gpt/
 date: 2023-05-23
 updated: 2023-05-23
 tags: 
-    - technical
+    - personal
 ---
 
 *Texto originalmente [publicado no meu LinkedIn](https://www.linkedin.com/posts/alessandrofajr_as-mentiras-do-chatgpt-e-outras-intelig%C3%AAncias-activity-7066919844620697601-qUEV?utm_source=share&utm_medium=member_desktop).*
