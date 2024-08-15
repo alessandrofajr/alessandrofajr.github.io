@@ -100,20 +100,32 @@ main {
 .legend-buttons {
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
+    height: 30px;
     padding:0.3em 0.6em;
     transition: 0.3s;
 }
 
 .legend-buttons:hover{
-    border: solid 1px #EFEFEF;
+    border: solid 1px #5A5A5A;
     background-color: #5A5A5A;
     color: #EFEFEF;
 }
 
-.legend-buttons.active {
-    border: solid 1px #EFEFEF;
+.legend-buttons-active {
+    border: solid 1px #5A5A5A;
+    border-radius: 0.5em;
+    height: 30px;
     background-color: #5A5A5A;
+    padding:0.3em 0.6em;
+    transition: 0.3s;
     color: #EFEFEF;
+}
+
+.legend-buttons-active:hover {
+    border: solid 1px #5A5A5A;
+    background-color: #EFEFEF;
+    color: #5A5A5A;
+
 }
 
 .button-email {
@@ -124,7 +136,7 @@ main {
 }
 
 .button-email:hover {
-    border: solid 1px #EFEFEF;
+    border: solid 1px #5A5A5A;
     background-color: #5A5A5A;
     color: #EFEFEF;
 }
