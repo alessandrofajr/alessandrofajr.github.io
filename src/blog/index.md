@@ -3,7 +3,7 @@ layout: default
 title: blog
 pagination:
   data: collections.blog
-  size: 30
+  size: 10
   reverse: true
   alias: posts
 ---
@@ -11,9 +11,9 @@ pagination:
 ## <span class="section-title">blog</span>
 
 <div class ="item-legend">
-  <button class="legend-buttons" data-filter="all">☉ todos</button> 
-  <button class="legend-buttons" data-filter="personal">❖ reflexões</button> 
-  <button class="legend-buttons" data-filter="tech">✱ técnicos</button> 
+  <a href="/blog/"><button class="legend-buttons-active">☉ todos</button></a>
+  <a href="/blog/tags/personal/"><button class="legend-buttons">❖ reflexões</button></a>
+  <a href="/blog/tags/tech/"><button class="legend-buttons">✱ técnicos</button></a>
 </div>
 
 {% for post in pagination.items %}

@@ -3,16 +3,16 @@ layout: default
 title: links interessantes
 pagination:
   data: collections.links
-  size: 30
+  size: 20
   alias: links
 ---
 
 ## <span class="section-title">links interessantes</span>
 
 <div class ="item-legend">
-  <button class="legend-buttons" data-filter="all">☉ todos</button> 
-  <button class="legend-buttons" data-filter="personal">❖ pessoais</button> 
-  <button class="legend-buttons" data-filter="tech">✱ técnicos</button> 
+  <a href="/links/"><button class="legend-buttons-active">☉ todos</button></a>
+  <a href="/links/tags/personal/"><button class="legend-buttons">❖ reflexões</button></a>
+  <a href="/links/tags/tech/"><button class="legend-buttons">✱ técnicos</button></a>
 </div>
 
 {% for link in links %}

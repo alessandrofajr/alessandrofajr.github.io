@@ -14,6 +14,7 @@
   "description": "Site, blog e jardim digital de Alessandro Feitosa Jr., ex-jornalista que aprendeu a programar e analisar dados.",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0"
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "lodash": "^4.17.21"
   }
 }

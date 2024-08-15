@@ -1,0 +1,58 @@
+---
+layout: default
+pagination:
+  data: collections.linkTagPagination
+  size: 1
+  alias: tag
+permalink: /links/tags/{{ tag.tagName }}/{% if tag.pageNumber %}{{ tag.pageNumber + 1 }}/{% endif %}
+eleventyComputed:
+  title: "{{ tag.title }}"
+---
+
+<h2><span class="section-title">links interessantes</span></h2>
+
+{% if tag.tagName == 'personal' %}
+  <div class="item-legend">
+    <a href="/links/"><button class="legend-buttons">☉ todos</button></a>
+    <a href="/links/tags/personal/"><button class="legend-buttons-active">❖ reflexões</button></a>
+    <a href="/links/tags/tech/"><button class="legend-buttons">✱ técnicos</button></a>
+  </div>
+{% elif tag.tagName == 'tech' %}
+  <div class="item-legend">
+    <a href="/links/"><button class="legend-buttons">☉ todos</button></a>
+    <a href="/links/tags/personal/"><button class="legend-buttons">❖ reflexões</button></a>
+    <a href="/links/tags/tech/"><button class="legend-buttons-active">✱ técnicos</button></a>
+  </div>
+{% else %}
+  <div class="item-legend">
+    <a href="/links/"><button class="legend-buttons">☉ todos</button></a>
+    <a href="/links/tags/personal/"><button class="legend-buttons">❖ reflexões</button></a>
+    <a href="/links/tags/tech/"><button class="legend-buttons">✱ técnicos</button></a>
+  </div>
+{% endif %}
+
+{% for link in tag.pageData %}
+  <article>
+    <div class="blogroll" data-tags="{% if link.tags %}{{ link.tags | join(',') }}{% endif %}">
+      <div class="blogroll-date">{{ link.date | date("YYYY-MM-DD") }}</div>
+      <div class="blogroll-tag">
+        {% if link.tags.includes('personal') %}❖
+        {% elif link.tags.includes('tech') %}✱
+        {% endif %}
+      </div>
+      <div class="blogroll-title"><a href="{{ link.link }}"> {{ link.title }} </a></div>
+    </div>
+  </article>
+{% endfor %}
+
+<nav class="pagination">
+  {% if tag.totalPages > 1 %}
+    {% if tag.pageSlugs.previous %}
+      <p><a href="/link/tags/{{ tag.pageSlugs.previous }}/">página anterior</a></p>
+    {% endif %}
+    <p>&nbsp;</p>
+    {% if tag.pageSlugs.next %}
+      <p><a href="/link/tags/{{ tag.pageSlugs.next }}/">próxima página</a></p>
+    {% endif %}
+  {% endif %}
+</nav>
