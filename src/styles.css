@@ -335,6 +335,9 @@ img {
     header, main {
         max-width: 85%;
     }
+    .item-legend {
+        gap: 8px;
+    }
     .site-footer{
         padding: 5px;
     }
