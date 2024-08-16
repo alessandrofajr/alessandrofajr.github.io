@@ -6,6 +6,16 @@ updated: 2024-08-13
 
 Um registro das mudanças que fiz ao longo do tempo neste site. Inspirado [nesse modelo](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.0.2] - 2024-08-16
+
+### Added
+- Metatags OpenGraph
+
+### Changed
+- CSS para aprimorar ícones e botões
+- Substituição de filtros via Javascript por tags linkadas
+
+
 ## [1.0.1] - 2024-08-14
 
 ### Added
