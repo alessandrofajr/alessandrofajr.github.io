@@ -11,7 +11,7 @@ pagination:
 
 <div class ="item-legend">
   <a href="/links/"><button class="legend-buttons-active">☉ todos</button></a>
-  <a href="/links/tags/personal/"><button class="legend-buttons">❖ interessantes</button></a>
+  <a href="/links/tags/personal/"><button class="legend-buttons">❖ achados</button></a>
   <a href="/links/tags/tech/"><button class="legend-buttons">✱ técnicos</button></a>
 </div>
 
