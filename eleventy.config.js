@@ -10,14 +10,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/img");
 
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+
   eleventyConfig.addCollection("blog", function(collection) {
     return collection.getFilteredByGlob("src/blog/*.md").filter(function(item) {
-      return !item.inputPath.endsWith("index.md");
-    });
-  });
-
-  eleventyConfig.addCollection("drawer", function(collection) {
-    return collection.getFilteredByGlob("src/drawer/*.md").filter(function(item) {
       return !item.inputPath.endsWith("index.md");
     });
   });
@@ -34,14 +30,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("blogTagPagination", function(collection) {
     let tagSet = new Set();
+    let desiredTags = ["personal", "tech"];
+
     collection.getAllSorted().map(function(item) {
-        if ("tags" in item.data) {
-            let tags = item.data.tags;
-            for (let tag of tags) {
-                tagSet.add(tag);
-            }
-        }
-    });
+      if ("tags" in item.data) {
+          let tags = item.data.tags.filter(tag => desiredTags.includes(tag));
+          for (let tag of tags) {
+              tagSet.add(tag);
+          }
+      }
+  });
 
     let paginationSize = 10;
     let tagMap = [];
@@ -83,9 +81,11 @@ module.exports = function(eleventyConfig) {
     const links = require("./src/_data/links.json");
 
     let tagSet = new Set();
+    let desiredTags = ["personal", "tech"];
+    
     links.forEach(link => {
         if (Array.isArray(link.tags)) {
-            let tags = link.tags;
+            let tags = link.tags.filter(tag => desiredTags.includes(tag));
             for (let tag of tags) {
                 tagSet.add(tag);
             }
