@@ -4,11 +4,21 @@
   <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
   <link href="https://alessandrofajr.com/feed.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2024-08-12T00:00:00Z</updated>
+  <updated>2024-08-16T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+  <entry>
+    <title>Carros autônomos da Waymo imitam a arte de Holy Motors</title>
+    <link href="https://alessandrofajr.com/blog/waymo-holy-motors/"/>
+    <updated>2024-08-16T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/waymo-holy-motors/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;O Rodrigo Ghedin &lt;a href=&quot;https://manualdousuario.net/links-legais-20240816/&quot;&gt;compartilhou no ótimo Manual do Usuário&lt;/a&gt; um &lt;a href=&quot;https://www.youtube.com/watch?v=6CN8k831Qp0&quot;&gt;vídeo de carros da Waymo&lt;/a&gt;, divisão de carros autônomos do Google, que começaram a buzinar sem motivo aparente às 4h da manhã em um estacionamento em San Francisco, incomodando os vizinhos.&lt;/p&gt;
+&lt;p&gt;De imediato me lembrei da &lt;a href=&quot;https://www.youtube.com/watch?v=7hIna8u0fos&quot;&gt;última cena (veja o trecho aqui)&lt;/a&gt; de &lt;a href=&quot;https://letterboxd.com/film/holy-motors/&quot;&gt;Holy Motors&lt;/a&gt;, filme de 2012 do diretor francês Leos Carax, com uma pegada bem surrealista. Se um dia for assistir, tente &lt;em&gt;sentir&lt;/em&gt; o filme em vez de entendê-lo.&lt;/p&gt;
+&lt;p&gt;A vida imita a arte e vice-versa.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ressaca dopaminérgica. Ou como eu me cansei dessa internet</title>
     <link href="https://alessandrofajr.com/blog/ressaca-dopaminergica/"/>
