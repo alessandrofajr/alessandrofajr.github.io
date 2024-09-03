@@ -1,7 +1,7 @@
 ---
 layout: sobre
 title: "Changelog"
-updated: 2024-08-13
+updated: 2024-09-03
 ---
 
 Um registro das mudanças que fiz ao longo do tempo neste site. Inspirado [nesse modelo](https://keepachangelog.com/pt-BR/1.1.0/).
@@ -22,7 +22,6 @@ Um registro das mudanças que fiz ao longo do tempo neste site. Inspirado [nesse
 ### Changed
 - CSS para aprimorar ícones e botões
 - Substituição de filtros via Javascript por tags linkadas
-
 
 ## [1.0.1] - 2024-08-14
 
