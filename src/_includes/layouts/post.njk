@@ -16,6 +16,7 @@
         <div class="blog-content">
           {{ content | safe }}
         </div>
+        <div class="human-content">{ texto 100% escrito por um humano }</div>
         <a href="mailto:{{ meta.authorEmail}}?subject={{ title }}"><button class="button-email">@ responda por email @</button></a>
     </main>
     {% include "partials/footer.njk" %}
