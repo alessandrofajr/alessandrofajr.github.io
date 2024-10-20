@@ -131,7 +131,7 @@ main {
 .button-email {
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
-    padding:0.3em 0.6em;
+    padding:0.2em 0.6em;
     transition: 0.3s;
 }
 
@@ -141,6 +141,59 @@ main {
     color: #EFEFEF;
 }
 
+.human-content {
+    color: #1c1c1c;
+    font-size: 1.1rem;
+    margin-bottom: 1.1em;
+}
+
+.post-footer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+
+}
+
+.field-email {
+    background-color: #EFEFEF;
+    border: solid 1px #5A5A5A;
+    border-radius: 0.5em;
+    padding:0.2em 0.6em;
+}
+
+.cta-newsletter {
+    font-size: 1.1rem;
+    margin-bottom: 1.1em;
+    margin-top: 1.1em;
+    line-height: 30px;
+}
+
+.cta-newsletter a {
+    color: #5A5A5A;
+    text-decoration: underline;
+    display: inline;
+}
+
+.cta-newsletter a:hover  {
+    text-decoration: dotted underline;
+}
+
+.cta-newsletter form {
+    display: inline;
+}
+
+.section-break {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-block-start: 1.3em;
+    margin-block-end: 1.3em;
+}
+
+.section-break::before {
+    content: "* * *";
+}
 
 article {
     text-transform: lowercase;
@@ -338,7 +391,21 @@ img {
     .item-legend {
         gap: 8px;
     }
-    .site-footer{
+    .post-footer {
+        align-items: center;
+        gap: 10px;
+        margin-block-start: 1.3em;
+        margin-block-end: 1.3em;
+    }
+    .human-content {
+        max-width: 50%;
+        text-wrap: balance;
+        margin: 0;
+    }
+    .button-email {
+        text-wrap: balance;
+    }
+    .site-footer {
         padding: 5px;
     }
     .footer-links {

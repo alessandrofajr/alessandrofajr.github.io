@@ -73,52 +73,62 @@
   
   <url>
     <loc>https://alessandrofajr.com/404.html</loc>
-    <lastmod>2024-08-16T21:39:28.236Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/about/</loc>
-    <lastmod>2024-08-16T21:39:28.236Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/blog/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/blog/tags/personal/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/changelog/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandrofajr.com/feeds</loc>
+    <lastmod>2024-10-20T21:24:14.604Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
   </url>
   
   <url>
-    <loc>https://alessandrofajr.com/links/tags/personal/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <loc>https://alessandrofajr.com/links/tags/tech/</loc>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/links/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alessandrofajr.com/newsletter/</loc>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/quotes/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
   </url>
   
   <url>
     <loc>https://alessandrofajr.com/quotes/3/</loc>
-    <lastmod>2024-08-16T21:39:28.240Z</lastmod>
+    <lastmod>2024-10-20T21:24:14.608Z</lastmod>
   </url>
   
 </urlset>

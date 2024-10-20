@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeds RSS</title>
+  <link rel="canonical" href="/feeds" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Feeds RSS" />
+  <meta property="og:url" content="/feeds" />
+  <meta property="og:image" content="/img/cover.webp" />
+
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Feeds RSS</h1>
+        
+        <div class="blog-content">
+          <p>Adicione o site em seu leitor RSS favorito para acompanhar novas publicações.</p>
+<p>São três opções:</p>
+<ul>
+<li><a href="/feed.xml">Feed geral</a> (com todas as publicações)</li>
+<li><a href="/feed_personal.xml">Feed pessoal</a> (somente com as publicações de cunho mais pessoal, posts de reflexões e ideias)</li>
+<li><a href="/feed_tech.xml">Feed técnico</a> (somente com os materiais relacionados à programação, como guias)</li>
+</ul>
+<p>Atualmente, uso o <a href="https://feedly.com/">Feedly</a> para acompanhar meus sites e blogs favoritos, mas existem outras opções como <a href="https://tt-rss.org/">Tiny Tiny RSS</a>, <a href="https://miniflux.app/">Miniflux</a> e <a href="https://theoldreader.com/">The Old Reader</a>.</p>
+<p>Se preferir, assine a <a href="/newsletter">newsletter</a> e receba, toda semana, os últimos posts, além da lista de novos <a href="/links">links interessantes</a>.</p>
+
+        <div>
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feeds">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</body>
+</html>
