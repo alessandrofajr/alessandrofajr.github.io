@@ -1,5 +1,29 @@
 [
   {
+    "title": "Gettiers in software engineering",
+    "link": "https://jsomers.net/blog/gettiers",
+    "date": "2024-10-20",
+    "tags": ["tech", "interesting"],
+    "notes": "Sobre casos em que o defeito parece ser causado por uma determinada alteração, mas acaba tendo razões inesperadas.",
+    "favorite": false
+  },
+  {
+    "title": "Simply do nothing",
+    "link": "https://nothing.mvze.net/",
+    "date": "2024-10-20",
+    "tags": ["personal", "interesting"],
+    "notes": "Um site para pausar e respirar um pouco.",
+    "favorite": false
+  },
+  {
+    "title": "Webdesign Museum",
+    "link": "https://www.webdesignmuseum.org/",
+    "date": "2024-10-20",
+    "tags": ["personal", "interesting"],
+    "notes": "Uma coletânea dos visuais das páginas na internet ao longo do tempo",
+    "favorite": false
+  },
+  {
     "title": "All Hail the Cloud",
     "link": "https://cosmographia.substack.com/p/all-hail-the-cloud",
     "date": "2024-08-12",
