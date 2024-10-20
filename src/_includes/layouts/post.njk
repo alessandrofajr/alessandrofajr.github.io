@@ -16,7 +16,25 @@
         <div class="blog-content">
           {{ content | safe }}
         </div>
-        <a href="mailto:{{ meta.authorEmail}}?subject={{ title }}"><button class="button-email">@ responda por email @</button></a>
+        
+        <div class="post-footer">
+          <div class="human-content">{ texto 100% escrito por um humano }</div>
+          <a href="mailto:{{ meta.authorEmail}}?subject={{ title }}"><button class="button-email">@ responda por email @</button></a>
+        </div>  
+
+        <div class="section-break"></div>
+        <div class="cta-newsletter">
+          Receba, toda semana, os últimos posts e uma lista de <a href="/links" class="newsletter-link">links interessantes</a>:
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/alessandrofajr"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.com/alessandrofajr', 'popupwindow')"
+          >
+            <input class="field-email" type="email" name="email" placeholder="Insira o seu email"/>
+            <input class="button-email" type="submit" value="assinar" />
+          </form>
+        </div> 
     </main>
     {% include "partials/footer.njk" %}
   </div>

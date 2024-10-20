@@ -1,0 +1,40 @@
+---json
+{
+  "permalink": "feed_personal.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Alessandro Feitosa Jr - Pessoal",
+    "description": "posts com reflexões",
+    "language": "pt-br",
+    "url": "https://alessandrofajr.com/",
+    "author": {
+      "name": "Alessandro Feitosa Jr",
+      "email": "alessandrofajr@protonmail.com"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+  </author>
+  {%- for post in collections.blog | reverse %}
+  {%- if "personal" in post.data.tags %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="{{ absolutePostUrl }}"/>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    </entry>
+  {%- endif %}
+{%- endfor %}
+</feed>
