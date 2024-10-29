@@ -98,6 +98,8 @@ main {
 }
 
 .legend-buttons {
+    color: #000;
+    background-color: #EFEFEF;
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
     height: 30px;
@@ -129,10 +131,14 @@ main {
 }
 
 .button-email {
+    color: #000;
+    background-color: #EFEFEF;
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
     padding:0.2em 0.6em;
     transition: 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .button-email:hover {
@@ -253,7 +259,7 @@ article {
     font-size: 1.1rem;
 }
 
-.quote-breaker {
+.breaker {
     --size: 10px;
     --b: 1.8px;
     --m: 1.7;
