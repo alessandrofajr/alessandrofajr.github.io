@@ -13,7 +13,7 @@ pagination:
     <div class="quotes">
         <a href="/quotes/{{ quote.id }}/">{{ quote.quote }}</a> ― {{ quote.author }}
         <p>adicionado em {{ quote.date }}</p>
-        <div class="quote-breaker"></div>
+        <div class="breaker"></div>
     <div>
 {% endfor %}
 
