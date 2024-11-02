@@ -1,9 +1,73 @@
 [
   {
+    "title": "Public Work",
+    "link": "https://public.work/",
+    "date": "2024-11-02",
+    "tags": ["personal"],
+    "notes": "Arquivo digital de obras que estão em domínio público. Para inspiração e ilustrar diversas coisas.",
+    "favorite": true
+  },
+  {
+    "title": "Archives Design",
+    "link": "https://archives.design/",
+    "date": "2024-11-02",
+    "tags": ["personal"],
+    "notes": "Arquivo digital de itens de design gráfico.",
+    "favorite": false
+  },
+  {
+    "title": "ABVA - Arquivo de arte búlgara",
+    "link": "https://archive.abva.bg/en",
+    "date": "2024-11-02",
+    "tags": ["personal"],
+    "notes": "Um bom lugar para encontrar inspirações, com uma coletânea do design gráfico da Bulgária",
+    "favorite": false
+  },
+  {
+    "title": "Design de Fitas K7",
+    "link": "https://tapefan.exblog.jp/",
+    "date": "2024-11-02",
+    "tags": ["personal"],
+    "notes": "Blog japonês que reúne designs de fitas K7.",
+    "favorite": false
+  },
+  {
+    "title": "Writing Examples",
+    "link": "https://writingexamples.com/",
+    "date": "2024-11-02",
+    "tags": ["personal"],
+    "notes": "Coletânea de textos para 'aprender a escrever com os melhores', com alguns vídeos detalhando técnicas. Tem bons textos, lista super ocidentalizada. Site muito bonito visualmente.",
+    "favorite": false
+  },
+  {
+    "title": "20 Super Useful CSS Animation Libraries",
+    "link": "https://dev.to/hosseinyazdi/20-super-useful-css-animation-libraries-59pc",
+    "date": "2024-11-02",
+    "tags": ["tech", "webdev"],
+    "notes": "Coletânea de bibliotecas de animações CSS.",
+    "favorite": false
+  },
+  {
+    "title": "README.so",
+    "link": "https://readme.so/pt",
+    "date": "2024-11-02",
+    "tags": ["tech"],
+    "notes": "Uma ferramenta web para ajudar a criar o arquivo README. Ele tem alguns botões que ajudam a preencher seções comuns e um editor WYSIWYG.",
+    "favorite": false
+  },
+  {
+    "title": "Build A Static RSS Reader To Fight Your Inner FOMO",
+    "link": "https://www.smashingmagazine.com/2024/10/build-static-rss-reader-fight-fomo/",
+    "date": "2024-11-02",
+    "tags": ["tech"],
+    "notes": "Existem diversos leitores RSS, mas esse guia ensina a criar uma versão própria. Me parece um projeto interessante.",
+    "favorite": false
+  },
+  {
     "title": "Gettiers in software engineering",
     "link": "https://jsomers.net/blog/gettiers",
     "date": "2024-10-20",
-    "tags": ["tech", "interesting"],
+    "tags": ["tech"],
     "notes": "Sobre casos em que o defeito parece ser causado por uma determinada alteração, mas acaba tendo razões inesperadas.",
     "favorite": false
   },
@@ -11,7 +75,7 @@
     "title": "Simply do nothing",
     "link": "https://nothing.mvze.net/",
     "date": "2024-10-20",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Um site para pausar e respirar um pouco.",
     "favorite": false
   },
@@ -19,7 +83,7 @@
     "title": "Webdesign Museum",
     "link": "https://www.webdesignmuseum.org/",
     "date": "2024-10-20",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Uma coletânea dos visuais das páginas na internet ao longo do tempo",
     "favorite": false
   },
@@ -27,7 +91,7 @@
     "title": "All Hail the Cloud",
     "link": "https://cosmographia.substack.com/p/all-hail-the-cloud",
     "date": "2024-08-12",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Texto super interessante comparando a nuvem digital com os deuses",
     "favorite": false
   },
@@ -35,7 +99,7 @@
     "title": "The World Reveals Itself to Those Who Walk",
     "link": "https://2ndbreakfast.audreywatters.com/the-world-reveals-itself-to-those-who-walk/",
     "date": "2024-08-12",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Artigo sobre a cultura de caminhar, em vez de andar de carro",
     "favorite": false
   },
@@ -43,7 +107,7 @@
     "title": "100r",
     "link": "https://100r.co/site/about_us.html",
     "date": "2024-08-09",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Site de um coletivo artístico com um pé na tecnologia e código open-source",
     "favorite": false
   },
@@ -51,7 +115,7 @@
     "title": "reasons to read",
     "link": "https://www.youtube.com/playlist?list=PLZpKwDwO5HwPrGyF9_Py_-BHcxbp_Co2c",
     "date": "2024-08-09",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Série de vídeos superinteressantes de Tim DeMoss com razões para lermos mais",
     "favorite": false
   },
@@ -59,7 +123,7 @@
     "title": "Art But Make It Sports",
     "link": "https://www.instagram.com/artbutmakeitsports/",
     "date": "2024-08-09",
-    "tags": ["personal", "interesting", "fun"],
+    "tags": ["personal", "fun"],
     "notes": "Página genial que compara fotografias de eventos esportivos com arte.",
     "favorite": true
   },
@@ -67,7 +131,7 @@
     "title": "How I search in 2024",
     "link": "https://vickiboykis.com/2024/04/25/how-i-search-in-2024/",
     "date": "2024-07-21",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Um blog post sobre as ferramentas de busca utilizada por Vicki Boykis, destaque para Marginalia e Kagi",
     "favorite": false
   },
@@ -83,7 +147,7 @@
     "title": "The Age of Average",
     "link": "https://www.alexmurrell.co.uk/articles/the-age-of-average",
     "date": "2024-07-19",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Uma reflexão sobre como as coisas ficaram uniformizadas, sem personalidade. Desde a aparência a produtos de mídia, arquitetura, projetos, entre outros.",
     "favorite": true
   },
@@ -99,7 +163,7 @@
     "title": "No Web Without Women",
     "link": "https://nowebwithoutwomen.com/",
     "date": "2024-07-19",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Inovações criadas por mulheres que permitem que a internet exista como existe hoje.",
     "favorite": false
   },
@@ -115,7 +179,7 @@
     "title": "Rach Smith",
     "link": "https://rachsmith.com/",
     "date": "2024-07-19",
-    "tags": ["personal", "interesting"],
+    "tags": ["personal"],
     "notes": "Blog interessante de uma programadora australiana.",
     "favorite": false
   },
