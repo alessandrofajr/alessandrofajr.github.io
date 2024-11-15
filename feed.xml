@@ -4,11 +4,36 @@
   <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
   <link href="https://alessandrofajr.com/feed.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2024-08-16T00:00:00Z</updated>
+  <updated>2024-11-15T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+  <entry>
+    <title>Como ativar a API de tooltip do Vega-Lite no Observable Framework</title>
+    <link href="https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/"/>
+    <updated>2024-11-15T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Tenho usado o &lt;a href=&quot;https://observablehq.com/framework/&quot;&gt;Observable Framework&lt;/a&gt; para criar dashboards na &lt;a href=&quot;https://belo.re/&quot;&gt;Belo&lt;/a&gt;. Gostei da ferramenta pela autonomia: por ser baseada em código, em vez de interfaces de arrastar e soltar, como a maioria dos softwares de Business Intelligence, tenho muito mais controle.&lt;/p&gt;
+&lt;p&gt;A curva de aprendizagem não é muito íngreme, mas há alguns detalhes que não constam na documentação do projeto. O &lt;a href=&quot;https://vega.github.io/vega-lite/docs/tooltip.html#plugin&quot;&gt;plugin de tooltip&lt;/a&gt; do &lt;a href=&quot;https://vega.github.io/vega-lite/&quot;&gt;Vega-Lite&lt;/a&gt;, por exemplo, não vem ativo por padrão e não basta importar a biblioteca correspondente.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;É preciso instanciar o manipulador de tooltip e associá-lo à visualização para que ela funcione corretamente&lt;/strong&gt;. Caso contrário, elas ficam dependentes das caixas de diálogo do navegador, que demoram muito para aparecer.&lt;/p&gt;
+&lt;p&gt;Essas são as importações:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;import * as vega from &amp;quot;npm:vega&amp;quot;;
+import * as vegaLite from &amp;quot;npm:vega-lite&amp;quot;;
+import * as vegaLiteApi from &amp;quot;npm:vega-lite-api&amp;quot;;
+import * as vegaTooltip from &amp;quot;npm:vega-tooltip&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E aqui a chamada para que a tooltip passe a funcionar:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const vl = vegaLiteApi.register(vega, vegaLite, {
+  init: (view) =&amp;gt; {
+    view.tooltip(new vegaTooltip.Handler().call);
+    if (view.container()) view.container().style[&amp;quot;overflow-x&amp;quot;] = &amp;quot;auto&amp;quot;;
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://observablehq.observablehq.cloud/pangea/party/vega-lite-tooltips&quot;&gt;Este link&lt;/a&gt; contém um exemplo ao vivo, que foi o que me ajudou a resolver o problema.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Carros autônomos da Waymo imitam a arte de Holy Motors</title>
     <link href="https://alessandrofajr.com/blog/waymo-holy-motors/"/>
