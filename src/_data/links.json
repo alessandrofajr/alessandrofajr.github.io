@@ -1,9 +1,41 @@
 [
   {
+    "title": "MomBoard: E-ink display for a parent with amnesia",
+    "link": "https://jan.miksovsky.com/posts/2024/11-12-momboard",
+    "date": "2024-11-15",
+    "tags": ["personal"],
+    "notes": "Relato detalhado sobre a criação de um web app que roda em uma tela e-ink para enviar notas para uma mãe com amnésia.",
+    "favorite": false
+  },
+  {
+    "title": "Should you just give up?",
+    "link": "https://www.newyorker.com/culture/open-questions/should-you-just-give-up",
+    "date": "2024-11-03",
+    "tags": ["personal"],
+    "notes": "Uma revisita à ideia de desistir. Por que ligamos essa palavra a conotações tão negativas? Gostei da passagem em que o autor comenta que desistimos de estar acordados para irmos dormir, por exemplo.",
+    "favorite": false
+  },
+  {
+    "title": "A handful of reasons JavaScript won't be available",
+    "link": "https://piccalil.li/blog/a-handful-of-reasons-javascript-wont-be-available/",
+    "date": "2024-11-02",
+    "tags": ["tech", "webdev"],
+    "notes": "Quinze razões pelas quais o JavaScript pode não estar disponível.",
+    "favorite": false
+  },
+  {
+    "title": "Poem: The Thing Is",
+    "link": "https://www.poetryfoundation.org/poems/151844/the-thing-is",
+    "date": "2024-11-02",
+    "tags": ["personal", "art"],
+    "notes": "Poema sobre a vida e o luto por Ellen Bass. Reproduzido na primeira edição da newsletter.",
+    "favorite": true
+  },
+  {
     "title": "Public Work",
     "link": "https://public.work/",
     "date": "2024-11-02",
-    "tags": ["personal"],
+    "tags": ["personal", "art"],
     "notes": "Arquivo digital de obras que estão em domínio público. Para inspiração e ilustrar diversas coisas.",
     "favorite": true
   },
@@ -11,7 +43,7 @@
     "title": "Archives Design",
     "link": "https://archives.design/",
     "date": "2024-11-02",
-    "tags": ["personal"],
+    "tags": ["personal", "art"],
     "notes": "Arquivo digital de itens de design gráfico.",
     "favorite": false
   },
@@ -19,7 +51,7 @@
     "title": "ABVA - Arquivo de arte búlgara",
     "link": "https://archive.abva.bg/en",
     "date": "2024-11-02",
-    "tags": ["personal"],
+    "tags": ["personal", "art"],
     "notes": "Um bom lugar para encontrar inspirações, com uma coletânea do design gráfico da Bulgária",
     "favorite": false
   },
@@ -27,7 +59,7 @@
     "title": "Design de Fitas K7",
     "link": "https://tapefan.exblog.jp/",
     "date": "2024-11-02",
-    "tags": ["personal"],
+    "tags": ["personal", "art"],
     "notes": "Blog japonês que reúne designs de fitas K7.",
     "favorite": false
   },
@@ -35,7 +67,7 @@
     "title": "Writing Examples",
     "link": "https://writingexamples.com/",
     "date": "2024-11-02",
-    "tags": ["personal"],
+    "tags": ["personal", "art"],
     "notes": "Coletânea de textos para 'aprender a escrever com os melhores', com alguns vídeos detalhando técnicas. Tem bons textos, lista super ocidentalizada. Site muito bonito visualmente.",
     "favorite": false
   },
@@ -188,8 +220,8 @@
     "link": "https://artvee.com/",
     "date": "2022-07-17",
     "tags": ["personal", "art"],
-    "notes": "Site com uma coletênea artística em domínio público",
-    "favorite": false
+    "notes": "Site com uma coletênea artística em domínio público.",
+    "favorite": true
   },
   {
     "title": "CSS One-Liners to Improve (Almost) Every Project",
