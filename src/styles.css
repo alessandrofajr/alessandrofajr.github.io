@@ -1,7 +1,6 @@
 html, body {
     background-color: #EFEFEF;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.05em;
+    font-family: 'Literata', serif;
     color: #000000;
     margin: 0;
     padding: 0;
@@ -24,7 +23,7 @@ header {
 }
 
 .header-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     margin: 0;
 }
@@ -32,7 +31,7 @@ header {
 .header-title a {
     color: #000000;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 main {
@@ -65,7 +64,7 @@ main {
 }
 
 .blogroll {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: left;
     gap: 3px;
@@ -98,6 +97,7 @@ main {
 }
 
 .legend-buttons {
+    font-family: 'Literata', serif;
     color: #000;
     background-color: #EFEFEF;
     border: solid 1px #5A5A5A;
@@ -114,6 +114,7 @@ main {
 }
 
 .legend-buttons-active {
+    font-family: 'Literata', serif;
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
     height: 30px;
@@ -131,6 +132,7 @@ main {
 }
 
 .button-email {
+    font-family: 'Literata', serif;
     color: #000;
     background-color: #EFEFEF;
     border: solid 1px #5A5A5A;
@@ -149,8 +151,8 @@ main {
 
 .human-content {
     color: #1c1c1c;
-    font-size: 1.1rem;
-    margin-bottom: 1.1em;
+    font-size: 1.2rem;
+    margin-bottom: 1.2em;
 }
 
 .post-footer {
@@ -161,6 +163,7 @@ main {
 }
 
 .field-email {
+    font-family: 'Literata', serif;
     background-color: #EFEFEF;
     border: solid 1px #5A5A5A;
     border-radius: 0.5em;
@@ -168,9 +171,9 @@ main {
 }
 
 .cta-newsletter {
-    font-size: 1.1rem;
-    margin-bottom: 1.1em;
-    margin-top: 1.1em;
+    font-size: 1.2rem;
+    margin-bottom: 1.2em;
+    margin-top: 1.2em;
     line-height: 30px;
 }
 
@@ -209,7 +212,7 @@ article {
 
 .blog-content {
     color: #5A5A5A;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 30px;
     margin-top: 35px;
 }
@@ -229,7 +232,7 @@ article {
 }
 
 .post-date {
-    font-size: 1.1rem; 
+    font-size: 1.2rem; 
     color: #000000;
     margin-top: 0;
 }
@@ -240,7 +243,7 @@ article {
 }
 
 .quotes {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 30px;
     margin-bottom: 5px;
     color: #5A5A5A;
@@ -256,7 +259,7 @@ article {
     margin-top: 5px;
     margin-bottom: 40px;
     color: #000;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .breaker {
@@ -315,7 +318,7 @@ article {
 a {
     color: #5A5A5A;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 a:hover {
@@ -323,23 +326,23 @@ a:hover {
 }
 
 h1 {
-    font-size: 1.5rem; 
+    font-size: 1.8rem; 
     padding-top: 0.83em;
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.5rem;
     text-wrap: balance;
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-wrap: balance;
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 ol, ul {
