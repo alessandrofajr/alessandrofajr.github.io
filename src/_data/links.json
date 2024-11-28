@@ -1,5 +1,13 @@
 [
   {
+    "title": "1 dataset, 100 visualizations",
+    "link": "https://100.datavizproject.com/",
+    "date": "2024-11-28",
+    "tags": ["tech", "data"],
+    "notes": "Cem diferentes representações em gráficos para um mesmo conjunto de dados.",
+    "favorite": false
+  },
+  {
     "title": "MomBoard: E-ink display for a parent with amnesia",
     "link": "https://jan.miksovsky.com/posts/2024/11-12-momboard",
     "date": "2024-11-15",

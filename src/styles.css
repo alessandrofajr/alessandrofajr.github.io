@@ -150,7 +150,7 @@ main {
 }
 
 .human-content {
-    color: #1c1c1c;
+    color: #2d2d2d;
     font-size: 1.2rem;
     margin-bottom: 1.2em;
 }
@@ -171,6 +171,7 @@ main {
 }
 
 .cta-newsletter {
+    color: #2d2d2d;
     font-size: 1.2rem;
     margin-bottom: 1.2em;
     margin-top: 1.2em;
@@ -211,7 +212,7 @@ article {
 }
 
 .blog-content {
-    color: #5A5A5A;
+    color: #2d2d2d;
     font-size: 1.2rem;
     line-height: 30px;
     margin-top: 35px;
@@ -246,7 +247,7 @@ article {
     font-size: 1.2rem;
     line-height: 30px;
     margin-bottom: 5px;
-    color: #5A5A5A;
+    color: #2d2d2d;
     padding-top: 0.83em;
 }
 
