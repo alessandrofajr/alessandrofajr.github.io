@@ -6,6 +6,13 @@ updated: 2024-10-20
 
 Um registro das mudanças que fiz ao longo do tempo neste site. Inspirado [nesse modelo](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.0.5] - 2024-11-28
+
+### Changed
+- Nova fonte, agora com serifa
+- Nova cor para fonte no corpo dos textos, para dar mais contraste
+- Outros pequenos ajustes cosméticos para consistência
+
 ## [1.0.4] - 2024-10-20
 
 ### Added
