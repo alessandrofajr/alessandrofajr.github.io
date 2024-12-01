@@ -14,12 +14,14 @@ Brincando com o [Observable Framework](https://observablehq.com/framework/), que
 
 Explico: eu queria que, quando o usuário clicasse novamente sobre o mesmo elemento, o filtro voltasse ao estado padrão. Um reset. Brinquei com algumas funcionalidades interessantes do trio Observable Framework, Vega-Lite e [Arquero](https://idl.uw.edu/arquero/).
 
+O resultado final pode ser [acessado aqui](https://alessandrofajr.com/vega-lite-interactive-charts/). O código-fonte completo está [neste repositório do GitHub](https://github.com/alessandrofajr/vega-lite-interactive-charts). Abaixo, detalho como desenvolvi.
+
 ## A ideia e os dados
 Escolhi um dataset da [Base dos Dados](https://basedosdados.org/dataset/3e31e540-81ba-4665-9e72-3f81c176adad?table=b955feef-1649-428b-ba46-bc891d2facc2) sobre o consumo de energia elétrica no Brasil. O objetivo era plotar um mapa coroplético mostrando os estados de maior consumo e permitir que o usuário clicasse em cada unidade federativa para detalhar um gráfico de barras ao lado que destrinchava o tipo de consumo (residencial, comercial, industrial).
 
 Baixei também a [tabela](https://basedosdados.org/api/tables/downloadTable?p=YnJfYmRfZGlyZXRvcmlvc19icmFzaWw=&q=dWY=&d=dHJ1ZQ==&s=ZnJlZQ==) que "traduz" a coluna `sigla_uf` para os códigos padronizados do IBGE, disponibilizada pela própria Base dos Dados.
 
-# A implementação
+## A implementação
 
 Importei as bibliotecas e configurei o [plugin de tooltip do Vega-Lite](https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/):
 
@@ -299,4 +301,4 @@ let barChart = await vl.render({
 });
 ```
 
-O resultado final pode ser [acessado aqui](https://alessandrofajr.com/vega-lite-interactive-charts/). O código-fonte completo está [neste repositório do GitHub](https://github.com/alessandrofajr/vega-lite-interactive-charts).
+Novamente: o resultado final pode ser [acessado aqui](https://alessandrofajr.com/vega-lite-interactive-charts/). O código-fonte completo está [neste repositório do GitHub](https://github.com/alessandrofajr/vega-lite-interactive-charts).
