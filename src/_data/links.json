@@ -1,5 +1,13 @@
 [
   {
+    "title": "Nothing is something",
+    "link": "https://blog.jim-nielsen.com/2024/nothing-is-something/",
+    "date": "2024-11-30",
+    "tags": ["tech"],
+    "notes": "Como a escolha de tecnologia é realizada a partir da popularidade, para garantir mais suporte, e como os LLMs pesam essa dinâmica. O perigo maior está no fato de as LLMs não admitirem não ter um corpo de conhecimento profundo o suficiente para responder.",
+    "favorite": false
+  },
+  {
     "title": "1 dataset, 100 visualizations",
     "link": "https://100.datavizproject.com/",
     "date": "2024-11-28",
