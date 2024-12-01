@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criando filtros interativos em Vega-Lite no Observable Framework</title>
+  <link rel="canonical" href="/blog/vega-lite-graficos-interativos-observable-framework/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Criando filtros interativos em Vega-Lite no Observable Framework" />
+  <meta property="og:url" content="/blog/vega-lite-graficos-interativos-observable-framework/" />
+  <meta property="og:image" content="/img/cover.webp" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Criando filtros interativos em Vega-Lite no Observable Framework</h1>
+        
+          <p class="post-date">2024-11-30</p>
+        
+        <div class="blog-content">
+          <p>Filtrar os dados a partir de cliques nos gráficos, realizando algum tipo de detalhamento das informações, é um comportamento comum em dashboards. Esse tipo de interação é configurada de forma intuitiva nos softwares de business intelligence, ao custo de ficar preso às muitas outras restrições como a falta de transparência nas computações.</p>
+<p>Brincando com o <a href="https://observablehq.com/framework/">Observable Framework</a>, queria construir algo similar usando a biblioteca de gráficos <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. O suporte à esse tipo de interação está nos <a href="https://vega.github.io/vega-lite/docs/selection.html">&quot;Selection Parameters&quot;</a>, mas a forma com que os cliques são interpretados não era exatamente o que eu desejava e que creio ser o mais natural para os usuários.</p>
+<p>Explico: eu queria que, quando o usuário clicasse novamente sobre o mesmo elemento, o filtro voltasse ao estado padrão. Um reset. Brinquei com algumas funcionalidades interessantes do trio Observable Framework, Vega-Lite e <a href="https://idl.uw.edu/arquero/">Arquero</a>.</p>
+<h2>A ideia e os dados</h2>
+<p>Escolhi um dataset da <a href="https://basedosdados.org/dataset/3e31e540-81ba-4665-9e72-3f81c176adad?table=b955feef-1649-428b-ba46-bc891d2facc2">Base dos Dados</a> sobre o consumo de energia elétrica no Brasil. O objetivo era plotar um mapa coroplético mostrando os estados de maior consumo e permitir que o usuário clicasse em cada unidade federativa para detalhar um gráfico de barras ao lado que destrinchava o tipo de consumo (residencial, comercial, industrial).</p>
+<p>Baixei também a <a href="https://basedosdados.org/api/tables/downloadTable?p=YnJfYmRfZGlyZXRvcmlvc19icmFzaWw=&amp;q=dWY=&amp;d=dHJ1ZQ==&amp;s=ZnJlZQ==">tabela</a> que &quot;traduz&quot; a coluna <code>sigla_uf</code> para os códigos padronizados do IBGE, disponibilizada pela própria Base dos Dados.</p>
+<h1>A implementação</h1>
+<p>Importei as bibliotecas e configurei o <a href="https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/">plugin de tooltip do Vega-Lite</a>:</p>
+<pre><code class="language-js">import * as aq from 'npm:arquero';
+import { op, table } from 'npm:arquero';
+import * as vega from &quot;npm:vega&quot;;
+import * as vegaLite from &quot;npm:vega-lite&quot;;
+import * as vegaLiteApi from &quot;npm:vega-lite-api&quot;;
+import * as vegaTooltip from &quot;npm:vega-tooltip&quot;;
+</code></pre>
+<pre><code class="language-js">const vl = vegaLiteApi.register(vega, vegaLite, {
+  init: (view) =&gt; {
+    view.tooltip(new vegaTooltip.Handler().call);
+    if (view.container()) view.container().style[&quot;overflow-x&quot;] = &quot;auto&quot;;
+  }
+});
+</code></pre>
+<p>Em seguida, importei os dados baixados e transformei os CSVs em tabelas do Arquero.</p>
+<p>Para esse experimento, quis usar o Arquero para manipular os dados porque os arquivos são pequenos, não passam de 2 MB juntos. Essa manipulação feita direto no navegador, com o Arquero, não traria muito impacto na performance e permitiria eu aplicar os filtros da maneira que pensei ser a mais fácil.</p>
+<pre><code class="language-js">const energyConsumptionData = FileAttachment(&quot;data/br_mme_consumo_energia_eletrica_uf.csv&quot;).csv();
+const brazilStateCodes = FileAttachment(&quot;data/br_bd_diretorios_brasil_uf.csv&quot;).csv();
+</code></pre>
+<pre><code class="language-js">let brazilStateCodesAq = aq
+    .from(brazilStateCodes)
+</code></pre>
+<pre><code class="language-js">let energyConsumptionDataAq = aq
+    .from(energyConsumptionData)
+    .join_left(brazilStateCodesAq, ['sigla_uf', 'sigla']) // Join to 'translate' the data with the state code
+    .select(aq.not('regiao', 'sigla')) // Removing columns
+</code></pre>
+<p>Manipulei os dados para fazer o cálculo do consumo total de energia no país por UF.</p>
+<pre><code class="language-js">let totalConsumptionByState = energyConsumptionDataAq
+    .filter((d) =&gt; d.ano == &quot;2023&quot; &amp;&amp; d.tipo_consumo != &quot;Cativo&quot;)
+    .groupby(&quot;sigla_uf&quot;, &quot;id_uf&quot;, &quot;nome&quot;)
+    .rollup({ consumo_total: aq.op.sum(&quot;consumo&quot;) }).objects()
+</code></pre>
+<p>Em seguida, criei a configuração de visualização do mapa. Plotar mapa é sempre um passo que exige um pouquinho mais de atenção, já que é necessário trabalhar com dados <code>topojson</code>. Não basta inserir os dados originais com a UF e esperar que a biblioteca localize o país e faça a mágina acontecer.</p>
+<p>Fui no site do IBGE pegar a <a href="https://servicodados.ibge.gov.br/api/docs/malhas?versao=3">API de malhas geográficas</a>. Com o <code>topojson</code> em mãos, definimos a especificação no Vega-Lite. Os detalhes que queremos estão dentro da chave &quot;BRUF&quot; (o código completo do mapa está mais abaixo):</p>
+<pre><code class="language-js">data: {
+    url: &quot;https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/json&amp;qualidade=intermediaria&amp;intrarregiao=UF&quot;,
+    format: {
+    type: &quot;topojson&quot;,
+    feature: &quot;BRUF&quot;}
+    },
+    projection: {
+        type: &quot;mercator&quot;,
+    }
+</code></pre>
+<p>Precisamos vincular a chave <code>properties.codarea</code> dos dados do IBGE com os mesmos códigos nos dados de consumo. É nesse passo, inclusive, que especificamos as informações que serão exibidas no mapa.</p>
+<pre><code class="language-js">transform: [
+    {
+        lookup: &quot;properties.codarea&quot;,
+        from: {
+        data: { values: totalConsumptionByState },
+        key: &quot;id_uf&quot;,
+        fields: [&quot;consumo_total&quot;, &quot;nome&quot;]   
+        }
+    }
+]
+</code></pre>
+<p>Definimos também qual é o campo que queremos recuperar quando o usuário clicar no mapa:</p>
+<pre><code class="language-js">selection: {
+    stateSelector: {
+        type: &quot;point&quot;,
+        fields: [&quot;properties.codarea&quot;, &quot;nome&quot;]
+    }
+}
+</code></pre>
+<p>Assim fica a especificação completa do mapa:</p>
+<pre><code class="language-js">let brazilMap = await vl.render({
+    spec:{
+        width: 550,
+        height: 400,
+        autosize: {type: &quot;fit&quot;, contains: &quot;padding&quot;},
+        title: {
+            text: &quot;Consumo total de energia por estado em 2023&quot;,
+            anchor: &quot;start&quot;,
+            offset: 20,
+            fontSize: 20,
+            subtitle: [`Clique em um estado para filtrar o gráfico ao lado`, `Clique novamente para voltar à agregação nacional.`],
+            subtitleFontSize: 16
+            },
+        data: {
+            url: &quot;https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/json&amp;qualidade=intermediaria&amp;intrarregiao=UF&quot;,
+            format: {
+            type: &quot;topojson&quot;,
+            feature: &quot;BRUF&quot;
+            }
+        },
+        projection: {
+            type: &quot;mercator&quot;,
+        },
+        transform: [
+            {
+                lookup: &quot;properties.codarea&quot;, // Vinculates 'properties.codarea' from TopoJSON
+                from: {
+                data: { values: totalConsumptionByState }, // Energy consumption data
+                key: &quot;id_uf&quot;, // Field to link with TopoJSON
+                fields: [&quot;consumo_total&quot;, &quot;nome&quot;] // Data to be used on the map
+                }
+            }
+            ],
+        selection: {
+            stateSelector: {
+                type: &quot;point&quot;,
+                fields: [&quot;properties.codarea&quot;, &quot;nome&quot;] // Field used to give the signal to the Listener
+            }
+        },
+        mark: {
+            type: &quot;geoshape&quot;,
+            stroke: &quot;white&quot;,
+            strokeWidth: 0.5
+            },
+        encoding: {
+            color: {
+                field: &quot;consumo_total&quot;,
+                type: &quot;quantitative&quot;,
+                scale: {
+                scheme: &quot;blues&quot; 
+                },
+                title: &quot;Consumo em MWh&quot;,
+                legend: {
+                    direction: &quot;vertical&quot;,
+                    orient: &quot;bottom-left&quot;,
+                    offset: 10
+                }
+            },
+            tooltip: [
+                { field: &quot;nome&quot;, type: &quot;nominal&quot;, title: &quot;Estado:&quot; },
+                { field: &quot;consumo_total&quot;, type: &quot;quantitative&quot;, title: &quot;Consumo Total (MWh):&quot; }
+                ]
+            }
+        }
+})
+</code></pre>
+<p>Agora vem a parte interessante de recuperar e armazenar em uma variável o clique do usuário. O Observable Framework tem a característica de ser <a href="https://observablehq.com/framework/reactivity">reativo</a>, e é uma dessas abstrações da ferramenta que utilizei.</p>
+<p>Para implementar o comportamento desejado de alternar entre o estado clicado e o filtro padrão, precisei configurar variáveis reativas e um listener para os cliques no mapa.</p>
+<pre><code class="language-js">let clickedStateCode = Mutable('0');
+let setClickedStateCode = (x) =&gt; {clickedStateCode.value = x};
+
+let clickedStateName = Mutable('Brasil');
+let setClickedStateName = (x) =&gt; {clickedStateName.value = x};
+</code></pre>
+<p>A função <code>stateSelectorHandler</code> aplica a lógica de reset ao verificar se o estado clicado é igual ao valor atual armazenado, invocando <code>setClickedStateCode</code> e <code>setClickedStateName</code>. (A variável <code>clickedStateName</code> vai servir para exibir o nome do estado no título do gráfico de barras):</p>
+<pre><code class="language-js">function stateSelectorHandler(name, value) {
+
+    const newSelection = value[&quot;properties\\.codarea&quot;]?.[0] ?? '0';
+    const stateSelected = value.nome?.[0] ?? 'Brasil'
+    
+    if (clickedStateCode === newSelection) {
+        setClickedStateCode('0');
+        setClickedStateName('Brasil');
+    } else {
+        setClickedStateCode(newSelection);
+        setClickedStateName(stateSelected);
+    }
+}
+</code></pre>
+<p>Repare que no código acima utilizamos o <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Optional_chaining">operador de encadeamento opcional</a> <code>?.</code>. Se, por um acaso, o usuário clicar em algum elemento que retornaria um valor <code>undefined</code> ou <code>null</code>, em vez de termos um erro, há um retorno de <code>undefined</code> ou <code>null</code>. Para evitar isso, definimos um valor padrão com <code>?? '0'</code>, o <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">operador de coalescência nula</a>.</p>
+<p>Para obtermos os valores após o clique, adicionamos um <a href="https://vega.github.io/vega/docs/signals/">SignalListener</a> ao gráfico, passando os parâmetros definidos na própria especificação da visualização e a nossa função recém-criada <code>stateSelectorHandler</code>.</p>
+<pre><code class="language-js">brazilMap.value.addSignalListener(&quot;stateSelector&quot;, stateSelectorHandler);
+</code></pre>
+<p>Em um primeiro momento, tive bastante dificuldade para fazer o <code>listener</code> funcionar corretamente. Ao clicar no mapa uma segunda vez, eram disparadas diversas chamadas da função que altera o valor da nossa variável <code>Mutable</code>. <a href="https://github.com/observablehq/framework/discussions/1829">Pedi ajuda no fórum do Observable Framework</a> e descobri que eu precisava remover o <code>listener</code> utilizando a promessa <code>invalidation</code>. Como o Framework funciona por blocos de código, o meu bloco que define a variável <code>Mutable</code> ficava rodando diversas vezes.</p>
+<pre><code class="language-js">invalidation.then(() =&gt; {
+    brazilMap.value.removeSignalListener(&quot;stateSelector&quot;, stateSelectorHandler);
+});
+</code></pre>
+<p>Um <code>console.log(clickedStateCode)</code> me mostrou que a interação estava dando certo, então era hora de filtrar os dados e construir o gráfico de barras. Primeiro, precisei manipular os dados para calcular o consumo total do Brasil. Isso porque os dados traziam informações granuladas por estado e, caso o usuário não tivesse clicado em nada, o gráfico de barras deveria mostrar as informações a nível nacional, somente para o ano de 2023:</p>
+<pre><code class="language-js">let brazilTotalConsumption = energyConsumptionDataAq
+    .filter((d) =&gt; d.ano == &quot;2023&quot; &amp;&amp; d.tipo_consumo != &quot;Cativo&quot; &amp;&amp; d.tipo_consumo != &quot;Total&quot;)
+    .groupby(&quot;tipo_consumo&quot;)
+    .rollup({
+        consumo_ano: aq.op.sum(&quot;consumo&quot;)
+        })
+    .derive({
+        sigla_uf: () =&gt; &quot;BR&quot;,
+        id_uf: () =&gt; &quot;0&quot;,
+        nome: () =&gt; &quot;Brasil&quot;
+        })
+    .select(['sigla_uf', 'id_uf', 'nome', 'tipo_consumo', 'consumo_ano'])
+</code></pre>
+<p>Os dados também tinham granularidade mensal, então agreguei os dados por estado e ano, da mesma forma que tinha feito para o país:</p>
+<pre><code class="language-js">let consumptionByState = energyConsumptionDataAq
+    .filter((d) =&gt; d.ano == &quot;2023&quot; &amp;&amp; d.tipo_consumo != &quot;Cativo&quot; &amp;&amp; d.tipo_consumo != &quot;Total&quot;) 
+    .groupby(&quot;sigla_uf&quot;, &quot;id_uf&quot;, &quot;nome&quot;, &quot;tipo_consumo&quot;)
+    .rollup({ consumo_ano: aq.op.sum(&quot;consumo&quot;) })
+</code></pre>
+<p>Juntei tudo num único dataset que era filtrado por <code>clickedStateCode</code> e é esse o trecho do código responsável por filtrar os dados de acordo com o valor da variável que armazena o clique do usuário:</p>
+<pre><code class="language-js">let consumptionTreatedData = consumptionByState
+    .concat(brazilTotalConsumption)
+    .filter(aq.escape((d) =&gt; d.id_uf == clickedStateCode))
+</code></pre>
+<p>Para finalizar, plotamos o gráfico de barras com os dados de <code>consumptionTreatedData</code>. A variável <code>clickedStateName</code> é utilizada para ajustar dinamicamente o título do gráfico com o nome do estado selecionado ou 'Brasil' no caso de agregação nacional.</p>
+<pre><code class="language-js">let barChart = await vl.render({
+    spec: {
+        width: 500,
+        height: 400,
+        autosize: {type: &quot;fit&quot;, contains: &quot;padding&quot;},
+        title: {
+            text: `Consumo de energia por categoria: ${clickedStateName}`,
+            anchor: &quot;start&quot;,
+            offset: 20,
+            fontSize: 20,
+            subtitle: [`Interaja com o mapa para mudar o estado`],
+            subtitleFontSize: 16
+            },
+        data: { values: consumptionTreatedData },
+        mark: { type: &quot;bar&quot; },
+        encoding: {
+            x: {
+                field: &quot;consumo_ano&quot;, 
+                type: &quot;quantitative&quot;,
+                axis: { grid: true },
+                title: &quot;Consumo Anual (MWh)&quot;
+                },
+            y: {
+                field: &quot;tipo_consumo&quot;,
+                type: &quot;nominal&quot;,
+                axis: { grid: false },
+                title: &quot;Tipo de Consumo&quot;
+                }
+        }
+  }
+});
+</code></pre>
+<p>O resultado final pode ser <a href="https://alessandrofajr.com/vega-lite-interactive-charts/">acessado aqui</a>. O código-fonte completo está <a href="https://github.com/alessandrofajr/vega-lite-interactive-charts">neste repositório do GitHub</a>.</p>
+
+        </div>
+        
+        <div class="post-footer">
+          <div class="human-content">{ texto 100% escrito por um humano }</div>
+          <a href="mailto:alessandrofajr@protonmail.com?subject=Criando filtros interativos em Vega-Lite no Observable Framework"><button class="button-email">@ responda por email @</button></a>
+        </div>  
+
+        <div class="breaker"></div>
+        <div class="cta-newsletter">
+          Receba, no máximo uma vez por semana, os últimos posts e uma lista de <a href="/links" class="newsletter-link">links interessantes</a>:
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/alessandrofajr"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.com/alessandrofajr', 'popupwindow')"
+          >
+            <input class="field-email" type="email" name="email" placeholder="Insira o seu email"/>
+            <input class="button-email" type="submit" value="assinar" />
+          </form>
+        </div> 
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feeds">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</body>
+</html>
