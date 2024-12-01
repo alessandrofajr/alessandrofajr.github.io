@@ -17,10 +17,11 @@
       <content xml:lang="pt-br" type="html">&lt;p&gt;Filtrar os dados a partir de cliques nos gráficos, realizando algum tipo de detalhamento das informações, é um comportamento comum em dashboards. Esse tipo de interação é configurada de forma intuitiva nos softwares de business intelligence, ao custo de ficar preso às muitas outras restrições como a falta de transparência nas computações.&lt;/p&gt;
 &lt;p&gt;Brincando com o &lt;a href=&quot;https://observablehq.com/framework/&quot;&gt;Observable Framework&lt;/a&gt;, queria construir algo similar usando a biblioteca de gráficos &lt;a href=&quot;https://vega.github.io/vega-lite/&quot;&gt;Vega-Lite&lt;/a&gt;. O suporte à esse tipo de interação está nos &lt;a href=&quot;https://vega.github.io/vega-lite/docs/selection.html&quot;&gt;&amp;quot;Selection Parameters&amp;quot;&lt;/a&gt;, mas a forma com que os cliques são interpretados não era exatamente o que eu desejava e que creio ser o mais natural para os usuários.&lt;/p&gt;
 &lt;p&gt;Explico: eu queria que, quando o usuário clicasse novamente sobre o mesmo elemento, o filtro voltasse ao estado padrão. Um reset. Brinquei com algumas funcionalidades interessantes do trio Observable Framework, Vega-Lite e &lt;a href=&quot;https://idl.uw.edu/arquero/&quot;&gt;Arquero&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;O resultado final pode ser &lt;a href=&quot;https://alessandrofajr.com/vega-lite-interactive-charts/&quot;&gt;acessado aqui&lt;/a&gt;. O código-fonte completo está &lt;a href=&quot;https://github.com/alessandrofajr/vega-lite-interactive-charts&quot;&gt;neste repositório do GitHub&lt;/a&gt;. Abaixo, detalho como desenvolvi.&lt;/p&gt;
 &lt;h2&gt;A ideia e os dados&lt;/h2&gt;
 &lt;p&gt;Escolhi um dataset da &lt;a href=&quot;https://basedosdados.org/dataset/3e31e540-81ba-4665-9e72-3f81c176adad?table=b955feef-1649-428b-ba46-bc891d2facc2&quot;&gt;Base dos Dados&lt;/a&gt; sobre o consumo de energia elétrica no Brasil. O objetivo era plotar um mapa coroplético mostrando os estados de maior consumo e permitir que o usuário clicasse em cada unidade federativa para detalhar um gráfico de barras ao lado que destrinchava o tipo de consumo (residencial, comercial, industrial).&lt;/p&gt;
 &lt;p&gt;Baixei também a &lt;a href=&quot;https://basedosdados.org/api/tables/downloadTable?p=YnJfYmRfZGlyZXRvcmlvc19icmFzaWw=&amp;amp;q=dWY=&amp;amp;d=dHJ1ZQ==&amp;amp;s=ZnJlZQ==&quot;&gt;tabela&lt;/a&gt; que &amp;quot;traduz&amp;quot; a coluna &lt;code&gt;sigla_uf&lt;/code&gt; para os códigos padronizados do IBGE, disponibilizada pela própria Base dos Dados.&lt;/p&gt;
-&lt;h1&gt;A implementação&lt;/h1&gt;
+&lt;h2&gt;A implementação&lt;/h2&gt;
 &lt;p&gt;Importei as bibliotecas e configurei o &lt;a href=&quot;https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/&quot;&gt;plugin de tooltip do Vega-Lite&lt;/a&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;import * as aq from &#39;npm:arquero&#39;;
 import { op, table } from &#39;npm:arquero&#39;;
@@ -244,7 +245,7 @@ let setClickedStateName = (x) =&amp;gt; {clickedStateName.value = x};
   }
 });
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;O resultado final pode ser &lt;a href=&quot;https://alessandrofajr.com/vega-lite-interactive-charts/&quot;&gt;acessado aqui&lt;/a&gt;. O código-fonte completo está &lt;a href=&quot;https://github.com/alessandrofajr/vega-lite-interactive-charts&quot;&gt;neste repositório do GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Novamente: o resultado final pode ser &lt;a href=&quot;https://alessandrofajr.com/vega-lite-interactive-charts/&quot;&gt;acessado aqui&lt;/a&gt;. O código-fonte completo está &lt;a href=&quot;https://github.com/alessandrofajr/vega-lite-interactive-charts&quot;&gt;neste repositório do GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
     </entry>
     <entry>

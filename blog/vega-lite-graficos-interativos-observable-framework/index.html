@@ -31,10 +31,11 @@
           <p>Filtrar os dados a partir de cliques nos gráficos, realizando algum tipo de detalhamento das informações, é um comportamento comum em dashboards. Esse tipo de interação é configurada de forma intuitiva nos softwares de business intelligence, ao custo de ficar preso às muitas outras restrições como a falta de transparência nas computações.</p>
 <p>Brincando com o <a href="https://observablehq.com/framework/">Observable Framework</a>, queria construir algo similar usando a biblioteca de gráficos <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. O suporte à esse tipo de interação está nos <a href="https://vega.github.io/vega-lite/docs/selection.html">&quot;Selection Parameters&quot;</a>, mas a forma com que os cliques são interpretados não era exatamente o que eu desejava e que creio ser o mais natural para os usuários.</p>
 <p>Explico: eu queria que, quando o usuário clicasse novamente sobre o mesmo elemento, o filtro voltasse ao estado padrão. Um reset. Brinquei com algumas funcionalidades interessantes do trio Observable Framework, Vega-Lite e <a href="https://idl.uw.edu/arquero/">Arquero</a>.</p>
+<p>O resultado final pode ser <a href="https://alessandrofajr.com/vega-lite-interactive-charts/">acessado aqui</a>. O código-fonte completo está <a href="https://github.com/alessandrofajr/vega-lite-interactive-charts">neste repositório do GitHub</a>. Abaixo, detalho como desenvolvi.</p>
 <h2>A ideia e os dados</h2>
 <p>Escolhi um dataset da <a href="https://basedosdados.org/dataset/3e31e540-81ba-4665-9e72-3f81c176adad?table=b955feef-1649-428b-ba46-bc891d2facc2">Base dos Dados</a> sobre o consumo de energia elétrica no Brasil. O objetivo era plotar um mapa coroplético mostrando os estados de maior consumo e permitir que o usuário clicasse em cada unidade federativa para detalhar um gráfico de barras ao lado que destrinchava o tipo de consumo (residencial, comercial, industrial).</p>
 <p>Baixei também a <a href="https://basedosdados.org/api/tables/downloadTable?p=YnJfYmRfZGlyZXRvcmlvc19icmFzaWw=&amp;q=dWY=&amp;d=dHJ1ZQ==&amp;s=ZnJlZQ==">tabela</a> que &quot;traduz&quot; a coluna <code>sigla_uf</code> para os códigos padronizados do IBGE, disponibilizada pela própria Base dos Dados.</p>
-<h1>A implementação</h1>
+<h2>A implementação</h2>
 <p>Importei as bibliotecas e configurei o <a href="https://alessandrofajr.com/blog/observable-framework-vega-lite-api-tooltip/">plugin de tooltip do Vega-Lite</a>:</p>
 <pre><code class="language-js">import * as aq from 'npm:arquero';
 import { op, table } from 'npm:arquero';
@@ -258,7 +259,7 @@ let setClickedStateName = (x) =&gt; {clickedStateName.value = x};
   }
 });
 </code></pre>
-<p>O resultado final pode ser <a href="https://alessandrofajr.com/vega-lite-interactive-charts/">acessado aqui</a>. O código-fonte completo está <a href="https://github.com/alessandrofajr/vega-lite-interactive-charts">neste repositório do GitHub</a>.</p>
+<p>Novamente: o resultado final pode ser <a href="https://alessandrofajr.com/vega-lite-interactive-charts/">acessado aqui</a>. O código-fonte completo está <a href="https://github.com/alessandrofajr/vega-lite-interactive-charts">neste repositório do GitHub</a>.</p>
 
         </div>
         
