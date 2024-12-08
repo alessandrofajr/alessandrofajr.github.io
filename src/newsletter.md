@@ -1,10 +1,10 @@
 ---
 layout: sobre
 title: "Newsletter"
-updated: 2024-10-20
+updated: 2024-12-08
 ---
 
-Receba, toda semana, os últimos posts e uma lista de [links interessantes](/links):
+Receba, no máximo uma vez por semana, os últimos posts e uma lista de [links interessantes](/links):
 
 <form
   action="https://buttondown.com/api/emails/embed-subscribe/alessandrofajr"
