@@ -48,11 +48,11 @@ eleventyComputed:
 <nav class="pagination">
   {% if tag.totalPages > 1 %}
     {% if tag.pageSlugs.previous %}
-      <p><a href="/link/tags/{{ tag.pageSlugs.previous }}/">página anterior</a></p>
+      <p><a href="/links/tags/{{ tag.pageSlugs.previous }}/">página anterior</a></p>
     {% endif %}
     <p>&nbsp;</p>
     {% if tag.pageSlugs.next %}
-      <p><a href="/link/tags/{{ tag.pageSlugs.next }}/">próxima página</a></p>
+      <p><a href="/links/tags/{{ tag.pageSlugs.next }}/">próxima página</a></p>
     {% endif %}
   {% endif %}
 </nav>

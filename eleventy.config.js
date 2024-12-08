@@ -98,7 +98,7 @@ module.exports = function(eleventyConfig) {
     
     for (let tagName of tagArray) {
         let tagItems = links.filter(link => link.tags && link.tags.includes(tagName));
-        let pagedItems = lodash.chunk(tagItems.reverse(), paginationSize);
+        let pagedItems = lodash.chunk(tagItems, paginationSize);
 
         let pagesSlugs = [];
         for (let i = 0; i < pagedItems.length; i++) {
