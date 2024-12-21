@@ -1,5 +1,21 @@
 [
   {
+    "title": "Olhe a floresta e não a árvore…",
+    "link": "https://c-taurion.medium.com/olhe-a-floresta-e-n%C3%A3o-a-%C3%A1rvore-287b875c8ba9",
+    "date": "2024-12-21",
+    "tags": ["tech"],
+    "notes": "O entusiasmo sobre inteligência artificial generativa ofusca outras iniciativas e os problemas que os modelos de linguagem apresentam.",
+    "favorite": false
+  },
+  {
+    "title": "Trustworthiness in the Age of AI",
+    "link": "https://jfkirk.github.io/posts/trustworthiness-ai/",
+    "date": "2024-12-21",
+    "tags": ["tech"],
+    "notes": "Sobre as diferenças entre sistemas de computação, sistemas de recomendação, e modelos de linguagem. Boas perguntas ao final.",
+    "favorite": false
+  },
+  {
     "title": "45 Questions to Ask While Waiting",
     "link": "https://radfag.com/2017/04/10/44-questions-to-ask-while-waiting/",
     "date": "2024-12-08",
