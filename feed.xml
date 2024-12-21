@@ -4,11 +4,34 @@
   <subtitle>aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado</subtitle>
   <link href="https://alessandrofajr.com/feed.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2024-11-30T00:00:00Z</updated>
+  <updated>2024-12-21T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+  <entry>
+    <title>A saga para transferir mensagens do WhatsApp do Android para um iPhone</title>
+    <link href="https://alessandrofajr.com/blog/transferindo-mensagens-whatsapp-android-ios/"/>
+    <updated>2024-12-21T00:00:00Z</updated>
+    <id>https://alessandrofajr.com/blog/transferindo-mensagens-whatsapp-android-ios/</id>
+    <content xml:lang="pt-br" type="html">&lt;p&gt;Depois de uns 8 anos usando um Android como celular pessoal e uns 3 anos desde a última vez que configurei um iPhone, voltei ao telefone da Apple.&lt;/p&gt;
+&lt;p&gt;Logo de cara, fui instalando os aplicativos e só pensei em trazer as minhas conversas do WhatsApp quando loguei no mensageiro pela primeira vez. Mas aí veio a decepção: não tinha como. Pelo menos não naquele momento.&lt;/p&gt;
+&lt;p&gt;É possível migrar as conversas do WhatsApp do Android para o iPhone, mas é &lt;strong&gt;preciso fazer isso em um dos primeiros passos da configuração do celular, quando aparece uma mensagem para trazer dados de outro aparelho&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Como eu queria muito manter essas conversas, tive que dar uma volta enorme para não perder o que já tinha configurado:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fiz o backup do iPhone em um Mac;&lt;/li&gt;
+&lt;li&gt;restaurei o celular aos padrões de fábrica;&lt;/li&gt;
+&lt;li&gt;iniciei a configuração do zero e trouxe as conversas do Android;&lt;/li&gt;
+&lt;li&gt;abri o WhatsApp e fiz backup das conversas pelo iCloud;&lt;/li&gt;
+&lt;li&gt;voltei mais uma vez para as configurações de fábrica (!!);&lt;/li&gt;
+&lt;li&gt;recuperei o backup que salvei no Mac para, então, baixar as mensagens pelo iCloud.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&amp;quot;Ah, mas isso tudo é pra preservar os protocolos de segurança da Apple e a criptografia das mensagens…&amp;quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A telinha de boas-vindas do iPhone poderia pelo menos avisar que aquele momento é o único em que terei chances de migrar as conversas sem maiores dores de cabeça.&lt;/p&gt;
+&lt;p&gt;No Reddit, tem uma porção de gente reclamando dessa limitação. For por lá que encontrei &lt;a href=&quot;https://www.reddit.com/r/whatsapp/comments/16su9mg/how_to_move_whatsapp_chats_from_android_to_ios/?rdt=63598&quot;&gt;a solução que dá essa volta toda&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Em quem colocar a culpa: na Apple? No Facebook? Em ambos? Software de grandes corporações costumam decepcionar. Às vezes é &lt;a href=&quot;https://manualdousuario.net/google-ios-bing-wallpaper-seguranca/&quot;&gt;pior do que isso&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Criando filtros interativos em Vega-Lite no Observable Framework</title>
     <link href="https://alessandrofajr.com/blog/vega-lite-graficos-interativos-observable-framework/"/>
