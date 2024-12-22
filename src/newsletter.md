@@ -15,3 +15,5 @@ Receba, no máximo uma vez por semana, os últimos posts e uma lista de [links i
   <input class="field-email" type="email" name="email" placeholder="Insira o seu email"/>
   <input class="button-email" type="submit" value="assinar" />
 </form>
+
+Veja as edições anteriores [aqui](https://buttondown.com/alessandrofajr/archive/).
