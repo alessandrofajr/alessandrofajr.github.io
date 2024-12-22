@@ -10,7 +10,7 @@ tags:
 
 Depois de uns 8 anos usando um Android como celular pessoal e uns 3 anos desde a última vez que configurei um iPhone, voltei ao telefone da Apple. 
 
-Logo de cara, fui instalando os aplicativos e só pensei em trazer as minhas conversas do WhatsApp quando loguei no mensageiro pela primeira vez. Mas aí veio a decepção: não tinha como. Pelo menos não naquele momento. 
+Instalei os aplicativos e só pensei em trazer as minhas conversas do WhatsApp quando loguei no mensageiro pela primeira vez. Mas aí veio a decepção: já não tinha mais como.
 
 É possível migrar as conversas do WhatsApp do Android para o iPhone, mas é **preciso fazer isso em um dos primeiros passos da configuração do celular, quando aparece uma mensagem para trazer dados de outro aparelho**.
 
