@@ -303,16 +303,16 @@ article {
 }
 
 .footer-links {
-    max-width: 550px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .footer-links li {
-    margin-left: 25px;
+    margin-right: 20px;
     display: inline;
 }
 
@@ -419,9 +419,9 @@ img {
         padding: 5px;
     }
     .footer-links {
-        display: flex;
-        justify-content: center; 
-        align-items: center;
+        display: block;
+        text-align: left;
+        margin-left: 1rem;
     }
     .footer-links a {
         font-size: 1rem;
