@@ -189,7 +189,7 @@ main {
 }
 
 .cta-newsletter form {
-    display: inline;
+    display: block;
 }
 
 .section-break {
