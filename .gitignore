@@ -131,3 +131,7 @@ dist
 
 #11ty
 _site
+
+# Drafts and Private Stuff
+draft_*.md
+private_*.md
