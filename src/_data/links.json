@@ -1,5 +1,37 @@
 [
   {
+    "title": "The plum you're going to eat next summer",
+    "link": "https://locuscommunis.blog/2024/06/18/the-plum-youre-going-to-eat-next-summer/",
+    "date": "2025-01-04",
+    "tags": ["personal"],
+    "notes": "Um belo poema da autora Gayle Brandeis.",
+    "favorite": false
+  },
+  {
+    "title": "One bucket at a time",
+    "link": "https://anniemueller.com/posts/one-bucket-at-a-time",
+    "date": "2025-01-04",
+    "tags": ["personal"],
+    "notes": "Lembrete simples: não dá para focar em mil coisas ao mesmo tempo.",
+    "favorite": false
+  },
+  {
+    "title": "Cognitive load is what matters",
+    "link": "https://minds.md/zakirullin/cognitive#long",
+    "date": "2025-01-04",
+    "tags": ["tech"],
+    "notes": "Um pequeno manual sobre boas práticas de programação envolvendo o conceito de carga cognitiva. Organizar o código, funções e classes de uma forma que permita, ao ler, compreender a lógica. Me parece mais fácil falar do que fazer, mas um norte interessante.",
+    "favorite": true
+  },
+  {
+    "title": "Teachings",
+    "link": "https://kayserifserif.place/teachings",
+    "date": "2024-12-29",
+    "tags": ["personal"],
+    "notes": "Coletânea de prints de mensagens, e-mails e outras comunicações entre professores e seus alunos.",
+    "favorite": false
+  },
+  {
     "title": "How I became 'collapse aware'",
     "link": "https://rojospinks.substack.com/p/how-i-became-collapse-aware",
     "date": "2024-12-29",
