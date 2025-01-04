@@ -11,8 +11,8 @@ pagination:
 
 {% for quote in quotes %}
     <div class="quotes">
-        <a href="/quotes/{{ quote.id }}/">{{ quote.quote }}</a> ― {{ quote.author }}
-        <p>adicionado em {{ quote.date }}</p>
+        <a href="/quotes/{{ quote.id }}/">{{ quote.quote }}</a> ― <b>{{ quote.author }}</b>
+        <div class="quote-date">Adicionado em {{ quote.date }}</div>
         <div class="breaker"></div>
     <div>
 {% endfor %}

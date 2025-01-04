@@ -1,5 +1,61 @@
 [
   {
+    "title": "The plum you're going to eat next summer",
+    "link": "https://locuscommunis.blog/2024/06/18/the-plum-youre-going-to-eat-next-summer/",
+    "date": "2025-01-04",
+    "tags": ["personal"],
+    "notes": "Um belo poema da autora Gayle Brandeis.",
+    "favorite": false
+  },
+  {
+    "title": "One bucket at a time",
+    "link": "https://anniemueller.com/posts/one-bucket-at-a-time",
+    "date": "2025-01-04",
+    "tags": ["personal"],
+    "notes": "Lembrete simples: não dá para focar em mil coisas ao mesmo tempo.",
+    "favorite": false
+  },
+  {
+    "title": "Cognitive load is what matters",
+    "link": "https://minds.md/zakirullin/cognitive#long",
+    "date": "2025-01-04",
+    "tags": ["tech"],
+    "notes": "Um pequeno manual sobre boas práticas de programação envolvendo o conceito de carga cognitiva. Organizar o código, funções e classes de uma forma que permita, ao ler, compreender a lógica. Me parece mais fácil falar do que fazer, mas um norte interessante.",
+    "favorite": true
+  },
+  {
+    "title": "Teachings",
+    "link": "https://kayserifserif.place/teachings",
+    "date": "2024-12-29",
+    "tags": ["personal"],
+    "notes": "Coletânea de prints de mensagens, e-mails e outras comunicações entre professores e seus alunos.",
+    "favorite": false
+  },
+  {
+    "title": "How I became 'collapse aware'",
+    "link": "https://rojospinks.substack.com/p/how-i-became-collapse-aware",
+    "date": "2024-12-29",
+    "tags": ["personal"],
+    "notes": "O mundo provavelmente não se tonará aquilo que nos foi prometido. O clima está colapsando, a economia não parece sair de ciclos de recessões, e a sociedade está cada vez mais polarizada. Não voltaremos a um 'normal'. E navegar nessa incerteza pode ser menos doloroso se ajustarmos as nossas prioridades. Esse texto possui algumas ideias que me lembraram de 'Cuidar não escala', de Steven Scrawls. Talvez a via seja na escala micro. Destaco um trecho: 'But I've broadly come to think of collapse as the antidote to the narrative of infinite progress. The one we're all steeped in, which tells us that with the right technology, innovation, and political party in power, we can save the way we’re living now. We won't have to face what's coming for us in a climate sense, and we don't have to change anything fundamental about the way we live, what we strive for, and what we value. We can have it all.'.",
+    "favorite": false
+  },
+  {
+    "title": "Cuidar não escala",
+    "link": "https://manualdousuario.net/cuidar-nao-escala/",
+    "date": "2024-12-29",
+    "tags": ["personal"],
+    "notes": "Estamos acostumados a pensar em soluções escaláveis: uma ação que se amplia. A lógica neoliberalista é a da reverberação exponencial. O cuidado, aquele genuíno, vai na contramão dessa ideologia. A pequena escala pode ter um impacto mais significativo do que imaginamos, já que estamos programados para pensar em termos grandiosos.",
+    "favorite": false
+  },
+  {
+    "title": "Slop Infrastructures 1 & 2",
+    "link": "https://mail.cyberneticforests.com/slop-infrastructures-1-2/",
+    "date": "2024-12-29",
+    "tags": ["tech"],
+    "notes": "Em uma série de artigos, Eryk Salvaggio expõe o conceito de 'infraestruturais residuais', em tradução livre. Talvez uma adaptação mais satisfatória para o português inclua a ideia de resíduo como lixo. Em seis partes, Salvaggio expõe como a produção de mídia via inteligência artificial é altamente ideológica e manipuladora, muitas vezes não no sentido de enganar as pessoas, mas de criar uma quantidade de ruído tão grande que passamos a duvidar da nossa própria capacidade de filtro. Tecnocracia, armamentização... Há muitas teses na série de artigos, impossível de resumir ou anotar aqui.",
+    "favorite": false
+  },
+  {
     "title": "Língua, ritmo, instrumento ― estilo",
     "link": "https://blog.ayom.media/ideiasdechirico/lingua-ritmo-instrumento-estilo",
     "date": "2024-12-22",
