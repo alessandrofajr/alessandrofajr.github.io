@@ -1,7 +1,7 @@
 ---
 title: Feeds RSS
 layout: sobre
-permalink: feeds
+permalink: /feeds/
 ---
 
 Adicione o site em seu leitor RSS favorito para acompanhar novas publicações.
