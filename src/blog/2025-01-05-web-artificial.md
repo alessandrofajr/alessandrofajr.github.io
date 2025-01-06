@@ -3,7 +3,7 @@ layout: post
 title: "O insustentável futuro da web artificial"
 permalink: /blog/web-artificial/
 date: 2025-01-05
-updated: 2025-01-05
+updated: 2025-01-06
 tags: 
     - tech
 ---
@@ -16,7 +16,7 @@ Essa tendência vem, de modo geral, para piorar a web – que já [está em deca
 
 Sem ferramentas para bloquear vários dos incovenientes da internet, surgiam, a cada clique, enormes pop-ups de cookies com opções desenhadas para confundir, mais pop-ups para assinar newsletters, ganhar descontos ou aceitar receber notificações push, vídeos tocando automaticamente, picture-in-picture desse mesmo vídeo no cantinho de uma tela já pequena e um monte de banner esquisito. 
 
-Esse é o normal. Imagino que muitas das pessoas simplesmente se acostumaram com isso e o que surpreendente é entrar num site que não esfrega tudo isso na nossa cara. 
+Esse é o normal. Imagino que muitas das pessoas simplesmente se acostumaram com isso e o que surpreende é entrar num site que não esfrega tudo isso na nossa cara. 
 
 Os cookies tem ainda suas particularidades. Para além da problemática da vigilância publicitária ostensiva, as legislações que tentaram dar algum nível de transparência e controle acabaram por piorar e muito a experiência de entrar numa página qualquer.
 
