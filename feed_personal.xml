@@ -10,6 +10,52 @@
     <name>Alessandro Feitosa Jr</name>
   </author>
     <entry>
+      <title>Terceirização da criatividade</title>
+      <link href="https://alessandrofajr.com/blog/terceirizacao-criatividade/"/>
+      <updated>2025-01-19T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/terceirizacao-criatividade/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;Seguindo o fluxo do &lt;a href=&quot;https://alessandrofajr.com/blog/web-artificial/&quot;&gt;último texto&lt;/a&gt;, tenho refletido sobre como, no médio prazo, ferramentas de inteligência artificial como o ChatGPT e seus equivalentes devem causar um achatamento da criatividade.&lt;/p&gt;
+&lt;p&gt;A delegação excessiva das nossas atividades vai atrofiar nossa capacidade intelectual.&lt;/p&gt;
+&lt;p&gt;O GPT (generative &lt;strong&gt;pre-trained&lt;/strong&gt; transformer) é resultado daquilo que é mais provável de ser respondido após um input. Como são modelos pré-treinados com um corpus literário estabelecido, a tendência é que ele traga a &amp;quot;ideia&amp;quot; mais comum e mediana, aquela que ele calcula ter a maior probabilidade de ser a correta. E sempre escrito da forma mais convincente possível, mesmo que esteja completamente equivocada.&lt;/p&gt;
+&lt;p&gt;Por serem modelos estatísticos, essas ferramentas são de pouca serventia para tarefas determinísticas. Peça para um GPT fazer contas e pode ter certeza de que, em algum momento, ele vai errar (ou alucinar, como diz o pessoal da área).&lt;/p&gt;
+&lt;p&gt;Para quem quiser se aprofundar, convido a entender o conceito de &lt;a href=&quot;https://dl.acm.org/doi/10.1145/3442188.3445922&quot;&gt;&amp;quot;papagaio estocástico&amp;quot;&lt;/a&gt;, da Emily M. Bender (de 2021!).&lt;/p&gt;
+&lt;p&gt;Não nego o fato de essas ferramentas serem boas molas para produtividade. Já desenrolei códigos complicados, acelerei traduções e resumi textos com elas – na verdade, uso quase todos os dias.&lt;/p&gt;
+&lt;p&gt;Mas também já reparei que houve momentos em que, por cansaço ou preguiça, terceirizei tanto uma determinada tarefa que gastei mais tempo refinando, debugando ou revisando o que o modelo cuspiu do que teria consumido se eu mesmo tivesse assumido as rédeas.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>O insustentável futuro da web artificial</title>
+      <link href="https://alessandrofajr.com/blog/web-artificial/"/>
+      <updated>2025-01-05T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/web-artificial/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;Creio que mais de dois terços de tudo que li no último mês envolvia inteligência artificial – fosse pelo tema ou pela forma como o &lt;em&gt;conteúdo&lt;/em&gt; foi produzido. Se você já está de saco cheio, eu sinto muito. É o novo normal, não haverá regresso.&lt;/p&gt;
+&lt;p&gt;Algumas iniciativas de resistência vão surgir? Certamente. Mas o mainstream não vai arredar um palmo. Pelo contrário, vai dobrar a aposta. All-in.&lt;/p&gt;
+&lt;p&gt;Essa tendência vem, de modo geral, para piorar a web – que já &lt;a href=&quot;https://alessandrofajr.com/blog/ressaca-dopaminergica/&quot;&gt;está em decadência&lt;/a&gt;. Também no mês passado, troquei de celular e me vi em contato com uma parte da internet que não me ocorria há um bom tempo.&lt;/p&gt;
+&lt;p&gt;Sem ferramentas para bloquear vários dos incovenientes da internet, surgiam, a cada clique, enormes pop-ups de cookies com opções desenhadas para confundir, mais pop-ups para assinar newsletters, ganhar descontos ou aceitar receber notificações push, vídeos tocando automaticamente, picture-in-picture desse mesmo vídeo no cantinho de uma tela já pequena e um monte de banner esquisito.&lt;/p&gt;
+&lt;p&gt;Esse é o normal. Imagino que muitas das pessoas simplesmente se acostumaram com isso e o que surpreende é entrar num site que não esfrega tudo isso na nossa cara.&lt;/p&gt;
+&lt;p&gt;Os cookies tem ainda suas particularidades. Para além da problemática da vigilância publicitária ostensiva, as legislações que tentaram dar algum nível de transparência e controle acabaram por piorar e muito a experiência de entrar numa página qualquer.&lt;/p&gt;
+&lt;p&gt;No médio prazo, imagino que a informação de qualidade, produzida por gente de carne e osso, vai se elitizar.&lt;/p&gt;
+&lt;p&gt;O conteúdo gratuito será produzido majoritariamente por modelos de linguagem natural. Como esse conteúdo já é exibido direto na ferramenta de busca ou no aplicativo do ChatGPT, haverá pouquíssimo incentivo para produção.&lt;/p&gt;
+&lt;p&gt;Se ganhar um trocado por visualizações de páginas ficar mais difícil, não existe muita razão para produzir material. No final das contas, uma big tech vai chupinhar tudo isso e cuspir direto em sua própria plataforma.&lt;/p&gt;
+&lt;p&gt;Ainda haverá demanda por conteúdo de qualidade, que estará cada vez menos disponível de forma gratuita.&lt;/p&gt;
+&lt;p&gt;A depender do andar da carruagem, veremos anúncios mesmo pagando pelo acesso. Netflix, Disney e companhia que o digam. Consegue notar como tudo tem evoluído para pior?&lt;/p&gt;
+&lt;p&gt;Agora, concretizado esse cenário, me intriga como as empresas que produzem os modelos pré-treinados lidariam com ele.&lt;/p&gt;
+&lt;p&gt;A retroalimentação da própria produção artificial pode gerar mais alucinações ou desacelerar bruscamente a evolução que o mercado espera. Menos dinheiro para financiar as iniciativas de LLMs devem tornar os modelos mais caros e tornar muitas aplicações inviáveis. Enxergo uma espiral de decadência em pouco tempo.&lt;/p&gt;
+&lt;p&gt;Pessimismo demais? Talvez. Mas quando olho em retrospectiva para a internet e para os serviços digitais, quase tudo piorou.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vale o aviso: não sou ludista. Pelo contrário. Leio, pesquiso e uso ferramentas de inteligência artificial, incluindo LLMs, no meu dia a dia. Isso não vai fazer com que eu deixe de ser crítico sobre seus usos, a forma como essas tecnologias tem sido propagandeadas e como que vão impactar a vida de praticamente toda a força de trabalho intelectual.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Algumas leituras sobre o tema que recomendo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jfkirk.github.io/posts/trustworthiness-ai/&quot;&gt;Trustworthiness in the Age of AI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://mail.cyberneticforests.com/slop-infrastructures-1-2/&quot;&gt;Slop Infrastructures 1 &amp;amp; 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://c-taurion.medium.com/olhe-a-floresta-e-n%C3%A3o-a-%C3%A1rvore-287b875c8ba9&quot;&gt;Olhe a floresta e não a árvore…&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://garden.delyo.be/rants/2024-12-15-the-web-is-dead/&quot;&gt;The Web is dead.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.jim-nielsen.com/2024/nothing-is-something/&quot;&gt;Nothing Is Something&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
+    <entry>
       <title>Lembrete #1</title>
       <link href="https://alessandrofajr.com/blog/lembrete-1/"/>
       <updated>2024-11-23T00:00:00Z</updated>
