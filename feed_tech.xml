@@ -4,11 +4,25 @@
   <subtitle>posts técnicos</subtitle>
   <link href="https://alessandrofajr.com/feed_tech.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2025-01-05T00:00:00Z</updated>
+  <updated>2025-01-19T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+    <entry>
+      <title>Terceirização da criatividade</title>
+      <link href="https://alessandrofajr.com/blog/terceirizacao-criatividade/"/>
+      <updated>2025-01-19T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/terceirizacao-criatividade/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;Seguindo o fluxo do &lt;a href=&quot;https://alessandrofajr.com/blog/web-artificial/&quot;&gt;último texto&lt;/a&gt;, tenho refletido sobre como, no médio prazo, ferramentas de inteligência artificial como o ChatGPT e seus equivalentes devem causar um achatamento da criatividade.&lt;/p&gt;
+&lt;p&gt;A delegação excessiva das nossas atividades vai atrofiar nossa capacidade intelectual.&lt;/p&gt;
+&lt;p&gt;O GPT (generative &lt;strong&gt;pre-trained&lt;/strong&gt; transformer) é resultado daquilo que é mais provável de ser respondido após um input. Como são modelos pré-treinados com um corpus literário estabelecido, a tendência é que ele traga a &amp;quot;ideia&amp;quot; mais comum e mediana, aquela que ele calcula ter a maior probabilidade de ser a correta. E sempre escrito da forma mais convincente possível, mesmo que esteja completamente equivocada.&lt;/p&gt;
+&lt;p&gt;Por serem modelos estatísticos, essas ferramentas são de pouca serventia para tarefas determinísticas. Peça para um GPT fazer contas e pode ter certeza de que, em algum momento, ele vai errar (ou alucinar, como diz o pessoal da área).&lt;/p&gt;
+&lt;p&gt;Para quem quiser se aprofundar, convido a entender o conceito de &lt;a href=&quot;https://dl.acm.org/doi/10.1145/3442188.3445922&quot;&gt;&amp;quot;papagaio estocástico&amp;quot;&lt;/a&gt;, da Emily M. Bender (de 2021!).&lt;/p&gt;
+&lt;p&gt;Não nego o fato de essas ferramentas serem boas molas para produtividade. Já desenrolei códigos complicados, acelerei traduções e resumi textos com elas – na verdade, uso quase todos os dias.&lt;/p&gt;
+&lt;p&gt;Mas também já reparei que houve momentos em que, por cansaço ou preguiça, terceirizei tanto uma determinada tarefa que gastei mais tempo refinando, debugando ou revisando o que o modelo cuspiu do que teria consumido se eu mesmo tivesse assumido as rédeas.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>O insustentável futuro da web artificial</title>
       <link href="https://alessandrofajr.com/blog/web-artificial/"/>
