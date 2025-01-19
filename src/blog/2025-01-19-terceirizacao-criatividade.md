@@ -12,7 +12,7 @@ Seguindo o fluxo do [último texto](/blog/web-artificial/), tenho refletido sobr
 
 A delegação excessiva das nossas atividades vai atrofiar nossa capacidade intelectual.
 
-O GPT (generative **pre-trained** transformer) é resultado daquilo que é mais provável de ser respondido após um input. Como são modelos são pré-treinados com um corpus literário estabelecido, a tendência é que ele traga a "ideia" mais comum e mediana, aquela que ele calcula ter a maior probabilidade de ser a correta. E sempre escrito da forma mais convincente possível, mesmo que esteja completamente equivocada. 
+O GPT (generative **pre-trained** transformer) é resultado daquilo que é mais provável de ser respondido após um input. Como são modelos pré-treinados com um corpus literário estabelecido, a tendência é que ele traga a "ideia" mais comum e mediana, aquela que ele calcula ter a maior probabilidade de ser a correta. E sempre escrito da forma mais convincente possível, mesmo que esteja completamente equivocada. 
 
 Por serem modelos estatísticos, essas ferramentas são de pouca serventia para tarefas determinísticas. Peça para um GPT fazer contas e pode ter certeza de que, em algum momento, ele vai errar (ou alucinar, como diz o pessoal da área).
 
