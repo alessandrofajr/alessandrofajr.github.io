@@ -5,7 +5,7 @@ permalink: /blog/terceirizacao-criatividade/
 date: 2025-01-19
 updated: 2025-01-19
 tags: 
-    - tech
+    - personal
 ---
 
 Seguindo o fluxo do [último texto](/blog/web-artificial/), tenho refletido sobre como, no médio prazo, ferramentas de inteligência artificial como o ChatGPT e seus equivalentes devem causar um achatamento da criatividade. 

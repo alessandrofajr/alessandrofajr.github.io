@@ -5,7 +5,7 @@ permalink: /blog/web-artificial/
 date: 2025-01-05
 updated: 2025-01-06
 tags: 
-    - tech
+    - personal
 ---
 
 Creio que mais de dois terços de tudo que li no último mês envolvia inteligência artificial – fosse pelo tema ou pela forma como o *conteúdo* foi produzido. Se você já está de saco cheio, eu sinto muito. É o novo normal, não haverá regresso. 
