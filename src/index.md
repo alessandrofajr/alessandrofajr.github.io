@@ -3,7 +3,7 @@ layout: default
 title: alessandro feitosa jr.
 ---
 
-## <span class="section-title">sou um ex-jornalista que aprendeu a programar e analisar dados</span>
+## <span class="section-title">eu costumava entrevistar pessoas para contar histórias. agora eu entrevisto dados</span>
 
 aqui, escrevo sobre o que tenho feito e compartilho aquilo que tem me interessado
 
