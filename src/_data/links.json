@@ -1,5 +1,133 @@
 [
   {
+    "title": "Defense Against Dishonest Charts",
+    "link": "https://flowingdata.com/projects/dishonest-charts/",
+    "date": "2025-03-01",
+    "tags": ["tech"],
+    "notes": "Bons exemplos sobre como podemos mentir com gráficos, com versões interativas.",
+    "favorite": false
+  },
+  {
+    "title": "Como e por que medir o impacto do seu trabalho",
+    "link": "https://newsletter.nagringa.dev/p/como-e-por-que-medir-o-impacto-do",
+    "date": "2025-03-01",
+    "tags": ["tech"],
+    "notes": "Algumas ideias para medir impacto no trabalho e como fazer isso.",
+    "favorite": false
+  },
+  {
+    "title": "Is There a Crisis of Seriousness?",
+    "link": "https://www.honest-broker.com/p/is-there-a-crisis-of-seriousness",
+    "date": "2025-02-25",
+    "tags": ["personal"],
+    "notes": "Texto sobre a falta de seriedade na cultura atual. Com alguma exceção ou outra, vivemos numa época do engraçadinho, do superficial, da falsidade. E o tecnocapitalismo tem liderado essa tendência.",
+    "favorite": false
+  },
+  {
+    "title": "The most profound wonder is stirred by what is most ordinary",
+    "link": "https://psyche.co/ideas/the-most-profound-wonder-is-stirred-by-what-is-most-ordinary",
+    "date": "2025-02-21",
+    "tags": ["personal"],
+    "notes": "As coisas mais comuns do nosso cotidiano podem nos impressionar e trazer mais alegria do que momentos excepcionais. Boa leitura, com menção ao filme Perfect Days (2023).",
+    "favorite": false
+  },
+  {
+    "title": "The myth of measuring 'data team ROI'",
+    "link": "https://hex.tech/blog/myth-of-data-team-roi/",
+    "date": "2025-02-19",
+    "tags": ["tech"],
+    "notes": "Medir o retorno de times de dados pode ser muito difícil. Este autor sugere utilizar NPS para responder essa perguntas: a partir da percepção daqueles que utilizam os produtos de dados da empresa, qual a percepção deles?",
+    "favorite": false
+  },
+  {
+    "title": "Transferring Media from macOS to a Jellyfin Server (Raspberry Pi 4)",
+    "link": "https://btxx.org/posts/jelly/",
+    "date": "2025-02-08",
+    "tags": ["tech"],
+    "notes": "Usando os protocolos SSH/SCP para transferir arquivos entre computadores usando a rede local.",
+    "favorite": false
+  },
+  {
+    "title": "Public Domain Image Archive",
+    "link": "https://pdimagearchive.org/",
+    "date": "2025-02-02",
+    "tags": ["personal"],
+    "notes": "Imagens em domínio público.",
+    "favorite": false
+  },
+  {
+    "title": "Sample Translation Prompt",
+    "link": "https://www.gally.net/temp/20250201sampletranslationprompt.html",
+    "date": "2025-02-02",
+    "tags": ["tech"],
+    "notes": "Exemplo interessante de prompt utilizado para fazer traduções.",
+    "favorite": false
+  },
+  {
+    "title": "What I've learned about writing AI apps so far",
+    "link": "https://seldo.com/posts/what-ive-learned-about-writing-ai-apps-so-far",
+    "date": "2025-01-29",
+    "tags": ["tech"],
+    "notes": "Segundo o autor, LLMs são ótimas em trabalhar a partir de um material maior, resumindo-o. Pedir para LLMs expandirem contextos geralmente se traduz em alucinações.",
+    "favorite": false
+  },
+  {
+    "title": "Seeing software",
+    "link": "https://whatworks.fyi/articles/seeing-software",
+    "date": "2025-01-26",
+    "tags": ["tech"],
+    "notes": "Todos os meios de comunicação influenciam a forma como pensamos, socializamos, trabalhamos e participamos da sociedade. A linguagem medeia nossa experiência com o outro. O relógio, primeiro analógico e depois digital, medeia nossa experiência do tempo. O livro medeia nossa experiência do conhecimento e da narrativa. O carro medeia nossa experiência da geografia. O software de gerenciamento de projetos medeia nossa experiência com nosso trabalho (ou carga de trabalho). O Zoom medeia nossa experiência de reunião. Se quisermos vivenciar mais frequentemente os impactos positivos do software e resistir aos seus efeitos prejudiciais, precisamos enxergá-lo. Devemos estar conscientemente cientes do que ele possibilita e do que ele inibe. Precisamos ser intencionais quanto às normas que estabelecemos para seu uso.",
+    "favorite": false
+  },
+  {
+    "title": "How to build a village",
+    "link": "https://rojospinks.substack.com/p/how-to-build-a-village",
+    "date": "2025-01-26",
+    "tags": ["personal"],
+    "notes": "Encontrar conexões requer, com muita frequência, nos colocar no lugar de vulnerabilidade e exposição: ser aquele que pede duas vezes, que coloca, em alguns momentos, as próprias necessidades em segundo plano. Teve um trecho específico do texto que me chamou a atenção: Kurt Vonnegut escreveu que a maioria dos casamentos fracassa porque não há pessoas o suficiente neles: 'Quando um marido ou uma esposa brigam, pode parecer ser sobre dinheiro ou poder. Mas o que eles realmente estão gritando um pro outro é sobre solidão. O que eles realmente estão falando é você não é gente o suficiente'",
+    "favorite": false
+  },
+  {
+    "title": "Why human creativity matters in the age of AI",
+    "link": "https://engelsbergideas.com/essays/why-human-creativity-matters-in-the-age-of-ai/",
+    "date": "2025-01-26",
+    "tags": ["tech"],
+    "notes": "A forma com que a arte nos conecta uns aos outros. No ensaio, o autor também argumenta que, com o passar do tempo, a produção humana deve ganhar mais valor.",
+    "favorite": false
+  },
+  {
+    "title": "Don't let machines or the crowd decide your world",
+    "link": "https://www.hottakes.space/p/dont-let-machines-or-the-crowd-decide",
+    "date": "2025-01-26",
+    "tags": ["personal"],
+    "notes": "O subtítulo sumariza bem a ideia 'Você sempre será entediante se não consegue fazer as próprias escolhas'. E como o nosso ambiente atual nos empurra para um piloto automático por algoritmos, tendências ou modismos.",
+    "favorite": false
+  },
+  {
+    "title": "What to Write",
+    "link": "https://flamedfury.com/posts/what-to-write/",
+    "date": "2025-01-25",
+    "tags": ["personal"],
+    "notes": "O texto fala sobre inspirações a respeito do que escrever. Particularmente, me foquei na ideia de enviar cartas para amigos, algo que contemplei recentemente.",
+    "favorite": false
+  },
+  {
+    "title": "The Search for Stillness in a Mad, Mad World",
+    "link": "https://pilgrimsinthemachine.substack.com/p/the-search-for-stillness-in-a-mad",
+    "date": "2025-01-21",
+    "tags": ["personal"],
+    "notes": "Velocidade e hiperestímulos deformam nossa percepção de nós mesmos e do mundo, como as ondulações num lago deformam aquilo que seria um reflexo das árvores ao redor e do céu. Nos oferecem hype, quando humildade e realismo nos fariam melhor.",
+    "favorite": false
+  },
+  {
+    "title": "35 Simple Health Tips Experts Swear By",
+    "link": "https://www.nytimes.com/interactive/2025/01/12/well/health-tips-experts.html",
+    "date": "2025-01-21",
+    "tags": ["personal"],
+    "notes": "Lista interessante do NYT com 'dicas' de saúde. Algumas são bem interessantes: tornar o início de tarefas o mais simples e fácil possível; ir para a cama quando se está com sono; se conectar com pessoas; desenvolver rituais; entre outros.",
+    "favorite": false
+  },
+  {
     "title": "Why probability probably doesn't exist (but it is useful to act like it does)",
     "link": "https://www.nature.com/articles/d41586-024-04096-5",
     "date": "2025-01-14",
