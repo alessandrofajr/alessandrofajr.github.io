@@ -16,4 +16,6 @@ Receba, no máximo uma vez por semana, os últimos posts e uma lista de [links i
   <input class="button-email" type="submit" value="assinar" />
 </form>
 
+Não conseguiu se inscrever pelo botão acima? Tente [este link](https://buttondown.com/alessandrofajr#subscribe-form).
+
 Veja as edições anteriores [aqui](https://buttondown.com/alessandrofajr/archive/).
