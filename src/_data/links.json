@@ -1,5 +1,85 @@
 [
   {
+    "title": "The Best Programmers I Know",
+    "link": "https://endler.dev/2025/best-programmers/",
+    "date": "2025-04-23",
+    "tags": ["tech"],
+    "notes": "Uma lista de características que constroem um bom programador. Tem algumas muito interessantes como ser um leitor de documentação, ler os erros com cuidado, quebrar problemas em pedaços menores, escrever...",
+    "favorite": false
+  },
+  {
+    "title": "Everyone I know is worried about work",
+    "link": "https://rojospinks.substack.com/p/everyone-i-know-is-worried-about",
+    "date": "2025-04-21",
+    "tags": ["personal"],
+    "notes": "Boa provocação sobre o futuro do trabalho e como, no sistema atual, estamos sempre pensando sobre nossas habilidades e interesses dentro de um contexto de se tornar mais atrativo no mercado de trabalho.",
+    "favorite": false
+  },
+  {
+    "title": "The Insanity of Being a Software Engineer",
+    "link": "https://0x1.pt/2025/04/06/the-insanity-of-being-a-software-engineer/",
+    "date": "2025-04-12",
+    "tags": ["tech"],
+    "notes": "A quantidade de conhecimento necessária para se trabalhar com engenharia de software cresceu exponencialmente.",
+    "favorite": false
+  },
+  {
+    "title": "Expose Yourself to Everything",
+    "link": "https://medium.com/journal-kita/expose-yourself-to-everything-d0226ea1a767",
+    "date": "2025-03-29",
+    "tags": ["personal"],
+    "notes": "Muitas vezes nos limitamos a experimentar novas coisas porque temos receio de não sermos bons o suficiente.",
+    "favorite": false
+  },
+  {
+    "title": "Small Seasons",
+    "link": "https://smallseasons.guide/",
+    "date": "2025-03-24",
+    "tags": ["personal"],
+    "notes": "Um site que revela o que na cultura japonesa se designa como pequenas estações. São as características mais específicas em janelas temporais menores.",
+    "favorite": false
+  },
+  {
+    "title": "Why You've Never Been In A Plane Crash",
+    "link": "https://asteriskmag.com/issues/05/why-you-ve-never-been-in-a-plane-crash",
+    "date": "2025-03-06",
+    "tags": ["personal"],
+    "notes": "Que a aviação é um sistema antifrágil, não é novidade. Nesse texto, o autor aborda como as autoridades de aviação garantem transparência na comunicação de erros ao não culpar indivíduos.",
+    "favorite": false
+  },
+  {
+    "title": "Keep coming back",
+    "link": "https://rojospinks.substack.com/p/keep-coming-back",
+    "date": "2025-03-03",
+    "tags": ["personal"],
+    "notes": "Cultivar relações é desafiador. Essa autora defende que o essencial é aparecer com frequência. O texto se centra em adicionar mais pessoas à vida, não necessariamente formar amizades.",
+    "favorite": false
+  },
+  {
+    "title": "Social Development > Self-Development",
+    "link": "https://www.elysian.press/p/social-development-self-development",
+    "date": "2025-03-03",
+    "tags": ["personal"],
+    "notes": "Boa reflexão sobre o individualismo exagerado impregnado pelo sistema capitalista. A autora escreveu um trecho muito interessante que diz que, uma vez que cuidamos de nós mesmos e estamos bem, é hora de olhar para fora e entender o que podemos fazer para ajudar os outros.",
+    "favorite": false
+  },
+  {
+    "title": "Designing monochrome data visualisations",
+    "link": "https://nrennie.rbind.io/blog/monochrome-data-visualisations/",
+    "date": "2025-03-03",
+    "tags": ["tech"],
+    "notes": "Referência sobre como desenhar visualizações de dados monocromáticas. Não sei se algum dia vou usar, mas achei interessante.",
+    "favorite": false
+  },
+  {
+    "title": "Despite the horrors, the laundry must be done; Despite the laundry, the horrors must be faced.",
+    "link": "https://anniemueller.com/posts/despite-the-horrors-the-laundry-must-be-done-despite-the-laundry-the-horrors-must-be-faced",
+    "date": "2025-03-03",
+    "tags": ["personal"],
+    "notes": "Texto com bons lembretes sobre o que não está em nosso controle. Apesar disso, ficar alheio não é uma opção.",
+    "favorite": false
+  },
+  {
     "title": "Defense Against Dishonest Charts",
     "link": "https://flowingdata.com/projects/dishonest-charts/",
     "date": "2025-03-01",
