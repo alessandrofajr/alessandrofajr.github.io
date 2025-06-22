@@ -1,5 +1,101 @@
 [
   {
+    "title": "On time machines, principles for high performance, and the trap of titles",
+    "link": "https://jamesclear.com/3-2-1/june-12-2025",
+    "date": "2025-06-19",
+    "tags": ["personal"],
+    "notes": "No meio dessa newsletters, há menção a uma ideia que ouvi de um querido professor na universidade, Douglas Canjani: vivemos deixando o urgente se impor sobre o que é importante.",
+    "favorite": false 
+  },
+  {
+    "title": "The Prompt Engineering Playbook for Programmers",
+    "link": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
+    "date": "2025-06-10",
+    "tags": ["tech"],
+    "notes": "Prompts interessantes para LLMs no contexto da programação ou engenharia de software.",
+    "favorite": false 
+  },
+  {
+    "title": "Ways to Optimize Your Code in Python",
+    "link": "https://blog.appsignal.com/2025/05/28/ways-to-optimize-your-code-in-python.html",
+    "date": "2025-06-10",
+    "tags": ["tech"],
+    "notes": "Uma série de exemplos de código otimizados para a performance em Python.",
+    "favorite": false 
+  },
+  {
+    "title": "Living to Die Well",
+    "link": "https://web.archive.org/web/20250602010157/https://www.nytimes.com/2025/06/01/opinion/dying-well-planning-life.html",
+    "date": "2025-06-03",
+    "tags": ["personal"],
+    "notes": "Esses textos e relatos sobre a vida e a morte sempre captam o meu interesse. As reflexões que as pessoas têm quando se aproximam da morte, os arrependimentos… Por que pouco se fala nas alegrias, nas conqiuistas e orgulhos daqueles que estão perto de deixar o mundo?",
+    "favorite": false 
+  },
+  {
+    "title": "Stevens: a hackable AI assistant using a single SQLite table and a handful of cron jobs",
+    "link": "https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs",
+    "date": "2025-05-30",
+    "tags": ["tech"],
+    "notes": "Relato interessante sobre a criação de um assistente de IA no Telegram usando ferramentas simples.",
+    "favorite": false
+  },
+  {
+    "title": "Learn a Foreign Language Before It's Too Late",
+    "link": "https://www.theatlantic.com/ideas/archive/2023/07/the-terrible-downside-of-ai-language-translation/674687/",
+    "date": "2025-05-21",
+    "tags": ["personal"],
+    "notes": "Havia lido há um tempo, mas me lembrei recentemente desse texto que discute como as pessoas devem perder o interesse e a motivação para aprender novos idiomas, à medida em que a tecnologia ofertará meios de se comunicar sem esforço entre diferentes línguas. Parte de um visão utilitarista do conhecimento, que certamente define o objetivo de muita gente ao aprender qualquer coisa.",
+    "favorite": false
+  },
+  {
+    "title": "The World Was Flat. Now It's Flattened",
+    "link": "https://www.honest-broker.com/p/the-world-was-flat-now-its-flattened",
+    "date": "2025-05-18",
+    "tags": ["personal"],
+    "notes": "Texto anual da série 'State of the culture' de Ted Gioia. A tese é que a tecnologia 'achatou' tudo: não há contexto, comunidade, seriedade, propósito, atenção, significado e, além de tudo, as interfaces são viciantes. Tudo convergendo para uma mesmice: todo mundo gostando das mesmas coisas, tendo os mesmos objetivos, seguindo os mesmos padrões. Tudo isso alimentando uma concentração de renda. Difícil não concordar. Me lembra bastante um outro texto que linkei aqui, o 'The Age of Average'.",
+    "favorite": false
+  },
+  {
+    "title": "Plain Vanilla",
+    "link": "https://plainvanillaweb.com/index.html",
+    "date": "2025-05-12",
+    "tags": ["tech"],
+    "notes": "Site com um resumo de técnicas de desenvolvimento web sem frameworks ou outras ferramentas. HTML, CSS e Javascript puros.",
+    "favorite": false
+  },
+  {
+    "title": "A rata que não sabia ser mediana",
+    "link": "https://alinevalek.substack.com/p/a-rata-que-nao-sabia-ser-mediana",
+    "date": "2025-05-07",
+    "tags": ["personal"],
+    "notes": "Faz um tempo que li e o que marcou foi uma citação: 'A informação não é experiência. E mais, a informação não deixa lugar para a experiência, ela é quase o contrário da experiência, quase uma antiexperiência. Por isso a ênfase contemporânea na informação, em estar informados, e toda a retórica destinada a constituir-nos como sujeitos informantes e informados; a informação não faz outra coisa que cancelar nossas possibilidades de experiência. O sujeito da informação sabe muitas coisas, passa seu tempo buscando informação, o que mais o preocupa é não ter bastante informação; cada vez sabe mais, cada vez está melhor informado, porém, com essa obsessão pela informação e pelo saber (mas saber não no sentido de “sabedoria”, mas no sentido de “estar informado”), o que consegue é que nada lhe aconteça. (…) Uma sociedade constituída sob o signo da informação é uma sociedade na qual a experiência é impossível.', Jorge Larrosa Bondía, 'Notas sobre a experiência e o saber da experiência', com tradução de João Wanderley Geraldi)",
+    "favorite": false
+  },
+  {
+    "title": "Eject disk.",
+    "link": "https://brilliantcrank.com/eject-disk/",
+    "date": "2025-05-06",
+    "tags": ["personal"],
+    "notes": "Um manifesto relacionado com a cultura da produtividade, com um exercício interessante ao final: escrever uma declaração pessoal expressando o que já não nos serve, o que estamos dispostos a assumir e qual versão de nós mesmos queremos resgatar.",
+    "favorite": false
+  },
+  {
+    "title": "How we saved time (and money!) on continuous integration",
+    "link": "https://www.datawrapper.de/blog/ci-workflow-efficiency-improvements",
+    "date": "2025-04-30",
+    "tags": ["tech"],
+    "notes": "Relato do time do Datawrapper sobre como otimizaram o fluxo de Continuous Integration.",
+    "favorite": false
+  },
+  {
+    "title": "Leadership Over Measureship",
+    "link": "https://www.invencion.com/campaigns/view-email/i2nK5wK1uChayq0i9OUJOUEYoF-ieTZfv_aCZyT0KSNZvBs2qxG0dFK6M-Y9SkuMggMkIalZdgBM1Xm5MjBw_p5JX6A0KbINVmDHLLel7Ne1yswzSE0aa_5eylPDmzmw58eaYFiiS0nImw3GQuNCbRi4GDpajpp9EUmk3w",
+    "date": "2025-03-29",
+    "tags": ["tech"],
+    "notes": "Texto apresenta o modus operandi da maioria dos serviços e apps: focado na mensuração de eficiência (pensando sempre no lucro, é claro), e como o hype da IA generativa pode reforçar ainda mais esse comportamento. O autor defende um olhar mais empático nos empreendimentos, desde a organização interna até o olhar para o cliente.",
+    "favorite": false
+  },
+  {
     "title": "The Best Programmers I Know",
     "link": "https://endler.dev/2025/best-programmers/",
     "date": "2025-04-23",
