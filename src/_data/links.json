@@ -1,5 +1,109 @@
 [
   {
+    "title": "What can agents actually do?",
+    "link": "https://lethain.com/what-can-agents-do/",
+    "date":"2025-07-15",
+    "tags": ["tech"],
+    "notes": "Bom material para entender o que os agentes de IA / LLM fazem e como eles funcionam.",
+    "favorite": false 
+  },
+  {
+    "title": "How to live an intellectually rich life",
+    "link": "https://utsavmamoria.substack.com/p/how-to-live-an-intellectually-rich",
+    "date":"2025-07-14",
+    "tags": ["personal"],
+    "notes": "Apesar do título com cara de material de 'coach', o texto traz anedotas interessantes e reflete a importância de se cercar de ideias.",
+    "favorite": false 
+  },
+  {
+    "title": "why are we lying to young people about work?",
+    "link": "https://maalvika.substack.com/p/being-too-ambitious-is-a-clever-form",
+    "date":"2025-07-11",
+    "tags": ["personal"],
+    "notes": "O texto em si não me trouxe nenhuma revelação especial, mas uma reflexão sobre a contemporaneidade: pouca gente está disposta a passar pelas dificuldades para atingir qualquer objetivo. No primeiro obstáculo a resposta é: vou proteger minha paz. E o que se constrói com isso? Pouca tolerância.",
+    "favorite": false 
+  },
+  {
+    "title": "sea glass",
+    "link": "https://louiseireland.substack.com/p/sea-glass",
+    "date":"2025-07-05",
+    "tags": ["personal"],
+    "notes": "Belo poema.",
+    "favorite": false 
+  },
+  {
+    "title": "being too ambitious is a clever form of self-sabotage",
+    "link": "https://maalvika.substack.com/p/being-too-ambitious-is-a-clever-form",
+    "date":"2025-07-03",
+    "tags": ["personal"],
+    "notes": "A autora argumenta que uma ambição exagerada – de ser imediatamente competente em uma nova empreitada, em alcançar determinado status – é uma forma de sabotagem. Se não nos permitirmos tentar, dificilmente chegaremos a algum lugar. E é mais confortável nem tentar. Tem um belo exemplo sobre as aulas de fotografia: aqueles que tiraram mais fotos e foram incentivados a explorarem a prática fotográfica conseguiram melhores resultados do que aqueles que foram instruídos a se prenderem na teoria e fotografar pouco.",
+    "favorite": false 
+  },
+  {
+    "title": "Taste Is the New Intelligence",
+    "link": "https://www.wildbarethoughts.com/p/taste-is-the-new-intelligence",
+    "date":"2025-07-03",
+    "tags": ["tech", "personal"],
+    "notes": "Dada a algoritmização e as produções com inteligência artificial, essa autora argumenta que a nova 'inteligência' é desenvolver uma espécie de bom gosto. Embora eu tenha achado o texto com um tom quase elitista, eu gostei da ideia central: de que precisamos ir cortando o que seria 'junk food' para o cérebro, já que a nossa dieta informacional vai moldando quem somos.",
+    "favorite": false 
+  },
+  {
+    "title": "All the Little Data",
+    "link": "https://www.newcartographies.com/p/all-the-little-data",
+    "date":"2025-07-02",
+    "tags": ["tech", "personal"],
+    "notes": "A dataficação do mundo transforma nossas relações sociais em uma forma de relação econômica. Tudo vira transação, quantitativo. Quantos seguidores alguém tem, quantas curtidas um determinado conteúdo recebeu, quanto tempo para ler determinado texto, quantas músicas você ouviu. O autor diz que passamos a falar 'o idioma dos robôs'. A passagem que me marcou foi essa aqui: 'But the view of reality that little data give us is narrow and distorted. The image in the mirror has low resolution. It obscures more than it reveals. Data can show us only what can be made explicit. Anything that can't be reduced to the zeroes and ones that run through computers gets pruned away. What we don't see when we see the world as information are qualities of being—ambiguity, contingency, mystery, beauty—that demand perceptual and emotional depth and the full engagement of the senses and the imagination. It hardly seems a coincidence that we find ourselves uncomfortable discussing or even acknowledging such qualities today. In their open-endedness, they defy datafication.'",
+    "favorite": false 
+  },
+  {
+    "title": "Building less flexibly for better usability",
+    "link": "https://www.counting-stuff.com/building-less-flexibly-for-better-usability/",
+    "date":"2025-07-02",
+    "tags": ["tech"],
+    "notes": "Provocação interessante sobre o desenvolvimento de produtos de tecnologia que são mais restritos: pode ser mais importante ser fácil de usar do que ser flexível para atender demandas de diferentes clientes.",
+    "favorite": false 
+  },
+  {
+    "title": "I built something that changed my friend group's social fabric",
+    "link": "https://blog.danpetrolito.xyz/i-built-something-that-changed-my-friend-gro-social-fabric/",
+    "date":"2025-07-02",
+    "tags": ["tech", "personal"],
+    "notes": "Esse cara desenvolveu um bot que manda uma mensagem no grupo de seus amigos sempre que alguém entra em um servidor de conversa por voz no Discord. A ideia foi facilitar o contato, sem precisarem combinar tudo com muita antecedência. Uma forma de avisar 'oi, estou disponível agora!'. Uma característica fantástica dos mensagens instantâneos do passado, como MSN, que se perdeu com a ubiquidade do WhatsApp e afins. Todo mundo está disponível o tempo todo e ao mesmo tempo não está. Quem quer incomodar?",
+    "favorite": false 
+  },
+  {
+    "title": "Large language models, explained with a minimum of math and jargon",
+    "link": "https://www.understandingai.org/p/large-language-models-explained-with",
+    "date":"2025-06-30",
+    "tags": ["tech"],
+    "notes": "A melhor explicação sobre como funcionam os LLMs, usando pouco jargão técnico.",
+    "favorite": true 
+  },
+  {
+    "title": "Why Even Try if You Have A.I.?",
+    "link": "https://www.newyorker.com/culture/open-questions/why-even-try-if-you-have-ai",
+    "date":"2025-06-28",
+    "tags": ["tech", "personal"],
+    "notes": "Esse texto se relaciona com um outro link que salvei aqui: 'Learn a Foreign Language Before It's Too Late'. Com o avanço das inteligências artificiais, parece que a humanidade vai terceirizar o pensamento por completo. O autor levanta dúvidas sobre quais serão os impactos cognitivos dessa ferramenta: seremos capazes de produzir ainda melhor? Ou ficaremos dependentes? Como será o aprendizado daqueles que são meros iniciantes em determinado assunto?",
+    "favorite": false 
+  },
+  {
+    "title": "Switching pip to uv in a Dockerized Flask / Django App",
+    "link": "https://nickjanetakis.com/blog/switching-pip-to-uv-in-a-dockerized-flask-or-django-app",
+    "date":"2025-06-24",
+    "tags": ["tech"],
+    "notes": "Guia para utilizar o uv como gerenciador de dependências em aplicações Python no Docker. Pode ser útil no futuro.",
+    "favorite": false 
+  },
+  {
+    "title": "30 minutes with a stranger",
+    "link": "https://pudding.cool/2025/06/hello-stranger/",
+    "date": "2025-06-24",
+    "tags": ["personal"],
+    "notes": "Material do sempre ótimo The Pudding, um scrollytelling que vai misturando dados e narrativa para falar sobre como as pessoas relataram se sentir depois de ter uma conversa de 30 minutos com um completo desconhecido. Um bom insight sobre o quão social somos, mesmo nos reservando a viver nos nossos pequenos mundinhos.",
+    "favorite": false 
+  },
+  {
     "title": "On time machines, principles for high performance, and the trap of titles",
     "link": "https://jamesclear.com/3-2-1/june-12-2025",
     "date": "2025-06-19",
