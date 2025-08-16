@@ -7,11 +7,11 @@ pagination:
   alias: quotes
 ---
 
-## <span class="section-title">citações, trechos e outros</span>
+<span class="section-title">citações, trechos e outros</span>
 
 {% for quote in quotes %}
     <div class="quotes">
-        <a href="/quotes/{{ quote.id }}/">{{ quote.quote }}</a> ― <b>{{ quote.author }}</b>
+        <a href="/quotes/{{ quote.title | slug }}/">{{ quote.quote }}</a> ― <b>{{ quote.author }}</b>
         <div class="quote-date">Adicionado em {{ quote.date }}</div>
         <div class="breaker"></div>
     <div>
