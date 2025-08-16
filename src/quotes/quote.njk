@@ -6,7 +6,7 @@ pagination:
   alias: quote
   before: 0
   after: 0
-permalink: "/quotes/{{ quote.id }}/"
+permalink: "/quotes/{{ quote.title | slug }}/"
 eleventyComputed:
   title: "{{ quote.title }}"
 ---

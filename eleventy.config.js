@@ -1,6 +1,7 @@
 const filters = require('./filters');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const lodash = require("lodash");
+const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
 
@@ -131,6 +132,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(filters);
 
   eleventyConfig.addPlugin(pluginRss);
+
+  eleventyConfig.addNunjucksFilter("slug", function(value) {
+    if(!value) return "";
+    return slugify(value, {
+      lower: true,
+      strict: true,
+      remove: /[*+~.()'"!:@]/g
+    });
+  });
 
   return {
     dir: {
