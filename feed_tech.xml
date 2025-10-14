@@ -4,11 +4,64 @@
   <subtitle>posts técnicos</subtitle>
   <link href="https://alessandrofajr.com/feed_tech.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2025-04-25T00:00:00Z</updated>
+  <updated>2025-10-14T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+    <entry>
+      <title>Como eu fiz o teclado Logitech parar de trocar os acentos ` e ~ por § e ± no Mac</title>
+      <link href="https://alessandrofajr.com/blog/teclado-logitech-mac/"/>
+      <updated>2025-10-14T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/teclado-logitech-mac/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;Comprei um teclado sem fio da Logitech para alternar entre um notebook Windows e um Mac via Bluetooth, em vez de precisar trocar o dongle USB de um pro outro – parecia que eu tava preso a um cabo, no final das contas.&lt;/p&gt;
+&lt;p&gt;A caixa do Logitech K950 indica o layout &amp;quot;US INTL&amp;quot;, padrão que eu estou habituado. Foi bem tranquilo de conectar no Windows: pareei o Bluetooth e indiquei o layout americano… Sucesso.&lt;/p&gt;
+&lt;p&gt;Quando fui fazer o mesmo no Mac, começou a dor de cabeça. Por mais que eu selecionasse o layout &amp;quot;US INTL&amp;quot;, a tecla abaixo do ESC cuspia os símbolos § (parágrafo) e ± (sinal de mais ou menos), em vez dos esperados ` (crase) e ~ (til).&lt;/p&gt;
+&lt;p&gt;Para usar os acentos, eu precisava recorrer à tecla que fica entre o Shift e o Z. Se eu tivesse que reprogramar a minha mente toda vez que mudasse de computador, o esforço de ter um teclado para alternar entre os computadores seria em vão.&lt;/p&gt;
+&lt;p&gt;Tentei mudar o tipo de teclado nos Ajustes do Mac para ANSI, ISO, colocar outros idiomas de entrada, fiz de tudo. Estava quase cedendo a um app chamado Karabiner, mas não queria ter mais um processo rodando no plano de fundo, mais um software para manter atualizado. Sem contar que eu não estava confortável em conceder várias permissões pro app registrar cada tecla apertada.&lt;/p&gt;
+&lt;p&gt;Encontrar a solução foi complicado: o negócio só começou a clarear quando pesquisei as palavras-chave &lt;code&gt;grave_accent_and_tilde&lt;/code&gt; (tecla dos acentos de crase e tio) e &lt;code&gt;non_us_backslash&lt;/code&gt; (tecla da barra invertida). Depois de bater cabeça, &lt;a href=&quot;https://lazycoder.ro/posts/remapping-tilde-macos-logitech-keyboard/&quot;&gt;esse post&lt;/a&gt; do desenvolvedor Gabriel Martin me salvou. Fiz um pequeno ajuste e fiquei bem satisfeito.&lt;/p&gt;
+&lt;h2&gt;Como resolvi essa treta&lt;/h2&gt;
+&lt;p&gt;Por meio da ferramenta hideutil, via Terminal, é possível remapear as teclas. Então, troquei a saída da tecla logo abaixo do ESC pela que está ao lado do Shift.&lt;/p&gt;
+&lt;p&gt;É só rodar isso aqui no Terminal:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/zsh
+
+CURRENT_MAPPING=$(hidutil property --get &amp;quot;UserKeyMapping&amp;quot;)
+
+if [[ $CURRENT_MAPPING == *&amp;quot;HIDKeyboardModifierMappingDst&amp;quot;* ]]; then
+    hidutil property --set &#39;{&amp;quot;UserKeyMapping&amp;quot;:[]}&#39;
+else
+    hidutil property --set &#39;{&amp;quot;UserKeyMapping&amp;quot;: [{&amp;quot;HIDKeyboardModifierMappingSrc&amp;quot;: 0x700000064, &amp;quot;HIDKeyboardModifierMappingDst&amp;quot;: 0x700000035}, {&amp;quot;HIDKeyboardModifierMappingSrc&amp;quot;: 0x700000035, &amp;quot;HIDKeyboardModifierMappingDst&amp;quot;: 0x700000064}]}&#39;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Funciona como um interruptor, você faz e desfaz o mapeamento rodando o script.&lt;/p&gt;
+&lt;p&gt;Ter que colar esse código toda vez que o computador reiniciasse ou que eu precisasse desfazer o remapeamento para usar o teclado nativo do Macbook não me pareceu ideal.&lt;/p&gt;
+&lt;p&gt;O próprio Gabriel dá o caminho das pedras: usar o Automator para configurar um atalho. Eu não reproduzi a ideia dele, mas acho que a minha solução ficou ótima para o meu caso:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abri o &lt;strong&gt;Automator&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Escolhi o tipo &amp;quot;Aplicativo&amp;quot;;&lt;/li&gt;
+&lt;li&gt;No painel da esquerda, pesquisei por &lt;strong&gt;“Executar Script Shell”&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;Na caixa de script que se abriu, colei o código abaixo (ele está ligeiramente modificado em relação à versão acima porque adicionei uma notificação para me certificar que rodou):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/zsh
+
+CURRENT_MAPPING=$(hidutil property --get &amp;quot;UserKeyMapping&amp;quot;)
+
+if [[ $CURRENT_MAPPING == *&amp;quot;HIDKeyboardModifierMappingDst&amp;quot;* ]]; then
+    hidutil property --set &#39;{&amp;quot;UserKeyMapping&amp;quot;:[]}&#39;
+    osascript -e &#39;display notification &amp;quot;Remapeamento desativado&amp;quot; with title &amp;quot;Remap&amp;quot;&#39;
+else
+    hidutil property --set &#39;{&amp;quot;UserKeyMapping&amp;quot;:[{&amp;quot;HIDKeyboardModifierMappingSrc&amp;quot;:0x700000064,&amp;quot;HIDKeyboardModifierMappingDst&amp;quot;:0x700000035},{&amp;quot;HIDKeyboardModifierMappingSrc&amp;quot;:0x700000035,&amp;quot;HIDKeyboardModifierMappingDst&amp;quot;:0x700000064}]}&#39;
+    osascript -e &#39;display notification &amp;quot;Remapeamento ativado&amp;quot; with title &amp;quot;Remap&amp;quot;&#39;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Salvei o app resultante na minha pasta de Documentos como &lt;code&gt;RemapTeclas.app&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;Sempre que preciso alternar esse mapeamento, seja por que vou usar o notebook sem o teclado externo ou por que reiniciei o computador, abro esse arquivo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pensei em ver alguma forma de colocar esse app na barra de menus, mas deixei pra lá por enquanto. Parece que tem como fazer usando algo como &lt;a href=&quot;https://xbarapp.com/&quot;&gt;xbar&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ah, e dá para adaptar o script para remapear outras teclas. &lt;a href=&quot;https://hidutil-generator.netlify.app/&quot;&gt;Esse site&lt;/a&gt; te ajuda a pegar os códigos.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>A saga para transferir mensagens do WhatsApp do Android para um iPhone</title>
       <link href="https://alessandrofajr.com/blog/transferindo-mensagens-whatsapp-android-ios/"/>
