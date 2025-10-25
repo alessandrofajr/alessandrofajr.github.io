@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu setup no terminal zsh</title>
+  <link rel="canonical" href="/blog/setup-zsh/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Meu setup no terminal zsh" />
+  <meta property="og:url" content="/blog/setup-zsh/" />
+  <meta property="og:image" content="/img/cover.webp" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Meu setup no terminal zsh</h1>
+        
+          <p class="post-date">2025-10-25</p>
+        
+        <div class="blog-content">
+          <p>Sessões de pair coding quase sempre rendem muitos frutos, desde o entendimento de um modo de resolver determinado problema a pequenas utilidades do dia a dia.</p>
+<p>Num dia desses, por exemplo, notei que o Terminal do meu colega <a href="https://www.linkedin.com/in/andre-martins-3a9520201/">André Martins</a> tinha funções interessantes, como um autocompletar bem esperto.</p>
+<p>Foi assim que descobri da existência do <a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh</a>, um framework para o terminal <strong>zsh</strong>. Aqui, um registro da minha configuração atual:</p>
+<ol>
+<li>
+<p>No Mac, o zsh costuma vir como o terminal padrão, mas no Linux talvez seja necessário <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">instalá-lo</a>;</p>
+</li>
+<li>
+<p>Com o zsh já configurado, instalei o Oh My Zsh:</p>
+<pre><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+</code></pre>
+</li>
+<li>
+<p>Depois, baixei quatro plugins, responsáveis pela mágica do autocompletar e outras facilidades:</p>
+<ul>
+<li><a href="https://github.com/zsh-users/zsh-autosuggestions">autosuggesions plugin</a></li>
+</ul>
+<p><code>git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions</code></p>
+<ul>
+<li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting plugin</a></li>
+</ul>
+<p><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code></p>
+<ul>
+<li><a href="https://dev.to/zeromeroz/(https://github.com/zdharma/fast-syntax-highlighting)">zsh-fast-syntax-highlighting plugin</a></li>
+</ul>
+<p><code>git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting</code></p>
+<ul>
+<li><a href="https://github.com/marlonrichert/zsh-autocomplete">zsh-autocomplete plugin</a></li>
+</ul>
+<p><code>git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete</code></p>
+</li>
+<li>
+<p>Depois de baixados, é hora de incluí-los no arquivo de configuração, rodando <code>nano ~/.zshrc</code> e editando a seção de plugins:</p>
+</li>
+</ol>
+<pre><code>plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-autocomplete
+ )
+</code></pre>
+<ol start="5">
+<li>Pra deixar tudo funcionando, basta reinicar o ambiente com <code>source ~/.zshrc</code></li>
+</ol>
+
+        </div>
+        
+        <div class="post-footer">
+          <div class="human-content">{ texto 100% escrito por um humano }</div>
+          <a href="mailto:alessandrofajr@protonmail.com?subject=Meu setup no terminal zsh"><button class="button-email">@ responda por email @</button></a>
+        </div>  
+
+        <div class="breaker"></div>
+        <div class="cta-newsletter">
+          Receba, no máximo uma vez por semana, os últimos posts e uma lista de <a href="/links" class="newsletter-link">links interessantes</a>:
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/alessandrofajr"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.com/alessandrofajr', 'popupwindow')"
+          >
+            <input class="field-email" type="email" name="email" placeholder="Insira o seu email"/>
+            <input class="button-email" type="submit" value="assinar" />
+          </form>
+        </div> 
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/newsletter/">newsletter</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feeds/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</body>
+</html>

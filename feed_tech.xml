@@ -4,11 +4,64 @@
   <subtitle>posts técnicos</subtitle>
   <link href="https://alessandrofajr.com/feed_tech.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2025-10-14T00:00:00Z</updated>
+  <updated>2025-10-25T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+    <entry>
+      <title>Meu setup no terminal zsh</title>
+      <link href="https://alessandrofajr.com/blog/setup-zsh/"/>
+      <updated>2025-10-25T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/setup-zsh/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;Sessões de pair coding quase sempre rendem muitos frutos, desde o entendimento de um modo de resolver determinado problema a pequenas utilidades do dia a dia.&lt;/p&gt;
+&lt;p&gt;Num dia desses, por exemplo, notei que o Terminal do meu colega &lt;a href=&quot;https://www.linkedin.com/in/andre-martins-3a9520201/&quot;&gt;André Martins&lt;/a&gt; tinha funções interessantes, como um autocompletar bem esperto.&lt;/p&gt;
+&lt;p&gt;Foi assim que descobri da existência do &lt;a href=&quot;https://github.com/ohmyzsh/ohmyzsh&quot;&gt;Oh My Zsh&lt;/a&gt;, um framework para o terminal &lt;strong&gt;zsh&lt;/strong&gt;. Aqui, um registro da minha configuração atual:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;No Mac, o zsh costuma vir como o terminal padrão, mas no Linux talvez seja necessário &lt;a href=&quot;https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH&quot;&gt;instalá-lo&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Com o zsh já configurado, instalei o Oh My Zsh:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Depois, baixei quatro plugins, responsáveis pela mágica do autocompletar e outras facilidades:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zsh-users/zsh-autosuggestions&quot;&gt;autosuggesions plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zsh-users/zsh-syntax-highlighting&quot;&gt;zsh-syntax-highlighting plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.to/zeromeroz/(https://github.com/zdharma/fast-syntax-highlighting)&quot;&gt;zsh-fast-syntax-highlighting plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/marlonrichert/zsh-autocomplete&quot;&gt;zsh-autocomplete plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Depois de baixados, é hora de incluí-los no arquivo de configuração, rodando &lt;code&gt;nano ~/.zshrc&lt;/code&gt; e editando a seção de plugins:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
+  zsh-autocomplete
+ )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Pra deixar tudo funcionando, basta reinicar o ambiente com &lt;code&gt;source ~/.zshrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    </entry>
     <entry>
       <title>Como eu fiz o teclado Logitech parar de trocar os acentos ` e ~ por § e ± no Mac</title>
       <link href="https://alessandrofajr.com/blog/teclado-logitech-mac/"/>
