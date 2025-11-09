@@ -2,6 +2,15 @@
 <html lang="pt-br">
 <head>
   {% include "partials/head.njk" %}
+  
+  <!-- Expose JSON data to client-side JavaScript -->
+  <script>
+    // Make quotes and links data available globally before other scripts load
+    window.SITE_DATA = {
+      quotes: {{ quotes | dump | safe }},
+      links: {{ links | dump | safe }}
+    };
+  </script>
 </head>
   <body>
     <div class="wrapper">
@@ -12,6 +21,10 @@
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}
+    
+    <script src="/js/daily-content-manager.js"></script>
+    <script src="/js/daily-components.js"></script>
+    <script src="/js/homepage-init.js"></script>
   </body>
 </div> 
 </html>
