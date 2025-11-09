@@ -1,6 +1,7 @@
 ---
 layout: default
 title: citações
+templateEngineOverride: njk,md
 pagination:
   data: collections.quotes
   size: 15
