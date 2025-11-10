@@ -10,14 +10,19 @@
     </header>
     <main>
         <div class="quotes">
-            {{ quote.quote }} ― <b>{{ quote.author }}</b>. 
+            "{{ quote.quote }}" ― <b>{{ quote.author }}</b>. 
             <div class="quote-source">{{ quote.source }}</div>
             <div class="quote-date">Adicionado em {{ quote.date }}</div>
         </div>
+        {% if quote.additionalQuotes and quote.additionalQuotes.length > 0 %}
         <div class="breaker"></div>
         <div class="quote-content">
-          {{ quote.thoughts | safe }}
+          {% for item in quote.additionalQuotes %}
+            <p>"{{ item.quote }}"</p>
+            <div class="breaker"></div>
+          {% endfor %}
         </div>
+        {% endif %}
     </main>
     {% include "partials/footer.njk" %}
   </div>
