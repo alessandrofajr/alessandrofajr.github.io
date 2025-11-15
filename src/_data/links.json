@@ -1,5 +1,37 @@
 [
   {
+    "title": "Context7 - Up-to-date documentation for LLMs and AI code editors",
+    "link": "https://context7.com/",
+    "date":"2025-11-12",
+    "tags": ["tech"],
+    "notes": "MCP para fornecer a documentação de linguagens de programação, frameworks e bibliotecas para LLMs.",
+    "favorite": false
+  },
+  {
+    "title": "Salário Transparente",
+    "link": "https://salariotransparente.com.br/",
+    "date":"2025-11-11",
+    "tags": ["tech"],
+    "notes": "Uma iniciativa nacional de transparência de salários, à la Glassdoor – mas sem toda a chatice o paywall da plataforma dos EUA.",
+    "favorite": false
+  },
+  {
+    "title": "The 'Toy Story' You Remember",
+    "link": "https://animationobsessive.substack.com/p/the-toy-story-you-remember",
+    "date":"2025-11-11",
+    "tags": ["personal"],
+    "notes": "As versões das animações da Disney/Pixar que vemos digitalizada hoje tem cores muito diferentes daquelas que estavam nos rolos dos filmes originais. Na época da produção, os criadores sabiam que precisavam fazer alguns ajustes a exibição nos cinemas – então, o que vemos digitalizado hoje não é necessariamente a forma como os filmes foram imaginados.",
+    "favorite": false
+  },
+  {
+    "title": "Board",
+    "link": "https://board.fun/",
+    "date":"2025-11-10",
+    "tags": ["personal"],
+    "notes": "Uma proposta híbrida entre um tabuleiro convencional e um videogame.",
+    "favorite": false
+  },
+  {
     "title": "Math for journalists",
     "link": "https://observablehq.com/@nshiab/math-for-journalists",
     "date":"2025-11-06",
