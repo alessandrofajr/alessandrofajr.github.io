@@ -14,7 +14,17 @@ class DailyContentManager {
    */
   getDailyQuote() {
     const brazilianDate = this.getBrazilianDate();
-    return this.selectRandomItem(this.quotesData, this.generateSeed(brazilianDate));
+    const seed = this.generateSeed(brazilianDate);
+  
+    const selectedQuoteObj = this.selectRandomItem(this.quotesData, seed);
+    if (!selectedQuoteObj) return null;
+  
+    const innerQuote = this.selectInnerQuote(selectedQuoteObj, seed);
+  
+    return {
+      ...selectedQuoteObj,
+      selectedQuote: innerQuote
+    };
   }
 
   /**
@@ -66,6 +76,37 @@ class DailyContentManager {
     
     const index = seed % items.length;
     return items[index];
+  }
+  /**
+   * Selects either the main quote or one of its additionalQuotes
+   * using a deterministic inner seed
+   * @param {Object} quoteObj
+   * @param {number} seed
+   * @returns {string} The selected quote text
+   */
+  selectInnerQuote(quoteObj, seed) {
+    const pool = [];
+
+    // Always include main quote
+    if (quoteObj.quote) {
+      pool.push(quoteObj.quote);
+    }
+
+    // Include additional quotes if present
+    if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
+      for (const aq of quoteObj.additionalQuotes) {
+        if (aq && aq.quote) {
+          pool.push(aq.quote);
+        }
+      }
+    }
+
+    // Create a stable inner seed
+    const idComponent = quoteObj.id ? Number(quoteObj.id) : 0;
+    const innerSeed = (seed * 31 + idComponent) >>> 0;
+
+    const index = innerSeed % pool.length;
+    return pool[index];
   }
 }
 
