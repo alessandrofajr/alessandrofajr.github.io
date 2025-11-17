@@ -1,6 +1,6 @@
 /**
- * DailyContentManager - Core class for managing daily content selection
- * Handles Brazilian timezone calculations and deterministic random selection
+ * DailyContentManager - Classe principal para gerenciar a seleção diária de conteúdo
+ * Lida com cálculos de fuso horário brasileiro e seleção aleatória determinística
  */
 class DailyContentManager {
   constructor(quotesData, linksData) {
@@ -9,8 +9,8 @@ class DailyContentManager {
   }
 
   /**
-   * Get daily quote for the current Brazilian date
-   * @returns {Object|null} Selected quote object or null if no data
+   * Obtém a citação diária para a data atual no Brasil
+   * @returns {Object|null} Objeto da citação selecionada ou null se não houver dados
    */
   getDailyQuote() {
     const brazilianDate = this.getBrazilianDate();
@@ -28,8 +28,8 @@ class DailyContentManager {
   }
 
   /**
-   * Get daily link for the current Brazilian date
-   * @returns {Object|null} Selected link object or null if no data
+   * Obtém o link diário para a data atual no Brasil
+   * @returns {Object|null} Objeto do link selecionado ou null se não houver dados
    */
   getDailyLink() {
     const brazilianDate = this.getBrazilianDate();
@@ -37,62 +37,62 @@ class DailyContentManager {
   }
 
   /**
-   * Calculate current date in Brazilian timezone (GMT-3)
-   * @returns {Date} Date object adjusted for Brazilian timezone
+   * Calcula a data atual no fuso horário brasileiro (GMT-3)
+   * @returns {Date} Objeto Date ajustado para o fuso horário do Brasil
    */
   getBrazilianDate() {
-    const now = new Date();
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const brazilianTime = new Date(utc + (-3 * 3600000)); // GMT-3
+    const now = new Date();  // Pega data/hora do computador
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);  // Converte para UTC (hora mundial)
+    const brazilianTime = new Date(utc + (-3 * 3600000));  // Ajusta para GMT-3 (Brasil)
     return brazilianTime;
   }
 
   /**
-   * Generate deterministic seed based on date
-   * @param {Date} date - Date to generate seed from
-   * @returns {number} Numeric seed for random selection
+   * Gera uma seed determinística baseada na data
+   * @param {Date} date - Data usada para gerar a seed
+   * @returns {number} Seed numérica para seleção aleatória
    */
   generateSeed(date) {
     const dateString = date.toISOString().split('T')[0]; // YYYY-MM-DD format
     let hash = 0;
     for (let i = 0; i < dateString.length; i++) {
-      const char = dateString.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash; // Convert to 32-bit integer
+      const char = dateString.charCodeAt(i);  // Pega código numérico de cada caractere
+      hash = ((hash << 5) - hash) + char;     // Fórmula matemática que mistura tudo
+      hash = hash & hash;                     // Garante que seja um número de 32 bits
     }
-    return Math.abs(hash);
-  }
+    return Math.abs(hash);  // Retorna número positivo
+}
 
   /**
-   * Select random item from array using deterministic seed
-   * @param {Array} items - Array of items to select from
-   * @param {number} seed - Seed for deterministic selection
-   * @returns {Object|null} Selected item or null if array is empty
+   * Seleciona um item aleatório do array usando uma seed determinística
+   * @param {Array} items - Array de itens para selecionar
+   * @param {number} seed - Seed para seleção determinística
+   * @returns {Object|null} Item selecionado ou null se o array estiver vazio
    */
   selectRandomItem(items, seed) {
     if (!Array.isArray(items) || items.length === 0) {
-      return null;
+      return null;  // Se não tem itens, retorna nada
     }
     
-    const index = seed % items.length;
+    const index = seed % items.length;  // Operação módulo (%)
     return items[index];
   }
   /**
-   * Selects either the main quote or one of its additionalQuotes
-   * using a deterministic inner seed
+   * Seleciona a citação principal ou uma das additionalQuotes
+   * usando uma seed interna determinística
    * @param {Object} quoteObj
    * @param {number} seed
-   * @returns {string} The selected quote text
+   * @returns {string} O texto da citação selecionada
    */
   selectInnerQuote(quoteObj, seed) {
     const pool = [];
 
-    // Always include main quote
+    // Inclui sempre a citação principal
     if (quoteObj.quote) {
       pool.push(quoteObj.quote);
     }
 
-    // Include additional quotes if present
+    // Tenta colocar citações adicionais, se estiverem presentes
     if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
       for (const aq of quoteObj.additionalQuotes) {
         if (aq && aq.quote) {
@@ -101,16 +101,16 @@ class DailyContentManager {
       }
     }
 
-    // Create a stable inner seed
+    // Cria uma seed interna
     const idComponent = quoteObj.id ? Number(quoteObj.id) : 0;
-    const innerSeed = (seed * 31 + idComponent) >>> 0;
+    const innerSeed = Math.abs((seed * 7919 + idComponent * 104729) ^ (seed >>> 16)); 
 
     const index = innerSeed % pool.length;
     return pool[index];
   }
 }
 
-// Export for both CommonJS and ES modules
+// Exporta para CommonJS e ES modules
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = DailyContentManager;
 } else if (typeof window !== 'undefined') {
