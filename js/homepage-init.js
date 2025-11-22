@@ -1,12 +1,12 @@
 /**
- * Homepage Initialization - Initialize daily components on homepage
+ * Inicialização da Homepage - Inicializa os componentes diários na homepage
  */
 
 /**
- * Initialize daily components when DOM is ready
+ * Inicializa os componentes diários quando o DOM estiver pronto
  */
 function initializeDailyComponents() {
-  // Wait for DOM to be ready
+  // Aguarda o DOM estar pronto
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initComponents);
   } else {
@@ -15,48 +15,48 @@ function initializeDailyComponents() {
 }
 
 /**
- * Initialize the components
+ * Inicializa os componentes
  */
 function initComponents() {
   try {
-    // Check if we have the required data and classes
+    // Verifica se os dados e classes necessários foram carregados
     if (typeof window.SITE_DATA === 'undefined' || 
         !window.SITE_DATA.quotes || 
         !window.SITE_DATA.links ||
         typeof window.DailyContentManager === 'undefined' ||
         typeof window.DailyQuoteComponent === 'undefined' ||
         typeof window.DailyLinkComponent === 'undefined') {
-      console.error('Daily components: Required dependencies not loaded');
+      console.error('Componentes diários: dependências necessárias não foram carregadas');
       return;
     }
 
-    // Find containers
+    // Encontra os contêineres
     const quoteContainer = document.getElementById('daily-quote-container');
     const linkContainer = document.getElementById('daily-link-container');
 
     if (!quoteContainer || !linkContainer) {
-      console.error('Daily components: Required containers not found');
+      console.error('Componentes diários: contêineres necessários não encontrados');
       return;
     }
 
-    // Initialize content manager
+    // Inicializa o gerenciador de conteúdo
     const contentManager = new window.DailyContentManager(
       window.SITE_DATA.quotes,
       window.SITE_DATA.links
     );
 
-    // Initialize and render components
+    // Inicializa e renderiza os componentes
     const quoteComponent = new window.DailyQuoteComponent(quoteContainer, contentManager);
     const linkComponent = new window.DailyLinkComponent(linkContainer, contentManager);
 
     quoteComponent.render();
     linkComponent.render();
 
-    console.log('Daily components initialized successfully');
+    console.log('Componentes diários inicializados com sucesso');
   } catch (error) {
-    console.error('Error initializing daily components:', error);
+    console.error('Erro ao inicializar os componentes diários:', error);
   }
 }
 
-// Auto-initialize when script loads
+// Inicializa automaticamente quando o script carregar
 initializeDailyComponents();
