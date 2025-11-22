@@ -1,9 +1,9 @@
 /**
- * Daily Components - UI components for rendering daily quote and link
+ * Daily Components - Componentes de UI para renderizar a citação e o link do dia
  */
 
 /**
- * DailyQuoteComponent - Handles rendering of daily quote
+ * DailyQuoteComponent - Responsável por renderizar a citação do dia
  */
 class DailyQuoteComponent {
   constructor(container, contentManager) {
@@ -12,7 +12,7 @@ class DailyQuoteComponent {
   }
 
   /**
-   * Render the daily quote component
+   * Renderiza o componente de citação do dia
    */
   render() {
     try {
@@ -26,19 +26,19 @@ class DailyQuoteComponent {
       const html = this.generateQuoteHTML(quote);
       this.container.innerHTML = html;
     } catch (error) {
-      console.error('Error rendering daily quote:', error);
+      console.error('Erro ao renderizar a citação do dia:', error);
       this.renderFallback('Erro ao carregar citação');
     }
   }
 
   /**
-   * Generate HTML for quote display
-   * @param {Object} quote - Quote object from data
-   * @returns {string} HTML string for quote
+   * Gera o HTML para exibir a citação
+   * @param {Object} quote - Objeto da citação vindo dos dados
+   * @returns {string} HTML da citação
    */
   generateQuoteHTML(quote) {
     const quoteUrl = this.generateQuoteURL(quote);
-    const quoteText = this.escapeHtml(quote.quote || 'Citação não disponível');
+    const quoteText = this.escapeHtml(quote.selectedQuote || 'Citação não disponível'); 
     const author = quote.author ? this.escapeHtml(quote.author) : '';
     
     return `
@@ -53,34 +53,34 @@ class DailyQuoteComponent {
   }
 
   /**
-   * Generate URL for quote page
-   * @param {Object} quote - Quote object
-   * @returns {string} URL path to quote page
+   * Gera a URL para a página da citação
+   * @param {Object} quote - Objeto da citação
+   * @returns {string} Caminho da URL para a página da citação
    */
   generateQuoteURL(quote) {
     if (!quote.title) return '/quotes/';
     
-    // Improved slugify logic to match 11ty behavior
+    // Lógica de slugify aprimorada para combinar com o comportamento do 11ty
     const slug = quote.title
       .toLowerCase()
-      // Normalize accented characters
+      // Normaliza caracteres acentuados
       .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
-      // Replace em dashes and en dashes with regular hyphens
+      .replace(/[\u0300-\u036f]/g, '') // Remove diacríticos
+      // Substitui travessões/em-dashes por hífens
       .replace(/[–—]/g, '-')
-      // Remove special characters but keep letters, numbers, spaces, and hyphens
+      // Remove caracteres especiais, mantendo letras, números, espaços e hífens
       .replace(/[^a-z0-9\s-]/g, '')
-      // Replace multiple spaces/hyphens with single hyphen
+      // Substitui múltiplos espaços/hífens por um único hífen
       .replace(/[\s-]+/g, '-')
-      // Remove leading/trailing hyphens
+      // Remove hífens no começo/fim
       .replace(/^-+|-+$/g, '');
     
     return `/quotes/${slug}`;
   }
 
   /**
-   * Render fallback message
-   * @param {string} message - Fallback message to display
+   * Renderiza mensagem de fallback
+   * @param {string} message - Mensagem a ser exibida
    */
   renderFallback(message) {
     this.container.innerHTML = `
@@ -92,9 +92,9 @@ class DailyQuoteComponent {
   }
 
   /**
-   * Escape HTML to prevent XSS
-   * @param {string} text - Text to escape
-   * @returns {string} Escaped text
+   * Faz escape de HTML para evitar XSS
+   * @param {string} text - Texto a ser tratado
+   * @returns {string} Texto com escape aplicado
    */
   escapeHtml(text) {
     const div = document.createElement('div');
@@ -104,7 +104,7 @@ class DailyQuoteComponent {
 }
 
 /**
- * DailyLinkComponent - Handles rendering of daily link
+ * DailyLinkComponent - Responsável por renderizar o link do dia
  */
 class DailyLinkComponent {
   constructor(container, contentManager) {
@@ -113,7 +113,7 @@ class DailyLinkComponent {
   }
 
   /**
-   * Render the daily link component
+   * Renderiza o componente de link do dia
    */
   render() {
     try {
@@ -127,15 +127,15 @@ class DailyLinkComponent {
       const html = this.generateLinkHTML(link);
       this.container.innerHTML = html;
     } catch (error) {
-      console.error('Error rendering daily link:', error);
+      console.error('Erro ao renderizar o link do dia:', error);
       this.renderFallback('Erro ao carregar link');
     }
   }
 
   /**
-   * Generate HTML for link display
-   * @param {Object} link - Link object from data
-   * @returns {string} HTML string for link
+   * Gera o HTML para exibir o link
+   * @param {Object} link - Objeto do link vindo dos dados
+   * @returns {string} HTML do link
    */
   generateLinkHTML(link) {
     const title = this.escapeHtml(link.title || 'Sem título');
@@ -157,8 +157,8 @@ class DailyLinkComponent {
   }
 
   /**
-   * Render fallback message
-   * @param {string} message - Fallback message to display
+   * Renderiza mensagem de fallback
+   * @param {string} message - Mensagem a ser exibida
    */
   renderFallback(message) {
     this.container.innerHTML = `
@@ -170,9 +170,9 @@ class DailyLinkComponent {
   }
 
   /**
-   * Escape HTML to prevent XSS
-   * @param {string} text - Text to escape
-   * @returns {string} Escaped text
+   * Faz escape de HTML para evitar XSS
+   * @param {string} text - Texto a ser tratado
+   * @returns {string} Texto com escape aplicado
    */
   escapeHtml(text) {
     const div = document.createElement('div');
@@ -181,7 +181,7 @@ class DailyLinkComponent {
   }
 }
 
-// Export for both CommonJS and ES modules
+// Exporta para CommonJS e ES modules
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { DailyQuoteComponent, DailyLinkComponent };
 } else if (typeof window !== 'undefined') {
