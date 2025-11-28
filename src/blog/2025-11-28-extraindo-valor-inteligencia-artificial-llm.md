@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Usando a IA como ajudante, não como substituta
-permalink: /blog/extraindo-valor-inteligencia-artificial-llm
+permalink: /blog/extraindo-valor-inteligencia-artificial-llm/
 date: 2025-11-28
 updated: 2025-11-28
 tags: 
