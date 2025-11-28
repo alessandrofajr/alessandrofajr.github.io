@@ -4,11 +4,33 @@
   <subtitle>posts técnicos</subtitle>
   <link href="https://alessandrofajr.com/feed_tech.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2025-10-25T00:00:00Z</updated>
+  <updated>2025-11-28T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+    <entry>
+      <title>Usando a IA como ajudante, não como substituta</title>
+      <link href="https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm"/>
+      <updated>2025-11-28T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;O hype da inteligência artificial é inescapável, especialmente para quem trabalha com tecnologia: novos modelos saindo a cada mês, soluções de agentes aqui e acolá, guias de uso… Correndo o risco de alimentar ainda mais a pilha de textos sobre o tema, aqui vai uma perspectiva para tirar proveito da tecnologia com mais intencionalidade e sem cair na espiral de achar que a IA vai assumir tudo amanhã de manhã.&lt;/p&gt;
+&lt;p&gt;Desde que coloquei esse site no ar, planejava adicionar um recurso para mostrar uma citação e um link do dia. Com uma massa de dados mais completa para colocar isso em prática, decidi acelerar o desenvolvimento usando IA e optei por testar o &lt;a href=&quot;https://kiro.dev/&quot;&gt;Kiro&lt;/a&gt;, a IDE baseada em agentes da Amazon.&lt;/p&gt;
+&lt;p&gt;Depois de ler o &lt;a href=&quot;https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html&quot;&gt;artigo da Birgitta Böckeler sobre Spec-Driven-Development&lt;/a&gt;, fiquei curioso para colocar a mão na massa (ou melhor, deixar com que a ferramenta colocasse a mão na massa por mim).&lt;/p&gt;
+&lt;p&gt;Mandei o meu prompt e a IDE começou a me explicar seu plano, primeiro com um arquivo &lt;code&gt;design.md&lt;/code&gt; onde montou um resumo do que seria desenvolvido, como seria feito e até um diagrama da arquitetura planejada. Em seguida, gerou um &lt;code&gt;requirements.md&lt;/code&gt; com os requisitos de desenvolvimento. Por fim, criou um &lt;code&gt;tasks.md&lt;/code&gt; decompondo o que precisaria ser feito.&lt;/p&gt;
+&lt;p&gt;Tudo o que eu fiz foi enviar esses 533 caracteres:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Meu site pessoal possui uma seção de links e outra de citações. Essas seções são alimentadas por dois arquivos separados: &amp;quot;src/_data/links.json&amp;quot; e &amp;quot;src/_data/quotes.json&amp;quot;. Quero adicionar, na página inicial, dois componentes: Citação do Dia e Link do Dia. A ideia é obter, a partir desses arquivos JSON, uma entrada aleatória e exibir na página inicial em caixas separadas. Quero usar uma abordagem client-side, uma vez que o meu site é estático, e realizar a atualização meia-noite no horário de Brasília sem precisar de um rebuild.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Em menos de uma hora e meia, eu tinha na versão local do meu site o que eu queria. Precisei adaptar trechos do código que estavam levando para links inexistentes e fazer ajustes visuais, mas intervi muito pouco.&lt;/p&gt;
+&lt;p&gt;E é aqui que a coisa ganha contorno para mim: não fiquei satisfeito com a ideia de simplesmente implementar o código que me foi entregue, porque vi ali a possibilidade de aprender.&lt;/p&gt;
+&lt;p&gt;Por exemplo: para fazer a seleção do link e da citação do dia, a IA usou o que chamou de &amp;quot;seleção aleatória determinística&amp;quot; para que o mesmo link e a mesma citação aparecessem para qualquer pessoa que acessasse o site e que as seleções permanecessem inalteradas durante todo o dia – afinal, eu não tenho um banco de dados para armazenar e persistir um valor.&lt;/p&gt;
+&lt;p&gt;O nome da técnica que a LLM cuspiu é, na verdade, relacionado com &lt;a href=&quot;https://en.wikipedia.org/wiki/Pseudorandom_number_generator&quot;&gt;geradores de números pseudo-aleatórios&lt;/a&gt; (PRNGs, na sigla em inglês).&lt;/p&gt;
+&lt;p&gt;Desconhecia esse algoritmo, como ela funcionava e em quais casos era aplicado. Comecei perguntando em LLMs sobre a implementação e aprofundei minha pesquisa para validar o que foi exposto. Descobri que jogos utilizam essa técnica para gerar comportamentos aleatórios de inimigos ou NPCs e que é central na criptografia. Interessante!&lt;/p&gt;
+&lt;p&gt;Investigando com mais profundidade o que a IA está sugerindo ou implementando, posso aumentar o meu repertório. Pode custar um pouco de velocidade, mas alavanca o aprendizado. Inclusive, a partir desse entendimento, consegui encontrar um bug na implementação.&lt;/p&gt;
+&lt;p&gt;A curiosidade tem um papel fundamental para enxergar essas ferramentas como ajudantes, não como  substitutas para o que fazemos – e aposto nesse caminho para navegar essa nova era. Ressoa muito com a ideia de &lt;a href=&quot;https://frankchimero.com/blog/2025/beyond-the-machine/&quot;&gt;trabalhar ao lado da IA e não embaixo dela&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Meu setup no terminal zsh</title>
       <link href="https://alessandrofajr.com/blog/setup-zsh/"/>

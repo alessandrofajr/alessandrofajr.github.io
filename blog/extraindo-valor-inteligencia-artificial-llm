@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usando a IA como ajudante, não como substituta</title>
+  <link rel="canonical" href="/blog/extraindo-valor-inteligencia-artificial-llm" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.svg" sizes="any">
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Usando a IA como ajudante, não como substituta" />
+  <meta property="og:url" content="/blog/extraindo-valor-inteligencia-artificial-llm" />
+  <meta property="og:image" content="/img/cover.webp" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e3212855-fce7-4e93-ad26-5ccec62a253b"></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="header-title"><a href="/">alessandro feitosa jr.</a> / <a href="/blog">blog</a></h1>
+    </header>
+    <main>
+        <h1 class="post-title">Usando a IA como ajudante, não como substituta</h1>
+        
+          <p class="post-date">2025-11-28</p>
+        
+        <div class="blog-content">
+          <p>O hype da inteligência artificial é inescapável, especialmente para quem trabalha com tecnologia: novos modelos saindo a cada mês, soluções de agentes aqui e acolá, guias de uso… Correndo o risco de alimentar ainda mais a pilha de textos sobre o tema, aqui vai uma perspectiva para tirar proveito da tecnologia com mais intencionalidade e sem cair na espiral de achar que a IA vai assumir tudo amanhã de manhã.</p>
+<p>Desde que coloquei esse site no ar, planejava adicionar um recurso para mostrar uma citação e um link do dia. Com uma massa de dados mais completa para colocar isso em prática, decidi acelerar o desenvolvimento usando IA e optei por testar o <a href="https://kiro.dev/">Kiro</a>, a IDE baseada em agentes da Amazon.</p>
+<p>Depois de ler o <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">artigo da Birgitta Böckeler sobre Spec-Driven-Development</a>, fiquei curioso para colocar a mão na massa (ou melhor, deixar com que a ferramenta colocasse a mão na massa por mim).</p>
+<p>Mandei o meu prompt e a IDE começou a me explicar seu plano, primeiro com um arquivo <code>design.md</code> onde montou um resumo do que seria desenvolvido, como seria feito e até um diagrama da arquitetura planejada. Em seguida, gerou um <code>requirements.md</code> com os requisitos de desenvolvimento. Por fim, criou um <code>tasks.md</code> decompondo o que precisaria ser feito.</p>
+<p>Tudo o que eu fiz foi enviar esses 533 caracteres:</p>
+<blockquote>
+<p>Meu site pessoal possui uma seção de links e outra de citações. Essas seções são alimentadas por dois arquivos separados: &quot;src/_data/links.json&quot; e &quot;src/_data/quotes.json&quot;. Quero adicionar, na página inicial, dois componentes: Citação do Dia e Link do Dia. A ideia é obter, a partir desses arquivos JSON, uma entrada aleatória e exibir na página inicial em caixas separadas. Quero usar uma abordagem client-side, uma vez que o meu site é estático, e realizar a atualização meia-noite no horário de Brasília sem precisar de um rebuild.</p>
+</blockquote>
+<p>Em menos de uma hora e meia, eu tinha na versão local do meu site o que eu queria. Precisei adaptar trechos do código que estavam levando para links inexistentes e fazer ajustes visuais, mas intervi muito pouco.</p>
+<p>E é aqui que a coisa ganha contorno para mim: não fiquei satisfeito com a ideia de simplesmente implementar o código que me foi entregue, porque vi ali a possibilidade de aprender.</p>
+<p>Por exemplo: para fazer a seleção do link e da citação do dia, a IA usou o que chamou de &quot;seleção aleatória determinística&quot; para que o mesmo link e a mesma citação aparecessem para qualquer pessoa que acessasse o site e que as seleções permanecessem inalteradas durante todo o dia – afinal, eu não tenho um banco de dados para armazenar e persistir um valor.</p>
+<p>O nome da técnica que a LLM cuspiu é, na verdade, relacionado com <a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">geradores de números pseudo-aleatórios</a> (PRNGs, na sigla em inglês).</p>
+<p>Desconhecia esse algoritmo, como ela funcionava e em quais casos era aplicado. Comecei perguntando em LLMs sobre a implementação e aprofundei minha pesquisa para validar o que foi exposto. Descobri que jogos utilizam essa técnica para gerar comportamentos aleatórios de inimigos ou NPCs e que é central na criptografia. Interessante!</p>
+<p>Investigando com mais profundidade o que a IA está sugerindo ou implementando, posso aumentar o meu repertório. Pode custar um pouco de velocidade, mas alavanca o aprendizado. Inclusive, a partir desse entendimento, consegui encontrar um bug na implementação.</p>
+<p>A curiosidade tem um papel fundamental para enxergar essas ferramentas como ajudantes, não como  substitutas para o que fazemos – e aposto nesse caminho para navegar essa nova era. Ressoa muito com a ideia de <a href="https://frankchimero.com/blog/2025/beyond-the-machine/">trabalhar ao lado da IA e não embaixo dela</a>.</p>
+
+        </div>
+        
+        <div class="post-footer">
+          <div class="human-content">{ texto 100% escrito por um humano }</div>
+          <a href="mailto:alessandrofajr@protonmail.com?subject=Usando a IA como ajudante, não como substituta"><button class="button-email">@ responda por email @</button></a>
+        </div>  
+
+        <div class="breaker"></div>
+        <div class="cta-newsletter">
+          Receba, no máximo uma vez por semana, os últimos posts e uma lista de <a href="/links" class="newsletter-link">links interessantes</a>:
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/alessandrofajr"
+            method="post"
+            target="popupwindow"
+            onsubmit="window.open('https://buttondown.com/alessandrofajr', 'popupwindow')"
+          >
+            <input class="field-email" type="email" name="email" placeholder="Insira o seu email"/>
+            <input class="button-email" type="submit" value="assinar" />
+          </form>
+        </div> 
+    </main>
+    <footer class="site-footer">
+  <nav class="footer-links">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/">blog</a></li>
+      <li><a href="/links/">links</a></li>
+      <li><a href="/quotes/">citações</a></li>
+      <li><a href="/newsletter/">newsletter</a></li>
+      <li><a href="/about/">sobre</a></li>
+      <li><a href="/feeds/">rss</a></li>
+    </ul>
+  </nav>
+</footer>
+
+  </div>
+</body>
+</html>
