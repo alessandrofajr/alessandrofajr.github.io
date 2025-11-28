@@ -11,9 +11,9 @@
   </author>
   <entry>
     <title>Usando a IA como ajudante, não como substituta</title>
-    <link href="https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm"/>
+    <link href="https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm/"/>
     <updated>2025-11-28T00:00:00Z</updated>
-    <id>https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm</id>
+    <id>https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm/</id>
     <content xml:lang="pt-br" type="html">&lt;p&gt;O hype da inteligência artificial é inescapável, especialmente para quem trabalha com tecnologia: novos modelos saindo a cada mês, soluções de agentes aqui e acolá, guias de uso… Correndo o risco de alimentar ainda mais a pilha de textos sobre o tema, aqui vai uma perspectiva para tirar proveito da tecnologia com mais intencionalidade e sem cair na espiral de achar que a IA vai assumir tudo amanhã de manhã.&lt;/p&gt;
 &lt;p&gt;Desde que coloquei esse site no ar, planejava adicionar um recurso para mostrar uma citação e um link do dia. Com uma massa de dados mais completa para colocar isso em prática, decidi acelerar o desenvolvimento usando IA e optei por testar o &lt;a href=&quot;https://kiro.dev/&quot;&gt;Kiro&lt;/a&gt;, a IDE baseada em agentes da Amazon.&lt;/p&gt;
 &lt;p&gt;Depois de ler o &lt;a href=&quot;https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html&quot;&gt;artigo da Birgitta Böckeler sobre Spec-Driven-Development&lt;/a&gt;, fiquei curioso para colocar a mão na massa (ou melhor, deixar com que a ferramenta colocasse a mão na massa por mim).&lt;/p&gt;
