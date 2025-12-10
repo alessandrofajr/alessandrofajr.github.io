@@ -6,6 +6,11 @@ updated: 2024-10-20
 
 Um registro das mudanças que fiz ao longo do tempo neste site. Inspirado [nesse modelo](https://keepachangelog.com/pt-BR/1.1.0/).
 
+## [1.0.6] - 2025-11-09
+
+### Added
+- Citação e link do dia na página inicial
+
 ## [1.0.5] - 2024-11-28
 
 ### Changed
