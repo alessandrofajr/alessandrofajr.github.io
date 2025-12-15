@@ -6,9 +6,8 @@ pagination:
   alias: quote
   before: 0
   after: 0
+  addAllPagesToCollections: true
 permalink: "/quotes/{{ quote.title | slug }}/"
 eleventyComputed:
   title: "{{ quote.title }}"
 ---
-
-
