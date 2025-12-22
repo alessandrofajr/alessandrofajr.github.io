@@ -4,11 +4,43 @@
   <subtitle>posts técnicos</subtitle>
   <link href="https://alessandrofajr.com/feed_tech.xml" rel="self"/>
   <link href="https://alessandrofajr.com/"/>
-  <updated>2025-11-28T00:00:00Z</updated>
+  <updated>2025-12-21T00:00:00Z</updated>
   <id>https://alessandrofajr.com/</id>
   <author>
     <name>Alessandro Feitosa Jr</name>
   </author>
+    <entry>
+      <title>Tentei criar um bot no WhatsApp. A Meta me baniu antes que ele saísse do papel</title>
+      <link href="https://alessandrofajr.com/blog/facebook-meta-whatsapp-business-developer/"/>
+      <updated>2025-12-21T00:00:00Z</updated>
+      <id>https://alessandrofajr.com/blog/facebook-meta-whatsapp-business-developer/</id>
+      <content xml:lang="pt-br" type="html">&lt;p&gt;&lt;em&gt;Texto que escrevi e publiquei originalmente no &lt;a href=&quot;https://manualdousuario.net/whatsapp-plataforma-banido/&quot;&gt;Manual do Usuário&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Parte da jornada de aprendizado da maioria das pessoas que começam a meter a mão em código é tentar criar projetos que, com sorte, possam virar algo útil para si e para    os outros. Em maio deste ano, quis entender melhor da API do WhatsApp: configurei meu ambiente local, loguei na plataforma de desenvolvimento da Meta e comecei a mexer aqui e ali.&lt;/p&gt;
+&lt;p&gt;Peguei um número de testes que a própria plataforma ofereceu, mandei um &amp;quot;Hello World&amp;quot; e testei alguns comandos básicos da arquitetura que estava desenhando. Poucas semanas depois, precisei deixar o projeto em stand-by.&lt;/p&gt;
+&lt;p&gt;Ao tentar retomar essa ideia há algumas semanas, me assustei com a mensagem na página de desenvolvedor da Meta: &amp;quot;&lt;strong&gt;Não é possível acessar este serviço&lt;/strong&gt;. Para mais informações, consulte os Termos de Serviço da Plataforma e a Política do Desenvolvedor da Meta. Se você acha que recebeu esta mensagem por engano, envie uma solicitação de suporte.&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://alessandrofajr.com/img/facebook-developers-conta-banida.png&quot; alt=&quot;Mensagem de conta banida na plataforma de desenvolvimento do Facebook&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Clicando no link para solicitação de suporte, outra mensagem: &lt;strong&gt;&amp;quot;Conta de desenvolvedor suspensa&amp;quot;&lt;/strong&gt; pelo &amp;quot;Termo da Plataforma 7.e.i.3&amp;quot;. Eis o que diz o documento:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Você criou ou manteve Apps para burlar, ou tentar burlar, nossas ações de monitoramento (que pode incluir a criação ou manutenção de Apps para burlar quaisquer restrições ou monitoramento que realizarmos em seus outros Apps ou conta devido a uma violação de nossos termos e políticas);&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fiquei surpreso com a mensagem porque:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Eu não recebi nenhum e-mail avisando sobre a suspensão ou pedindo algum ajuste;&lt;/li&gt;
+&lt;li&gt;Não tive nenhuma chance de entender por que meu app, em ambiente de desenvolvimento, feriu qualquer termo da plataforma.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Preenchi o tal formulário para apelar da decisão, mas ele parece levar do nada a lugar nenhum. Não existe nenhum indicativo de prazo para que alguém ou algum sistema revise o meu pedido, por exemplo. A cada dia, o formulário reabre para que eu possa enviar uma nova solicitação, com a apelo do dia anterior registrado logo abaixo.&lt;/p&gt;
+&lt;p&gt;Um dos campos no formulário pergunta: &amp;quot;Você fez as alterações necessárias? Explique as alterações que você fez para cumprir este Termo da Plataforma&amp;quot;.
+A ironia é que eu nem tenho como fazer alteração alguma, já que estou trancado para fora da plataforma, e meu app está em um ambiente de desenvolvimento (ou seja, não foi publicado em lugar algum, não está disponível para absolutamente ninguém).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://alessandrofajr.com/img/facebook-developers-dispute.png&quot; alt=&quot;Página de apelações da plataforma de desenvolvimento do Facebook&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Dezenas de outras pessoas estão nessa mesma sinuca de bico, e ninguém relata ter resolvido. É o caso do desenvolvedor João Filipe, que também teve sua conta suspensa e me contou ter enviado pelo menos 15 solicitações de revisão para a Meta. Segundo ele, a página de suporte exclui as apelações, como se ele nunca as tivesse enviado.&lt;/p&gt;
+&lt;p&gt;Filipe empreende e perdeu acesso ao aplicativo de sua empresa – embora o app continue funcionando, somente as pessoas que trabalham com ele conseguem acessar os recursos de desenvolvimento. Se não fosse por isso, ele acredita que teria perdido sua empresa. Outro efeito colateral da suspensão envolve não conseguir usar a API de Conversões para anúncios nas plataformas do Facebook e Instagram.&lt;/p&gt;
+&lt;p&gt;No Reddit, pelo menos &lt;a href=&quot;https://www.reddit.com/r/facebook/comments/1h1c79w/developer_account_suspended_no_warning_no/&quot;&gt;três&lt;/a&gt; &lt;a href=&quot;https://www.reddit.com/r/WhatsappBusinessAPI/comments/1ldowzf/developer_account_suspended_for_circumvention/&quot;&gt;threads&lt;/a&gt; &lt;a href=&quot;https://alessandrofajr.com/blog/facebook-meta-whatsapp-business-developer/facebook_developer_account_restricted_no_review&quot;&gt;distintas&lt;/a&gt; relatam o mesmíssimo caso.&lt;/p&gt;
+&lt;p&gt;Na própria comunidade de desenvolvimento da Meta, &lt;a href=&quot;https://developers.facebook.com/community/threads/1934177984018926/&quot;&gt;existem&lt;/a&gt; &lt;a href=&quot;https://developers.facebook.com/community/threads/802106002978326/&quot;&gt;vários&lt;/a&gt; &lt;a href=&quot;https://developers.facebook.com/community/threads/1358539545223405/&quot;&gt;posts&lt;/a&gt; sem nenhum retorno de algum representante da companhia há meses. Até no &lt;a href=&quot;https://www.linkedin.com/posts/naman-jhawar-6644bb15_hello-linkedin-folks-looking-for-meta-developer-activity-7332335821955485697-m8zR/&quot;&gt;LinkedIn&lt;/a&gt; eu encontrei relatos similares.&lt;/p&gt;
+&lt;p&gt;Mais do que a frustração de não conseguir levar adiante uma ideia, fica a sensação de impotência diante de um sistema em que nenhuma regra é clara e nenhum canal de contato existe de fato. A Meta concentra um dos principais aplicativos do país, mas oferece aos desenvolvedores o oposto de transparência. Procurei à beça alguma forma de falar com um humano, sem sucesso.&lt;/p&gt;
+&lt;p&gt;O que era para ser uma tentativa de construir algo legal virou um lembrete de como depender da boa vontade de uma plataforma colossal como a Meta expõe uma fragilidade no ecossistema sobre o qual a internet de hoje se apoia. E um gostinho amargo de injustiça, afinal, não dá para dizer que infringi algum termo ou fiz algo de errado.&lt;/p&gt;
+&lt;p&gt;Procurei a assessoria de imprensa da Meta para um posicionamento mas não obtive nenhuma resposta.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Usando a IA como ajudante, não como substituta</title>
       <link href="https://alessandrofajr.com/blog/extraindo-valor-inteligencia-artificial-llm/"/>
