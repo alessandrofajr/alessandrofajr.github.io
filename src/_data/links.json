@@ -1,5 +1,255 @@
 [
   {
+    "title": "If You Don’t Design Your Career, Someone Else Will",
+    "link": "https://gregmckeown.com/if-you-dont-design-your-career-someone-else-will/",
+    "date": "2025-12-22",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Um bom lembrete de que é fácil ficar ocupado demais para pensar no rumo que se está tomando.",
+    "favorite": true
+  },
+  {
+    "title": "Fantasizing the Feminine: A Look at the Female Archetypes in David Lynch’s BLUE VELVET",
+    "link": "https://www.tribecafilm.com/news/blue-velvet-female-archetypes-david-lynch",
+    "date": "2025-12-16",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Assisti 'Blue Velvet' e reforçou ainda mais minha admiração pelo cinema de David Lynch.",
+    "favorite": true
+  },
+  {
+    "title": "Grow, Like a Tree Not a Cancer",
+    "link": "https://blog.jim-nielsen.com/2025/grow-like-a-tree-not-a-cancer/",
+    "date": "2025-12-15",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Devagar, com a base sólida.",
+    "favorite": true
+  },
+  {
+    "title": "Cultivating a state of mind where new ideas are born",
+    "link": "https://www.henrikkarlsson.xyz/p/good-ideas",
+    "date": "2025-12-11",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Esse texto me fez refletir sobre quantas vezes não coloquei uma ideia no mundo por um excesso de zelo – o que, no final das contas, esconde uma vaidade. O autor aponta que ideias nascem em um estado mental 'frágil', protegido da pressão social e do gosto dominante. Sustentar curiosidade sem censura, status ou validação externa é desafiador. Embora o feedback seja fundamental, ele seria mais valioso depois que o núcleo da ideia amadurece fora do campo gravitacional do consenso.",
+    "favorite": true
+  },
+  {
+    "title": "Notion Interview Guides",
+    "link": "https://www.notion.so/notion/Interview-Guides-Technical-Roles-50e339f3fa8a4c8a8a4c1cd7a7565110",
+    "date": "2025-12-10",
+    "tags": [
+      "tech"
+    ],
+    "notes": "O Notion mantém um material muito rico para ajudar profissionais a se prepararem para as entrevistas na empresa.",
+    "favorite": true
+  },
+  {
+    "title": "Friends Don't Let Friends Make Bad Graphs",
+    "link": "https://github.com/cxli233/FriendsDontLetFriends",
+    "date": "2025-12-10",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Lista extensa de recomendações sobre o que não se fazer ao visualizar dados.",
+    "favorite": false
+  },
+  {
+    "title": "Arthur Verocai: A Brazilian Original",
+    "link": "https://daily.redbullmusicacademy.com/2013/11/arthur-verocai-a-brazilian-original",
+    "date": "2025-12-10",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Amo as músicas do Arthur Verocai. Fiquei bem contente de encontrar aleatoriamente essa entrevista dele, publicada em 2013!",
+    "favorite": false
+  },
+  {
+    "title": "Learn Like an Athlete",
+    "link": "https://perell.com/essay/learn-like-an-athlete/",
+    "date": "2025-12-10",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Ideias sobre aprendizado: projetos curtos, orientados a resultado e com feedback frequente. Aprender como treino: ciclos repetidos, incrementando aos poucos, com acúmulo de vantagem ao longo do tempo.",
+    "favorite": false
+  },
+  {
+    "title": "FlowSQL",
+    "link": "https://flowsql.com/",
+    "date": "2025-12-09",
+    "tags": [
+      "tech"
+    ],
+    "notes": "FlowSQL is a free, privacy-focused SQL editor that runs entirely in your browser. You can write and execute SQL queries, import CSV files, and work with SQLite databases - all without sending any data to a server.",
+    "favorite": false
+  },
+  {
+    "title": "21 Lessons from 14 Years at Google",
+    "link": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
+    "date": "2025-12-08",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Gosto dessas listinhas de carreira. Vale a releitura de vez em quando, mas os destaques gerais envolvem conselhos sobre agir em vez pensar demais e o cuidado com as relações profissionais.",
+    "favorite": false
+  },
+  {
+    "title": "No one can teach you to have conviction",
+    "link": "https://www.benkuhn.net/conviction/",
+    "date": "2025-12-06",
+    "tags": [
+      "tech"
+    ],
+    "notes": "O insight principal aqui é: pra ter convicção nas decisões, é preciso tentar, ter experiência.",
+    "favorite": false
+  },
+  {
+    "title": "Staring into the abyss as a core life skill",
+    "link": "https://www.benkuhn.net/abyss/",
+    "date": "2025-12-04",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Olhar para o abismo: dedicar tempo com seriedade para tomar decisões difíceis.",
+    "favorite": false
+  },
+  {
+    "title": "We should all be Luddites",
+    "link": "https://www.brookings.edu/articles/we-should-all-be-luddites/",
+    "date": "2025-12-04",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Uma tentativa de reabilitação do rótulo 'ludista'. O autor tenta distanciar o termo da aversão à tecnologia para a recusa do fatalismo e da concentração de poder. O argumento central não é sobre capacidades da IA, mas sobre governança: quem decide, quem se beneficia e quem arca com os custos. Tem uma cobrança interessante aos jornalistas, acadêmicos, formuladores de políticas e educadores que reproduzem narrativas de inevitabilidade em vez de interrogarem as políticas que estão se formanco. A analogia tenta mostrar que a disputa nunca foi máquina vs. humano, mas controle vs. agência. Regular apenas o desenvolvimento seria insuficiente, já que o conflito real está na implantação e nos efeitos sistêmicos sobre trabalho, educação e democracia.",
+    "favorite": false
+  },
+  {
+    "title": "What AI is Really For",
+    "link": "https://www.chrbutler.com/what-ai-is-really-for",
+    "date": "2025-12-04",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Quanto maior o escopo prometido para a IA, menor o retorno real — e maior o custo oculto, segundo o autor. A crítica mais forte não é técnica, mas política-econômica: a promessa de AGI funciona como narrativa mobilizadora para justificar concentração extrema de capital, terra, energia e poder institucional via datacenters. Ele faz uma leitura de que a IA seria uma 'tecnologia normal em uma bolha anormal', diferenciando ganhos reais (casos pequenos e bem definidos) de fantasias sistêmicas. Segundo ele, se a IA falhar como produto, a infraestrutura construída — e quem a controla — permanecerá, deslocando poder do campo democrático para o privado.",
+    "favorite": false
+  },
+  {
+    "title": "In what specific way are you annoying?",
+    "link": "https://haleynahman.substack.com/p/222-in-what-specific-way-are-you",
+    "date": "2025-11-29",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Talvez aquilo que nos torne únicos e especiais para as outras pessoas seja justamente nossas características mais irritantes, nossas idiossincrasias. Entre essas coisas, há aquelas que estamos sempre tentando esconder dos outros: se não queremos incomodar os outros, nos tornamos irritantemente relutantes em aceitar ajuda, por exemplo. Gostei de como a autora conecta o argumento com a teoria Junguiana da sombra. Trechinho com um exercício proposto no texto: 'Describe your ideal self—the qualities you’d most like to embody—in five words. Then, to find your shadow self, locate the opposing qualities of each one. The shadow self describes the parts of ourselves we most ardently reject and repress. I think my ideal self would be: insightful, generous, authentic, funny, discerning. That means my shadow self would be: foolish, self-absorbed, artificial, humorless, and tasteless.'",
+    "favorite": false
+  },
+  {
+    "title": "A Technical Interview Doesn't Have To Suck!",
+    "link": "https://matthogg.fyi/a-technical-interview-doesnt-have-to-suck/",
+    "date": "2025-11-27",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Framework para entrevistas técnicas em tecnologia.",
+    "favorite": false
+  },
+  {
+    "title": "ImageConverter",
+    "link": "https://imageconverter.dev/",
+    "date": "2025-11-27",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Utilitário de conversão de formato de imagens.",
+    "favorite": false
+  },
+  {
+    "title": "Nudez",
+    "link": "https://vanessaguedes.substack.com/p/nudez",
+    "date": "2025-11-26",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Relato sobre a experiência em saunas na Europa, acentuando as diferenças culturais de quem é um outsider.",
+    "favorite": false
+  },
+  {
+    "title": "Espiral: Pelados em Berlim",
+    "link": "https://lalai.substack.com/p/espiral-pelados-em-berlim",
+    "date": "2025-11-26",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Relato sobre a experiência em saunas na Alemanha.",
+    "favorite": false
+  },
+  {
+    "title": "Zero-sum Thinking and the Labor Market",
+    "link": "https://kyla.substack.com/p/zero-sum-thinking-and-the-labor-market",
+    "date": "2025-11-24",
+    "tags": [
+      "tech"
+    ],
+    "notes": "O texto articula como a sensação de escassez (zero-sum thinking) não nasce apenas de fatores culturais ou políticos, mas de sistemas concretos que deixaram de funcionar: mercado de trabalho, ensino superior, processos de contratação e instituições públicas. A tese tem foco nos EUA, mas ressoa globalmente, especialmente quando argumenta sobre a algoritmização dos processos de contração, radicalização e perda de fé na meritocracia. Essa sensação de escassez seria uma resposta racional a sistemas que parecem loterias viciadas.",
+    "favorite": false
+  },
+  {
+    "title": "The Learning Loop and LLMs",
+    "link": "https://martinfowler.com/articles/llm-learning-loop.html",
+    "date": "2025-11-24",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Ótimo material sobre aprendizado na era dos LLMs. Trecho em destaque: 'That experience helped me think through the nature of software development, most importantly that writing software is fundamentally an act of learning, and that we cannot escape the need to learn just because we have LLM agents at our disposal.'",
+    "favorite": false
+  },
+  {
+    "title": "My Working Principles For Managing Ego, Empathy, And Humility",
+    "link": "https://matthogg.fyi/my-working-principles-for-managing-ego-empathy-and-humility/",
+    "date": "2025-11-24",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Algumas reflexões sobre trabalho em equipe e liderança.",
+    "favorite": false
+  },
+  {
+    "title": "conventional: comments",
+    "link": "https://conventionalcomments.org/",
+    "date": "2025-11-24",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Sugestões de boas práticas para comentários em código.",
+    "favorite": false
+  },
+  {
+    "title": "All you can do is play the game",
+    "link": "https://benn.substack.com/p/all-you-can-do-is-play-the-game",
+    "date": "2025-11-23",
+    "tags": [
+      "tech"
+    ],
+    "notes": "O que a IA vai trazer para o mercado de trabalho? Ninguém sabe com certeza.",
+    "favorite": false
+  },
+  {
+    "title": "The lump of cognition fallacy",
+    "link": "https://andymasley.substack.com/p/the-lump-of-cognition-fallacy",
+    "date": "2025-11-19",
+    "tags": [
+      "tech"
+    ],
+    "notes": "O autor defende que a inteligência artificial vai potencializar o potencial humano e faz uma crítica ao argumento de ferramentas de LLM nos deixarão mais 'burros' ou menos criativos. Particularmente, creio que a IA vai ampliar (e muito!) a desigualdade entre as pessoas que são curiosas e que possuem acesso à educação de qualidade em relação as que não possuem essas oportunidades. Ainda teremos muitos desdobramentos da adoção dessas ferramentas no médio e longo prazo, mas esse artigo tem um contraponto ao discurso que vejo com mais frequência na minha bolha.",
+    "favorite": false
+  },
+  {
     "title": "Sudoku Shift: The Shapeshifting Sudoku Challenge",
     "link": "https://coffeefirst.games/sudoku-shift",
     "date": "2025-11-23",
@@ -8,7 +258,7 @@
       "games"
     ],
     "notes": "Um Sudoku bem divertido! Começamos num grid 4x4, que assim que resolvido se transforma em 6x6 e depois no tradicional 9x9. Tem sido um bom passa tempo.",
-    "favorite": false
+    "favorite": true
   },
   {
     "title": "Context7 - Up-to-date documentation for LLMs and AI code editors",
