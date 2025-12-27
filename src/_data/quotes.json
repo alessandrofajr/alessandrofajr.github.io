@@ -1,5 +1,59 @@
 [
   {
+    "id": "24",
+    "title": "A Hora da Estrela - Clarice Lispector",
+    "quote": "Então, no dia seguinte, quando as quatro Marias cansadas foram trabalhar, ela teve pela primeira vez na vida uma coisa a mais preciosa: a solidão.",
+    "author": "Clarice Lispector",
+    "source": "A Hora da Estrela",
+    "additionalQuotes": [
+        {
+            "quote": "Sim, mas não esquecer que para escrever não importa o quê o meu material básico é a palavra. Assim é que esta história será feita de palavras que se agrupam em frases e destas se evola um sentido secreto que ultrapassa palavras e frases. É claro que, como todo escritor, tenho a tentação de usar termos suculentos: conheço adjetivos esplendorosos, carnudos substantivos e verbos tão esguios que atravessam agudos o ar em vias de ação, já que palavra é ação, concordais? Mas não vou enfeitar a palavra pois se eu tocar no pão da moça esse pão se tornará em ouro e a jovem (ela tem dezenove anos) e a jovem não poderia mordê-lo, morrendo de fome. Tenho então que falar simples para captar a sua delicada e vaga existência. Limito-me a humildemente mas sem fazer estardalhaço de minha humildade que já não seria humilde limito-me a contar as fracas aventuras de uma moça numa cidade toda feita contra ela. (p. 50)"
+        },
+        {
+            "quote": "A música era um fantasma pálido como uma rosa que é louca de beleza mas mortal: pálida e mortal a moça era hoje o fantasma suave e terrificante de uma infância sem bola nem boneca. Então costumava fingir que corria pelos corredores de boneca na mão atrás de uma bola e rindo muito. A gargalhada era aterrorizadora porque acontecia no passado e só a imaginação maléfica a trazia para o presente, saudade do que poderia ter sido e não foi. (Eu bem avisei que era literatura de cordel, embora eu me recuse a ter qualquer piedade.) Devo dizer que essa moça não tem consciência de mim, se tivesse teria para quem rezar e seria a salvação. Mas eu tenho plena consciência dela: através dessa jovem dou o meu grito de horror à vida. À vida que tanto amo. (p. 65)"
+        },
+        {
+            "quote": "Na verdade por pior a infância é sempre encantada, que susto. Nunca se queixava de nada, sabia que as coisas são assim mesmo e quem organizou a terra dos homens? Na certa mereceria um dia o céu dos oblíquos onde só entra quem é torto. Aliás não é entrar no céu, é oblíquo na terra mesmo. Juro que nada posso fazer por ela. (p. 67)"
+        },
+        {
+            "quote": "Devo registrar aqui uma alegria. É que a moça num aflitivo domingo sem farofa teve uma inesperada felicidade que era inexplicável: no cais do porto viu um arco-íris. Experimentando o leve êxtase, ambicionou logo outro: queria ver, como uma vez em Maceió, espocarem mudos fogos de artifício. Ela quis mais porque é mesmo uma verdade que quando se dá a mão, essa gentinha quer todo o resto, o zé-povinho sonha com fome de tudo. E quer mas sem direito algum, pois não é? Não havia meio pelo menos eu não posso de obter os multiplicantes brilhos em chuva chuvisco dos fogos de artifício. (p. 67)"
+        },
+        {
+            "quote": "Se a moça soubesse que minha alegria também vem de minha mais profunda tristeza e que tristeza era uma alegria falhada. Sim, ela era alegrezinha dentro de sua neurose. Neurose de guerra. (p. 67)"
+        },
+        {
+            "quote": "E quando acordava? Quando acordava não sabia mais quem era. Só depois é que pensava com satisfação: sou datilógrafa e virgem, e gosto de coca-cola. Só então vestia-se de si mesma, passava o resto do dia representando com obediência o papel de ser. (p. 67)"
+        },
+        {
+            "quote": "Que se há de fazer com a verdade de que todo mundo é um pouco triste e um pouco só. (p. 71)"
+        },
+        {
+            "quote": "Então, no dia seguinte, quando as quatro Marias cansadas foram trabalhar, ela teve pela primeira vez na vida uma coisa a mais preciosa: a solidão. Tinha um quarto só para ela. Mal acreditava que usufruía o espaço. E nem uma palavra era ouvida. Então dançou num ato de absoluta coragem, pois a tia não a entenderia. Dançava e rodopiava porque ao estar sozinha se tornava: l-i-v-r-e! Usufruía de tudo, da arduamente conseguida solidão, do rádio de pilha tocando o mais alto possível, da vastidão do quarto sem as Marias. Arrumou, como pedido de favor, um pouco de café solúvel com a dona dos quartos, e, ainda como favor, pediu-lhe água fervendo, tomou tudo se lambendo e diante do espelho para nada perder de si mesma. Encontrar-se consigo própria era um bem que ela até então não conhecia. Acho que nunca fui tão contente na vida, pensou. Não devia nada a ninguém e ninguém lhe devia nada. Até deu-se ao luxo de ter tédio um tédio até muito distinto. (p. 72)"
+        },
+        {
+            "quote": "[...] Mas quem sabe se ela não estaria precisando de morrer? Pois há momentos em que a pessoa está precisando de uma pequena mortezinha e sem nem ao menos saber. Quanto a mim, substituo o ato da morte por um seu símbolo. Símbolo este que pode se resumir num profundo beijo mas não na parede áspera e sim boca a boca na agonia do prazer que é morte. Eu, que simbolicamente morro várias vezes só para experimentar a ressurreição. Acho com alegria que ainda não chegou a hora de estrela de cinema de Macabéa morrer. Pelo menos ainda não consigo adivinhar se lhe acontece o homem louro e estrangeiro. Rezem por ela e que todos interrompam o que estão fazendo para soprar-lhe vida, pois Macabéa está por enquanto solta no acaso como a porta balançando ao vento no infinito. Eu poderia resolver pelo caminho mais fácil, matar a menina-infante, mas quero o pior: a vida. Os que me lerem, assim, levem um soco no estômago para ver se é bom. A vida é um soco no estômago. (p. 107)"
+        }
+    ],
+    "thoughts": null,
+    "date": "2025-12-26",
+    "language": "pt-br",
+    "tags": ["existência", "solidão"]
+  },
+  {
+    "id": "23",
+    "title": "A Casa dos Espíritos - Isabel Allende",
+    "quote": "Ao longo de tantos anos de solidão e tristeza, fora decantando as emoções e limpando os sentimentos, até reduzi-los a umas poucas, terríveis e magníficas paixões, que a ocupavam por completo. Não tinha capacidade para as pequenas perturbações, os rancores mesquinhos, as invejas disfarçadas, as obras de caridade, os afetos mornos, a atenciosa polidez ou as considerações cotidianas. Era um desses seres nascidos para a grandeza de um só amor, o ódio extremado, a vingança apocalíptica e o heroísmo mais sublime; não lhe foi possível, contudo, realizar, na medida de sua romântica vocação, seu destino, que se tornou monótono e cinzento,  entre as paredes de um quarto de doente, em miseráveis asilos, em tortuosas confissões, em que aquela mulher grande, opulenta, de sangue ardente, feita para a maternidade, a abundância, a ação e o ardor, foi-se consumindo. [...] Provavelmente aqueles anos junto de Clara foram os únicos felizes para ela, porque só com Clara se pôde fazer íntima. Ela foi a depositária de suas mais sutis emoções e a ela dedicou sua enorme capacidade de sacrifício e veneração. Uma vez ousou verbalizar isso, e Clara escreveu em seu caderno de anotar a vida que Férula a amava muito mais do que ela merecia ou podia retribuir.",
+    "author": "Isabel Allende",
+    "source": "A Casa dos Espíritos (p. 117)",
+    "additionalQuotes": [],
+    "thoughts": null,
+    "date": "2025-12-26",
+    "language": "pt-br",
+    "tags": [
+      "amor"
+    ]
+  },
+  {
     "id": "22",
     "title": "Tu Não Te Moves de Ti - Hilda Hilst",
     "quote": "[...] é dor, Maria, como tudo o que acontece nos adentros. Não sentes então, numa soma final, que é mais dor do que alegria o existir?",
