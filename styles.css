@@ -274,6 +274,10 @@ article {
     font-size: 1.2rem;
 }
 
+.quote-text {
+  white-space: pre-line;
+}
+
 .breaker {
     --size: 10px;
     --b: 1.8px;
