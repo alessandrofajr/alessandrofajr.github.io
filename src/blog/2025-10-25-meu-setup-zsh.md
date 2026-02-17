@@ -3,7 +3,7 @@ layout: post
 title: Meu setup no terminal zsh
 permalink: /blog/setup-zsh/
 date: 2025-10-25
-updated: 2025-10-25
+updated: 2026-12-17
 tags: 
     - tech
 ---
@@ -25,10 +25,6 @@ Foi assim que descobri da existência do [Oh My Zsh](https://github.com/ohmyzsh/
     
     `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
-    - [zsh-syntax-highlighting plugin](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-    `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
-
      - [zsh-fast-syntax-highlighting plugin](https://dev.to/zeromeroz/(https://github.com/zdharma/fast-syntax-highlighting))
 
      `git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting`
@@ -41,9 +37,10 @@ Foi assim que descobri da existência do [Oh My Zsh](https://github.com/ohmyzsh/
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
  )
 ```
 5. Pra deixar tudo funcionando, basta reinicar o ambiente com `source ~/.zshrc`
+
+*Atualização em 17 de fevereiro de 2026*: Removi a menção ao `zsh-syntax-highlighting`, já que ele fazia a mesma coisa que o `zsh-fast-syntax-highlighting`. Um outro adendo importante: o `zsh-autocomplete` pode tornar o Terminal mais lento em alguns setups. Continuo usando na minha máquina pessoal, mas tive problemas no computador do trabalho.
