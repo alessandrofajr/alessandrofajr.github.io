@@ -1,5 +1,65 @@
 [
   {
+    "title": "The stable marriage problem",
+    "link": "https://acotra.substack.com/p/the-stable-marriage-problem",
+    "date": "2026-01-31",
+    "tags": [
+      "personal"
+    ],
+    "notes": "A autora apresenta um argumento sob a perspectiva de um problema de probabilidade, chamado 'stable matching problem'. A ideia é que a melhor 'resolução' é ser mais ativo, pedir por aquilo que se quer.",
+    "favorite": false
+  },
+  {
+    "title": "First, Make Me Care, by Gwern",
+    "link": "https://gwern.net/blog/2026/make-me-care",
+    "date": "2026-01-26",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Escrever é fácil. Difícil é escrever algo que as pessoas queiram ler. Aqui, o autor defende que para fisgar o leitor, o que precisamos fazer é usar um bom gancho para que ele se importe com o que vem adiante.",
+    "favorite": false
+  },
+  {
+    "title": "Explore Your Possibilities with Career Dreamer - Grow with Google",
+    "link": "https://grow.google/career-dreamer/",
+    "date": "2026-01-05",
+    "tags": [
+      "tech"
+    ],
+    "notes": "Ferramenta de IA interessante do Google. Você descreve experiências profissionais e ele vai montando uma descrição das suas características com LLM. Dá pra explorar trilhas de carreira e criar um currículo.",
+    "favorite": false
+  },
+  {
+    "title": "Mude, mas comece",
+    "link": "https://youtu.be/A2hk9jtL7WA",
+    "date": "2026-01-05",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Gosto demais desse poema do Edson Marques recitado pelo Abujamra. Vale muito a pena rever de tempos em tempos.",
+    "favorite": true
+  },
+  {
+    "title": "Slowness is a Virtue - Jakob Schwichtenberg’s Newsletter",
+    "link": "https://blog.jakobschwichtenberg.com/p/slowness-is-a-virtue",
+    "date": "2026-01-05",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Só é possível ser veloz quando você sabe o que está fazendo e onde quer chegar – e isso, por si só, depende de experiência. Quando entramos em um território novo, a velocidade deixa de aparecer. Grandes desenvolvimentos e descobertas podem levar muito tempo para acontecer, mas no estado atual da nossa sociedade (capitalismo!), isso parece inaceitável. Afinal, pode ser que aquele projeto não dê frutos.",
+    "favorite": false
+  },
+  {
+    "title": "This life gives you nothing - Blackbird Spyplane",
+    "link": "https://www.blackbirdspyplane.com/p/this-life-gives-you-nothing",
+    "date": "2025-12-29",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Há muitas passagens que gostei nesse texto, que ressoa muito com o que tenho tentado fazer: recuperar minha capacidade de atenção ao que realmente importa. O autor escreve: 'sua atenção é, num nível fundamental, tudo o que você tem'. Tem um outro trecho em que ele escreve sobre o fato de querermos tirar fotos e fazer vídeos de tudo, o que pra ele se trata de um impulso de criatividade que reflete nossa necessidade de intervir na vida, imprimindo nossas emoções, em vez de recebê-la passivamente – além de ser uma forma de comunicar a experiência para o nosso 'Eu Futuro' ou para aqueles que imaginamos que vamos impressionar. Outro trecho que me tocou: 'Nosso apetite pela vida é tão grande que só viver a vida não parece o suficiente. Queremos saber como são as vidas das outras pessoas e queremos que elas vivam um pouco da nossa também'. Recuperar a atenção é uma forma de recuperar o tempo, também. A vida parece tão acelerada porque estamos o tempo todo nos distraindo.",
+    "favorite": true
+  },
+  {
     "title": "If You Don’t Design Your Career, Someone Else Will",
     "link": "https://gregmckeown.com/if-you-dont-design-your-career-someone-else-will/",
     "date": "2025-12-22",
@@ -80,16 +140,6 @@
     "favorite": false
   },
   {
-    "title": "FlowSQL",
-    "link": "https://flowsql.com/",
-    "date": "2025-12-09",
-    "tags": [
-      "tech"
-    ],
-    "notes": "FlowSQL is a free, privacy-focused SQL editor that runs entirely in your browser. You can write and execute SQL queries, import CSV files, and work with SQLite databases - all without sending any data to a server.",
-    "favorite": false
-  },
-  {
     "title": "21 Lessons from 14 Years at Google",
     "link": "https://addyo.substack.com/p/21-lessons-from-14-years-at-google",
     "date": "2025-12-08",
@@ -150,26 +200,6 @@
     "favorite": false
   },
   {
-    "title": "A Technical Interview Doesn't Have To Suck!",
-    "link": "https://matthogg.fyi/a-technical-interview-doesnt-have-to-suck/",
-    "date": "2025-11-27",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Framework para entrevistas técnicas em tecnologia.",
-    "favorite": false
-  },
-  {
-    "title": "ImageConverter",
-    "link": "https://imageconverter.dev/",
-    "date": "2025-11-27",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Utilitário de conversão de formato de imagens.",
-    "favorite": false
-  },
-  {
     "title": "Nudez",
     "link": "https://vanessaguedes.substack.com/p/nudez",
     "date": "2025-11-26",
@@ -227,16 +257,6 @@
       "tech"
     ],
     "notes": "Sugestões de boas práticas para comentários em código.",
-    "favorite": false
-  },
-  {
-    "title": "All you can do is play the game",
-    "link": "https://benn.substack.com/p/all-you-can-do-is-play-the-game",
-    "date": "2025-11-23",
-    "tags": [
-      "tech"
-    ],
-    "notes": "O que a IA vai trazer para o mercado de trabalho? Ninguém sabe com certeza.",
     "favorite": false
   },
   {
@@ -311,36 +331,6 @@
     "favorite": true
   },
   {
-    "title": "SQL Anti-Patterns You Should Avoid",
-    "link": "https://datamethods.substack.com/p/sql-anti-patterns-you-should-avoid",
-    "date": "2025-11-05",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Boas dicas de padrões de queries SQL a serem evitados.",
-    "favorite": false
-  },
-  {
-    "title": "uv is the best thing to happen to the Python ecosystem in a decade",
-    "link": "https://emily.space/posts/251023-uv",
-    "date": "2025-11-04",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Mais uma exaltação do uv para o ecossistema Python. E algumas boas dicas de uso.",
-    "favorite": false
-  },
-  {
-    "title": "The role of developer skills in agentic coding",
-    "link": "https://martinfowler.com/articles/exploring-gen-ai/13-role-of-developer-skills.html",
-    "date": "2025-10-23",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Tenho tentado ler (quase) tudo o que a Birgitta Böckeler escreve sobre produzir código com auxílio de LLMs e agentes. Aqui, ela fala sobre a importância da revisão e monitoramento de qualidade do código, regras customizadas e cultura organizacional.",
-    "favorite": false
-  },
-  {
     "title": "Eunoia - Words That Don't Translate",
     "link": "https://www.eunoia.world/",
     "date": "2025-10-22",
@@ -351,16 +341,6 @@
     "favorite": false
   },
   {
-    "title": "EuroStack",
-    "link": "https://euro-stack.com/",
-    "date": "2025-10-22",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Serviços e softwares desenvolvidos na Europa. Interessante a ideia de soberania digital.",
-    "favorite": false
-  },
-  {
     "title": "Looking for Alice",
     "link": "https://www.henrikkarlsson.xyz/p/looking-for-alice",
     "date": "2025-10-14",
@@ -368,16 +348,6 @@
       "personal"
     ],
     "notes": "The type of person I’m assuming we’re looking for here is 1) someone that you will find fascinating to talk to after you’ve talked for 20,000 hours, 2) you feel comfortable with them talking through the hardest and most painful decisions you will face in your life, and 3) the conversation is wildly generative for both of you, in that it brings you out, helps you become.",
-    "favorite": false
-  },
-  {
-    "title": "Vibing a Non-Trivial Ghostty Feature",
-    "link": "https://mitchellh.com/writing/non-trivial-vibing",
-    "date": "2025-10-13",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Relato sobre desenvolvimento de uma feature com a assistência de IA.",
     "favorite": false
   },
   {
@@ -399,16 +369,6 @@
     ],
     "notes": "Apesar do título desse estilo 'guia', achei um belíssimo texto sobre arte e poesia, sobre contemplação, desaceleração e como podemos recortar os mesmos objetos e atribuir significados completamente diferentes.",
     "favorite": true
-  },
-  {
-    "title": "Kit de ferramentas de ansiedade",
-    "link": "https://anxietyaidtools.com/pt",
-    "date": "2025-10-09",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Kit de ferramentas para lidar com a ansiedade.",
-    "favorite": false
   },
   {
     "title": "The Self-Domesticated Ape",
@@ -438,16 +398,6 @@
       "personal"
     ],
     "notes": "Contraponto à ideia de que não precisamos memorizar nada, mas ter a capacidade de saber chegar às resoluções.",
-    "favorite": false
-  },
-  {
-    "title": "How I build software quickly",
-    "link": "https://evanhahn.com/how-i-build-software-quickly/",
-    "date": "2025-09-05",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Guia prático para desenvolvimento rápido, sem comprometer qualidade.",
     "favorite": false
   },
   {
@@ -489,16 +439,6 @@
       "personal"
     ],
     "notes": "Uma longa lista de coisas para se fazer e desconectar do digital.",
-    "favorite": false
-  },
-  {
-    "title": "Price Per Token",
-    "link": "https://pricepertoken.com/",
-    "date": "2025-08-08",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Ferramenta para calcular o custo por token de diversas APIs de LLMs.",
     "favorite": false
   },
   {
@@ -610,17 +550,7 @@
     "tags": [
       "personal"
     ],
-    "notes": "Um ensaio longo com algumas reflexões comoventes sobre o tempo e sobre como percebemos o passar do dele na nossa vida. Destaquei um trechinho: 'Forgive yourself. Instead of beating yourself over the past, instead of punishing yourself with the regret of actions not taken, be kind to your present self.Accept that you did what you did, and focus on what you can do today. Make regret productive by taking action. This could help you break the cycle of regret.'",
-    "favorite": false
-  },
-  {
-    "title": "Complexity disclosure, top-down vibe coding, and taking notes",
-    "link": "https://refactoring.fm/p/complexity-disclosure-top-down-vibe",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Bons exemplos de prompts para utilizar em LLMs para obter melhores resultados programando.",
+    "notes": "Um ensaio longo com algumas reflexões comoventes sobre o tempo e sobre como percebemos o passar do dele na nossa vida. Destaquei um trechinho: 'Forgive yourself. Instead of beating yourself over the past, instead of punishing yourself with the regret of actions not taken, be kind to your present self. Accept that you did what you did, and focus on what you can do today. Make regret productive by taking action. This could help you break the cycle of regret.'",
     "favorite": false
   },
   {
@@ -644,46 +574,6 @@
     "favorite": false
   },
   {
-    "title": "Developing with GitHub Copilot Agent Mode and MCP",
-    "link": "https://austen.info/blog/github-copilot-agent-mcp/",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Relato de um desenvolvedor sobre como passou a utilizar o GitHub Copilot Agent Mode somado com ferramentas de MCP.",
-    "favorite": false
-  },
-  {
-    "title": "The New Skill in AI is Not Prompting, It's Context Engineering",
-    "link": "https://www.philschmid.de/context-engineering",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Material interessante sobre agentes e contexto ao lidar com LLMs e produtos correlatos.",
-    "favorite": false
-  },
-  {
-    "title": "How to Vibe Code as a Senior Engineer",
-    "link": "https://blog.alexmaccaw.com/how-to-vibe-code-as-a-senior-engineer/",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Relato de como tirar mais proveito do Cursor para vibe coding.",
-    "favorite": false
-  },
-  {
-    "title": "Nobody Codes Here Anymore",
-    "link": "https://ghiculescu.substack.com/p/nobody-codes-here-anymore",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Visão de um co-fundador e CTO de um SaaS sobre ferramentas como Cursor e Claude Code.",
-    "favorite": false
-  },
-  {
     "title": "Making Software",
     "link": "https://www.makingsoftware.com/",
     "date": "2025-07-18",
@@ -691,16 +581,6 @@
       "tech"
     ],
     "notes": "Manual ilustrado com explicações sobre inúmeros conceitos relacionados à tecnologia, desenvolvimento de software, dados, entre outros.",
-    "favorite": false
-  },
-  {
-    "title": "Smithery AI",
-    "link": "https://smithery.ai/",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Um repositório com milhares de ferramentas para LLMs, a maioria utilizando o protocolo MCP.",
     "favorite": false
   },
   {
@@ -734,16 +614,6 @@
     "favorite": false
   },
   {
-    "title": "ChatGPT reveals the system prompt for ChatGPT Tasks",
-    "link": "https://simonwillison.net/2025/Jan/15/chatgpt-tasks/#atom-everything",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Uma maneira de ver as 'entranhas' dos prompts usados por quem desenvolve LLMs.",
-    "favorite": false
-  },
-  {
     "title": "Bolinho quente de doce de leite na Air Fryer da Rita Lobo",
     "link": "https://panelinha.com.br/receita/bolinho-quente-doce-de-leite-airfryer",
     "date": "2025-07-18",
@@ -751,36 +621,6 @@
       "personal"
     ],
     "notes": "Tentei adaptar essa receita para reproduzir um bolo delicioso de chocolate que adoro comer no Café Artigas. Ainda não cheguei na execução ideal, mas o processo tem sido divertido.",
-    "favorite": false
-  },
-  {
-    "title": "Font with built-in syntax highlighting",
-    "link": "https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Uma fonte que destaca sintaxe de programação, sem necessidade de JavaScript adicional. Ideia e execução muito interessantes.",
-    "favorite": false
-  },
-  {
-    "title": "Doing weeknotes",
-    "link": "https://gilest.org/doingweeknotes/index.html",
-    "date": "2025-07-18",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Um guia para escrever notas semanais – uma maneira de refletir sobre a semana e manter uma organização.",
-    "favorite": false
-  },
-  {
-    "title": "What I Wish I Knew As a Mid-Level Engineer",
-    "link": "https://www.developing.dev/p/what-i-wish-i-knew-as-a-mid-level",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Ex-engenheiro do Instagram compartilha conselho para quem é 'engenheiro pleno': focar em impacto. Vale para qualquer profissão, na real.",
     "favorite": false
   },
   {
@@ -814,36 +654,6 @@
     "favorite": true
   },
   {
-    "title": "Igor Falconeri",
-    "link": "https://www.igorfalconieri.com/",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Uma organização legal de portfolio – com projetos interessantes!",
-    "favorite": false
-  },
-  {
-    "title": "Uv has a killer feature you should know about",
-    "link": "https://valatka.dev/2025/01/12/on-killer-uv-feature.html",
-    "date": "2025-07-18",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Uv parece ser uma das melhores ferramentas para quem programa em Python, aqui tem um bom guia para iniciantes. Ele pode subsituir, numa tacada só, o pienv, poetry e virtualenv.",
-    "favorite": false
-  },
-  {
-    "title": "What can agents actually do?",
-    "link": "https://lethain.com/what-can-agents-do/",
-    "date": "2025-07-15",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Bom material para entender o que os agentes de IA / LLM fazem e como eles funcionam.",
-    "favorite": false
-  },
-  {
     "title": "How to live an intellectually rich life",
     "link": "https://utsavmamoria.substack.com/p/how-to-live-an-intellectually-rich",
     "date": "2025-07-14",
@@ -851,16 +661,6 @@
       "personal"
     ],
     "notes": "Apesar do título com cara de material de 'coach', o texto traz anedotas interessantes e reflete a importância de se cercar de ideias.",
-    "favorite": false
-  },
-  {
-    "title": "why are we lying to young people about work?",
-    "link": "https://maalvika.substack.com/p/being-too-ambitious-is-a-clever-form",
-    "date": "2025-07-11",
-    "tags": [
-      "personal"
-    ],
-    "notes": "O texto em si não me trouxe nenhuma revelação especial, mas uma reflexão sobre a contemporaneidade: pouca gente está disposta a passar pelas dificuldades para atingir qualquer objetivo. No primeiro obstáculo a resposta é: vou proteger minha paz. E o que se constrói com isso? Pouca tolerância.",
     "favorite": false
   },
   {
@@ -906,16 +706,6 @@
     "favorite": false
   },
   {
-    "title": "Building less flexibly for better usability",
-    "link": "https://www.counting-stuff.com/building-less-flexibly-for-better-usability/",
-    "date": "2025-07-02",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Provocação interessante sobre o desenvolvimento de produtos de tecnologia que são mais restritos: pode ser mais importante ser fácil de usar do que ser flexível para atender demandas de diferentes clientes.",
-    "favorite": false
-  },
-  {
     "title": "I built something that changed my friend group's social fabric",
     "link": "https://blog.danpetrolito.xyz/i-built-something-that-changed-my-friend-gro-social-fabric/",
     "date": "2025-07-02",
@@ -948,16 +738,6 @@
     "favorite": false
   },
   {
-    "title": "Switching pip to uv in a Dockerized Flask / Django App",
-    "link": "https://nickjanetakis.com/blog/switching-pip-to-uv-in-a-dockerized-flask-or-django-app",
-    "date": "2025-06-24",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Guia para utilizar o uv como gerenciador de dependências em aplicações Python no Docker. Pode ser útil no futuro.",
-    "favorite": false
-  },
-  {
     "title": "30 minutes with a stranger",
     "link": "https://pudding.cool/2025/06/hello-stranger/",
     "date": "2025-06-24",
@@ -974,27 +754,7 @@
     "tags": [
       "personal"
     ],
-    "notes": "No meio dessa newsletters, há menção a uma ideia que ouvi de um querido professor na universidade, Douglas Canjani: vivemos deixando o urgente se impor sobre o que é importante.",
-    "favorite": false
-  },
-  {
-    "title": "The Prompt Engineering Playbook for Programmers",
-    "link": "https://addyo.substack.com/p/the-prompt-engineering-playbook-for",
-    "date": "2025-06-10",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Prompts interessantes para LLMs no contexto da programação ou engenharia de software.",
-    "favorite": false
-  },
-  {
-    "title": "Ways to Optimize Your Code in Python",
-    "link": "https://blog.appsignal.com/2025/05/28/ways-to-optimize-your-code-in-python.html",
-    "date": "2025-06-10",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Uma série de exemplos de código otimizados para a performance em Python.",
+    "notes": "No meio dessa newsletter, há menção a uma ideia que ouvi de um querido professor na universidade, Douglas Canjani: vivemos deixando o urgente se impor sobre o que é importante.",
     "favorite": false
   },
   {
@@ -1004,17 +764,7 @@
     "tags": [
       "personal"
     ],
-    "notes": "Esses textos e relatos sobre a vida e a morte sempre captam o meu interesse. As reflexões que as pessoas têm quando se aproximam da morte, os arrependimentos… Por que pouco se fala nas alegrias, nas conqiuistas e orgulhos daqueles que estão perto de deixar o mundo?",
-    "favorite": false
-  },
-  {
-    "title": "Stevens: a hackable AI assistant using a single SQLite table and a handful of cron jobs",
-    "link": "https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs",
-    "date": "2025-05-30",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Relato interessante sobre a criação de um assistente de IA no Telegram usando ferramentas simples.",
+    "notes": "Esses textos e relatos sobre a vida e a morte sempre captam o meu interesse. As reflexões que as pessoas têm quando se aproximam da morte, os arrependimentos… Por que pouco se fala nas alegrias, nas conquistas e orgulhos daqueles que estão perto de deixar o mundo?",
     "favorite": false
   },
   {
@@ -1038,16 +788,6 @@
     "favorite": false
   },
   {
-    "title": "Plain Vanilla",
-    "link": "https://plainvanillaweb.com/index.html",
-    "date": "2025-05-12",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Site com um resumo de técnicas de desenvolvimento web sem frameworks ou outras ferramentas. HTML, CSS e Javascript puros.",
-    "favorite": false
-  },
-  {
     "title": "A rata que não sabia ser mediana",
     "link": "https://alinevalek.substack.com/p/a-rata-que-nao-sabia-ser-mediana",
     "date": "2025-05-07",
@@ -1068,26 +808,6 @@
     "favorite": false
   },
   {
-    "title": "How we saved time (and money!) on continuous integration",
-    "link": "https://www.datawrapper.de/blog/ci-workflow-efficiency-improvements",
-    "date": "2025-04-30",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Relato do time do Datawrapper sobre como otimizaram o fluxo de Continuous Integration.",
-    "favorite": false
-  },
-  {
-    "title": "Leadership Over Measureship",
-    "link": "https://www.invencion.com/campaigns/view-email/i2nK5wK1uChayq0i9OUJOUEYoF-ieTZfv_aCZyT0KSNZvBs2qxG0dFK6M-Y9SkuMggMkIalZdgBM1Xm5MjBw_p5JX6A0KbINVmDHLLel7Ne1yswzSE0aa_5eylPDmzmw58eaYFiiS0nImw3GQuNCbRi4GDpajpp9EUmk3w",
-    "date": "2025-03-29",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Texto apresenta o modus operandi da maioria dos serviços e apps: focado na mensuração de eficiência (pensando sempre no lucro, é claro), e como o hype da IA generativa pode reforçar ainda mais esse comportamento. O autor defende um olhar mais empático nos empreendimentos, desde a organização interna até o olhar para o cliente.",
-    "favorite": false
-  },
-  {
     "title": "The Best Programmers I Know",
     "link": "https://endler.dev/2025/best-programmers/",
     "date": "2025-04-23",
@@ -1105,16 +825,6 @@
       "personal"
     ],
     "notes": "Boa provocação sobre o futuro do trabalho e como, no sistema atual, estamos sempre pensando sobre nossas habilidades e interesses dentro de um contexto de se tornar mais atrativo no mercado de trabalho.",
-    "favorite": false
-  },
-  {
-    "title": "The Insanity of Being a Software Engineer",
-    "link": "https://0x1.pt/2025/04/06/the-insanity-of-being-a-software-engineer/",
-    "date": "2025-04-12",
-    "tags": [
-      "tech"
-    ],
-    "notes": "A quantidade de conhecimento necessária para se trabalhar com engenharia de software cresceu exponencialmente.",
     "favorite": false
   },
   {
@@ -1178,16 +888,6 @@
     "favorite": false
   },
   {
-    "title": "Despite the horrors, the laundry must be done; Despite the laundry, the horrors must be faced.",
-    "link": "https://anniemueller.com/posts/despite-the-horrors-the-laundry-must-be-done-despite-the-laundry-the-horrors-must-be-faced",
-    "date": "2025-03-03",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Texto com bons lembretes sobre o que não está em nosso controle. Apesar disso, ficar alheio não é uma opção.",
-    "favorite": false
-  },
-  {
     "title": "Defense Against Dishonest Charts",
     "link": "https://flowingdata.com/projects/dishonest-charts/",
     "date": "2025-03-01",
@@ -1195,16 +895,6 @@
       "tech"
     ],
     "notes": "Bons exemplos sobre como podemos mentir com gráficos, com versões interativas.",
-    "favorite": false
-  },
-  {
-    "title": "Como e por que medir o impacto do seu trabalho",
-    "link": "https://newsletter.nagringa.dev/p/como-e-por-que-medir-o-impacto-do",
-    "date": "2025-03-01",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Algumas ideias para medir impacto no trabalho e como fazer isso.",
     "favorite": false
   },
   {
@@ -1228,16 +918,6 @@
     "favorite": false
   },
   {
-    "title": "The myth of measuring 'data team ROI'",
-    "link": "https://hex.tech/blog/myth-of-data-team-roi/",
-    "date": "2025-02-19",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Medir o retorno de times de dados pode ser muito difícil. Este autor sugere utilizar NPS para responder essa perguntas: a partir da percepção daqueles que utilizam os produtos de dados da empresa, qual a percepção deles?",
-    "favorite": false
-  },
-  {
     "title": "Transferring Media from macOS to a Jellyfin Server (Raspberry Pi 4)",
     "link": "https://btxx.org/posts/jelly/",
     "date": "2025-02-08",
@@ -1255,26 +935,6 @@
       "personal"
     ],
     "notes": "Imagens em domínio público.",
-    "favorite": false
-  },
-  {
-    "title": "Sample Translation Prompt",
-    "link": "https://www.gally.net/temp/20250201sampletranslationprompt.html",
-    "date": "2025-02-02",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Exemplo interessante de prompt utilizado para fazer traduções.",
-    "favorite": false
-  },
-  {
-    "title": "What I've learned about writing AI apps so far",
-    "link": "https://seldo.com/posts/what-ive-learned-about-writing-ai-apps-so-far",
-    "date": "2025-01-29",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Segundo o autor, LLMs são ótimas em trabalhar a partir de um material maior, resumindo-o. Pedir para LLMs expandirem contextos geralmente se traduz em alucinações.",
     "favorite": false
   },
   {
@@ -1398,16 +1058,6 @@
     "favorite": false
   },
   {
-    "title": "One bucket at a time",
-    "link": "https://anniemueller.com/posts/one-bucket-at-a-time",
-    "date": "2025-01-04",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Lembrete simples: não dá para focar em mil coisas ao mesmo tempo.",
-    "favorite": false
-  },
-  {
     "title": "Cognitive load is what matters",
     "link": "https://minds.md/zakirullin/cognitive#long",
     "date": "2025-01-04",
@@ -1498,26 +1148,6 @@
     "favorite": false
   },
   {
-    "title": "Olhe a floresta e não a árvore…",
-    "link": "https://c-taurion.medium.com/olhe-a-floresta-e-n%C3%A3o-a-%C3%A1rvore-287b875c8ba9",
-    "date": "2024-12-21",
-    "tags": [
-      "tech"
-    ],
-    "notes": "O entusiasmo sobre inteligência artificial generativa ofusca outras iniciativas e os problemas que os modelos de linguagem apresentam.",
-    "favorite": false
-  },
-  {
-    "title": "Trustworthiness in the Age of AI",
-    "link": "https://jfkirk.github.io/posts/trustworthiness-ai/",
-    "date": "2024-12-21",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Sobre as diferenças entre sistemas de computação, sistemas de recomendação, e modelos de linguagem. Boas perguntas ao final.",
-    "favorite": false
-  },
-  {
     "title": "45 Questions to Ask While Waiting",
     "link": "https://radfag.com/2017/04/10/44-questions-to-ask-while-waiting/",
     "date": "2024-12-08",
@@ -1535,16 +1165,6 @@
       "tech"
     ],
     "notes": "Sobre a atomização do tempo, aceleração da vida, o impacto da tecnologia nessa percepção e como essas forças são derivadas da competição.",
-    "favorite": false
-  },
-  {
-    "title": "Nothing is something",
-    "link": "https://blog.jim-nielsen.com/2024/nothing-is-something/",
-    "date": "2024-11-30",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Como a escolha de tecnologia é realizada a partir da popularidade, para garantir mais suporte, e como os LLMs pesam essa dinâmica. O perigo maior está no fato de as LLMs não admitirem não ter um corpo de conhecimento profundo o suficiente para responder.",
     "favorite": false
   },
   {
@@ -1576,17 +1196,6 @@
       "personal"
     ],
     "notes": "Uma revisita à ideia de desistir. Por que ligamos essa palavra a conotações tão negativas? Gostei da passagem em que o autor comenta que desistimos de estar acordados para irmos dormir, por exemplo.",
-    "favorite": false
-  },
-  {
-    "title": "A handful of reasons JavaScript won't be available",
-    "link": "https://piccalil.li/blog/a-handful-of-reasons-javascript-wont-be-available/",
-    "date": "2024-11-02",
-    "tags": [
-      "tech",
-      "webdev"
-    ],
-    "notes": "Quinze razões pelas quais o JavaScript pode não estar disponível.",
     "favorite": false
   },
   {
@@ -1677,26 +1286,6 @@
     "favorite": false
   },
   {
-    "title": "Build A Static RSS Reader To Fight Your Inner FOMO",
-    "link": "https://www.smashingmagazine.com/2024/10/build-static-rss-reader-fight-fomo/",
-    "date": "2024-11-02",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Existem diversos leitores RSS, mas esse guia ensina a criar uma versão própria. Me parece um projeto interessante.",
-    "favorite": false
-  },
-  {
-    "title": "Gettiers in software engineering",
-    "link": "https://jsomers.net/blog/gettiers",
-    "date": "2024-10-20",
-    "tags": [
-      "tech"
-    ],
-    "notes": "Sobre casos em que o defeito parece ser causado por uma determinada alteração, mas acaba tendo razões inesperadas.",
-    "favorite": false
-  },
-  {
     "title": "Simply do nothing",
     "link": "https://nothing.mvze.net/",
     "date": "2024-10-20",
@@ -1733,7 +1322,7 @@
     "tags": [
       "personal"
     ],
-    "notes": "Artigo sobre a cultura de caminhar, em vez de andar de carro",
+    "notes": "Artigo sobre a cultura de caminhar.",
     "favorite": false
   },
   {
@@ -1768,46 +1357,14 @@
     "favorite": true
   },
   {
-    "title": "How I search in 2024",
-    "link": "https://vickiboykis.com/2024/04/25/how-i-search-in-2024/",
-    "date": "2024-07-21",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Um blog post sobre as ferramentas de busca utilizada por Vicki Boykis, destaque para Marginalia e Kagi",
-    "favorite": false
-  },
-  {
-    "title": "The Cheap Web",
-    "link": "https://potato.cheap/",
-    "date": "2024-07-19",
-    "tags": [
-      "tech",
-      "webdev"
-    ],
-    "notes": "Um manifesto em prol de uma web simples, 'barata'. O texto ressoou em mim na medida que quero tornar esse site um produto simples, que não me dê muito trabalho para manter.",
-    "favorite": false
-  },
-  {
     "title": "The Age of Average",
     "link": "https://www.alexmurrell.co.uk/articles/the-age-of-average",
     "date": "2024-07-19",
     "tags": [
       "personal"
     ],
-    "notes": "Uma reflexão sobre como as coisas ficaram uniformizadas, sem personalidade. Desde a aparência a produtos de mídia, arquitetura, projetos, entre outros.",
+    "notes": "Tudo ficou uniforme, sem personalidade. Desde a aparência a produtos de mídia, arquitetura, projetos, entre outros.",
     "favorite": true
-  },
-  {
-    "title": "The Wrong Abstraction",
-    "link": "https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction",
-    "date": "2024-07-19",
-    "tags": [
-      "tech",
-      "programming"
-    ],
-    "notes": "Uma reflexão sobre programação orientada a objetos e como abstrações podem se tornar complexas.",
-    "favorite": false
   },
   {
     "title": "No Web Without Women",
@@ -1828,16 +1385,6 @@
       "decision-making"
     ],
     "notes": "Frameworks para resolução de problemas",
-    "favorite": false
-  },
-  {
-    "title": "Rach Smith",
-    "link": "https://rachsmith.com/",
-    "date": "2024-07-19",
-    "tags": [
-      "personal"
-    ],
-    "notes": "Blog interessante de uma programadora australiana.",
     "favorite": false
   },
   {
