@@ -47,10 +47,6 @@
 </ul>
 <p><code>git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions</code></p>
 <ul>
-<li><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting plugin</a></li>
-</ul>
-<p><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting</code></p>
-<ul>
 <li><a href="https://dev.to/zeromeroz/(https://github.com/zdharma/fast-syntax-highlighting)">zsh-fast-syntax-highlighting plugin</a></li>
 </ul>
 <p><code>git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting</code></p>
@@ -66,7 +62,6 @@
 <pre><code>plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   fast-syntax-highlighting
   zsh-autocomplete
  )
@@ -74,6 +69,7 @@
 <ol start="5">
 <li>Pra deixar tudo funcionando, basta reinicar o ambiente com <code>source ~/.zshrc</code></li>
 </ol>
+<p><em>Atualização em 17 de fevereiro de 2026</em>: Removi a menção ao <code>zsh-syntax-highlighting</code>, já que ele fazia a mesma coisa que o <code>zsh-fast-syntax-highlighting</code>. Um outro adendo importante: o <code>zsh-autocomplete</code> pode tornar o Terminal mais lento em alguns setups. Continuo usando na minha máquina pessoal, mas tive problemas no computador do trabalho.</p>
 
         </div>
         
