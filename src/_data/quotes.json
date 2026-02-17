@@ -1,4 +1,39 @@
 [
+    {
+    "id": "28",
+    "title": "The plum you’re going to eat next summer - Gayle Brandeis",
+    "quote": "The plum you’re going to eat next summer\ndoesn’t exist yet; its potential [...]",
+    "author": "Gayle Brandeis",
+    "source": "The plum you’re going to eat next summer",
+    "additionalQuotes": [
+    {
+    "quote": "The plum you’re going to eat next summer\ndoesn’t exist yet; its potential\nlives inside a tree you’ll never see\nin an orchard you’ll never see, will be touched\nby a certain number of water droplets\nbefore it reaches you, by certain angles\nof light, by a finite amount of bugs\nand dust motes and hands\nyou’ll never know. The plum you are\ngoing to eat next summer will gather\nsugar, gather mass, will harden\nat its center so it can soften toward\nyour mouth. The plum\nyou’re going to eat next\nsummer doesn’t know\nyou exist. The plum you are\ngoing to eat next summer\nis growing just for you."
+    }
+    ],
+    "thoughts": null,
+    "date": "2026-02-17",
+    "language": "en",
+    "tags": [
+      "existência"
+    ]
+  },
+    {
+    "id": "27",
+    "title": "The Thing Is - Ellen Bass",
+    "quote": "to love life, to love it even\nwhen you have no stomach for it [...]",
+    "author": "Ellen Bass",
+    "source": "The Thing Is",
+    "additionalQuotes": [
+      {
+    "quote": "to love life, to love it even\nwhen you have no stomach for it\nand everything you’ve held dear\ncrumbles like burnt paper in your hands,\nyour throat filled with the silt of it.\nWhen grief sits with you, its tropical heat\nthickening the air, heavy as water\nmore fit for gills than lungs;\nwhen grief weights you down like your own flesh\nonly more of it, an obesity of grief,\nyou think, How can a body withstand this?\nThen you hold life like a face\nbetween your palms, a plain face,\nno charming smile, no violet eyes,\nand you say, yes, I will take you\nI will love you, again."}
+    ],
+    "thoughts": null,
+    "date": "2026-02-17",
+    "language": "en",
+    "tags": [
+      "vida"
+    ]
+  },
   {
     "id": "26",
     "title": "A Peste - Albert Camus",
@@ -82,7 +117,7 @@
             "quote": "[...] Sem dúvida, um jovem que recebe com prudência as impressões do coração, já tendo aprendido a amar não mais com ardor, mas friamente, e a pensar com exatidão, embora de forma razoável demais para a sua idade; um adolescente já plenamente maduro logo, um ser não muito interessante evitaria o que aconteceu ao meu herói; mas, em certos casos, na verdade, é mais honroso ceder a um impulso, mesmo irracional, mas originário de um amor imenso, do que não lhe ceder de forma alguma. Ainda mais na primeira juventude, pois um jovem sempre razoável é pouco seguro e de pouco valor, eis minha opinião! (p. 382)"
         }
     ],
-    "thoughts": null,
+    "thoughts": "Creio que não selecionei nenhum trecho daquele que achei o melhor capítulo do livro, dO Inquisidor.",
     "date": "2026-02-17",
     "language": "pt-br",
     "tags": [
@@ -384,9 +419,9 @@
     "author": "Amalia Bautista",
     "source": "Estou Ausente",
     "additionalQuotes": [
-      {
-        "quote": "Que a vida te pareça suportável. Que a culpa não afogue a esperança. Que não te rendas nunca. Que o caminho que sigas seja sempre escolhido entre dois pelo menos. Que te interesse a vida tanto como tu a ela. Que não te apanhe o vício de prolongar as despedidas. E que o peso da terra seja leve sobre os teus pobres ossos. Que a tua recordação ponha lágrimas nos olhos de quem nunca te disse que te amava."
-      }
+    {
+      "quote": "Que a vida te pareça suportável.\nQue a culpa não afogue a esperança.\nQue não te rendas nunca.\nQue o caminho que sigas seja sempre escolhido entre dois pelo menos.\nQue te interesse a vida tanto como tu a ela.\nQue não te apanhe o vício\nde prolongar as despedidas.\nE que o peso da terra seja leve\nsobre os teus pobres ossos.\nQue a tua recordação ponha lágrimas nos olhos\nde quem nunca te disse que te amava."
+    }
     ],
     "thoughts": null,
     "date": "2025-08-02",
