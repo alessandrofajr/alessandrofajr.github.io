@@ -1,5 +1,35 @@
 [
   {
+    "title": "Happy map",
+    "link": "https://pudding.cool/2026/02/happy-map/",
+    "date": "2026-03-01",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Este mapa interativo reúne 100 mil descrições de momentos felizes enviadas por pessoas do mundo todo para um projeto de pesquisa. Um jornalista organizou e classificou esses relatos, distribuindo-os por ‘continentes’. Além de ser um projeto muito bem executado, é um passatempo delicioso navegar por essas descrições — pequenas âncoras do que pode nos trazer felicidade, das maiores às menores conquistas.",
+    "favorite": false
+  },
+  {
+    "title": "Nevoeiro #66 - by Carol Bensimon - Nevoeiro",
+    "link": "https://open.substack.com/pub/carolbensimon/p/nevoeiro-66",
+    "date": "2026-02-21",
+    "tags": [
+      "personal"
+    ],
+    "notes": "'[…] as coisas do dia-a-dia também podem – e devem – ser reverenciadas. O segredo, me parece, é não tratá-las como algo que está posto, mas sempre conservar algum encantamento com o que está se desenrolando no agora.'",
+    "favorite": false
+  },
+  {
+    "title": "Spotless | The Stain Solver",
+    "link": "https://spotless.neocities.org/",
+    "date": "2026-02-18",
+    "tags": [
+      "personal"
+    ],
+    "notes": "Você seleciona o tipo de mancha e tecido e este site te diz como removê-la.",
+    "favorite": false
+  },
+  {
     "title": "Becoming the person who does the thing | @fredrivett",
     "link": "https://www.fredrivett.com/2025/09/10/becoming-the-person-who-does-the-thing/",
     "date": "2026-02-17",
