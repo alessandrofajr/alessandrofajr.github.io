@@ -13,8 +13,8 @@ class DailyContentManager {
    * @returns {Object|null} Objeto da citação selecionada ou null se não houver dados
    */
   getDailyQuote() {
-    const brazilianDate = this.getBrazilianDate();
-    const seed = this.generateSeed(brazilianDate);
+    const brazilianDateKey = this.getBrazilianDateKey();
+    const seed = this.generateSeed(brazilianDateKey);
   
     const selectedQuoteObj = this.selectRandomItem(this.quotesData, seed);
     if (!selectedQuoteObj) return null;
@@ -32,28 +32,30 @@ class DailyContentManager {
    * @returns {Object|null} Objeto do link selecionado ou null se não houver dados
    */
   getDailyLink() {
-    const brazilianDate = this.getBrazilianDate();
-    return this.selectRandomItem(this.linksData, this.generateSeed(brazilianDate));
+    const brazilianDateKey = this.getBrazilianDateKey();
+    return this.selectRandomItem(this.linksData, this.generateSeed(brazilianDateKey));
   }
 
   /**
-   * Calcula a data atual no fuso horário brasileiro (GMT-3)
-   * @returns {Date} Objeto Date ajustado para o fuso horário do Brasil
+   * Obtém a data atual no fuso de Brasília em formato YYYY-MM-DD
+   * @returns {string} Data formatada para seed diária
    */
-  getBrazilianDate() {
-    const now = new Date();  // Pega data/hora do computador
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);  // Converte para UTC (hora mundial)
-    const brazilianTime = new Date(utc + (-3 * 3600000));  // Ajusta para GMT-3 (Brasil)
-    return brazilianTime;
+  getBrazilianDateKey() {
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'America/Sao_Paulo',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    return formatter.format(new Date());
   }
 
   /**
    * Gera uma seed determinística baseada na data
-   * @param {Date} date - Data usada para gerar a seed
+   * @param {string} dateString - Data no formato YYYY-MM-DD
    * @returns {number} Seed numérica para seleção aleatória
    */
-  generateSeed(date) {
-    const dateString = date.toISOString().split('T')[0]; // YYYY-MM-DD format
+  generateSeed(dateString) {
     let hash = 0;
     for (let i = 0; i < dateString.length; i++) {
       const char = dateString.charCodeAt(i);  // Pega código numérico de cada caractere
