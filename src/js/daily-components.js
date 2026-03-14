@@ -75,7 +75,7 @@ class DailyQuoteComponent {
       // Remove hífens no começo/fim
       .replace(/^-+|-+$/g, '');
     
-    return `/quotes/${slug}`;
+    return `/quotes/${slug}/`;
   }
 
   /**
