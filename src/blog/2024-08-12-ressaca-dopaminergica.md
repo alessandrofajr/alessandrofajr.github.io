@@ -18,6 +18,6 @@ são bons até sermos tomados pela frustração de estar consumindo muito "conte
 
 é claro que as próprias plataformas foram se desenhando de uma maneira com o ojetivo de prender as pessoas por lá. mas, no final das contas, quem decide ficar nesse emaranhado somos nós. tenho tornado meu consumo mais lento e ativo, e esse blog faz parte desse objetivo.
 
-se quiser acompanhar, seja bem-vindo ou bem-vinda. de repente, adicione o [feed](https://alessandrofajr.com/feed.xml) em um leitor rss, entenda [por que eu criei esse site](https://alessandrofajr.com/about/) (pra além de tudo isso que escrevi aqui) e acompanhe uns [links interessantes](https://alessandrofajr.com/bookmarks/) que ando encontrando por aí (afinal, a internet tem muita coisa legal, mas parece que não estão necessariamente nas grandes plataformas)
+se quiser acompanhar, seja bem-vindo ou bem-vinda. de repente, adicione o [feed](https://alessandrofajr.com/feed.xml) em um leitor rss, entenda [por que eu criei esse site](https://alessandrofajr.com/about/) (pra além de tudo isso que escrevi aqui) e acompanhe uns [links interessantes](https://alessandrofajr.com/links/) que ando encontrando por aí (afinal, a internet tem muita coisa legal, mas parece que não estão necessariamente nas grandes plataformas)
 
 em breve devo criar uma newsletter pra avisar sobre novos posts.

@@ -26,7 +26,8 @@
     <name>{{ metadata.author.name }}</name>
   </author>
   {%- for post in collections.blog | reverse %}
-  {%- if "tech" in post.data.tags %}
+  {%- set postTags = post.data.tags | default([]) %}
+  {%- if postTags.indexOf and postTags.indexOf("tech") > -1 %}
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <entry>
       <title>{{ post.data.title }}</title>
