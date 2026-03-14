@@ -14,17 +14,7 @@ class DailyContentManager {
    */
   getDailyQuote() {
     const brazilianDateKey = this.getBrazilianDateKey();
-    const seed = this.generateSeed(brazilianDateKey);
-  
-    const selectedQuoteObj = this.selectRandomItem(this.quotesData, seed);
-    if (!selectedQuoteObj) return null;
-  
-    const innerQuote = this.selectInnerQuote(selectedQuoteObj, seed);
-  
-    return {
-      ...selectedQuoteObj,
-      selectedQuote: innerQuote
-    };
+    return this.selectRandomItem(this.flattenQuotes(), `${brazilianDateKey}:quote`);
   }
 
   /**
@@ -33,7 +23,7 @@ class DailyContentManager {
    */
   getDailyLink() {
     const brazilianDateKey = this.getBrazilianDateKey();
-    return this.selectRandomItem(this.linksData, this.generateSeed(brazilianDateKey));
+    return this.selectRandomItem(this.linksData, `${brazilianDateKey}:link`);
   }
 
   /**
@@ -51,64 +41,87 @@ class DailyContentManager {
   }
 
   /**
-   * Gera uma seed determinística baseada na data
-   * @param {string} dateString - Data no formato YYYY-MM-DD
+   * Gera uma seed determinística baseada em uma string
+   * @param {string} seedInput
    * @returns {number} Seed numérica para seleção aleatória
    */
-  generateSeed(dateString) {
-    let hash = 0;
-    for (let i = 0; i < dateString.length; i++) {
-      const char = dateString.charCodeAt(i);  // Pega código numérico de cada caractere
-      hash = ((hash << 5) - hash) + char;     // Fórmula matemática que mistura tudo
-      hash = hash & hash;                     // Garante que seja um número de 32 bits
+  generateSeed(seedInput) {
+    let hash = 2166136261;
+
+    for (let i = 0; i < seedInput.length; i++) {
+      hash ^= seedInput.charCodeAt(i);
+      hash = Math.imul(hash, 16777619);
     }
-    return Math.abs(hash);  // Retorna número positivo
-}
+
+    return hash >>> 0;
+  }
+
+  /**
+   * Gera um PRNG determinístico a partir de uma seed de 32 bits
+   * @param {number} seed
+   * @returns {Function} Função que retorna um número entre 0 e 1
+   */
+  createPRNG(seed) {
+    let state = seed >>> 0;
+
+    return function() {
+      state += 0x6D2B79F5;
+      let t = state;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
 
   /**
    * Seleciona um item aleatório do array usando uma seed determinística
    * @param {Array} items - Array de itens para selecionar
-   * @param {number} seed - Seed para seleção determinística
+   * @param {string} seedInput - Texto-base para seed determinística
    * @returns {Object|null} Item selecionado ou null se o array estiver vazio
    */
-  selectRandomItem(items, seed) {
+  selectRandomItem(items, seedInput) {
     if (!Array.isArray(items) || items.length === 0) {
       return null;  // Se não tem itens, retorna nada
     }
-    
-    const index = seed % items.length;  // Operação módulo (%)
+
+    const random = this.createPRNG(this.generateSeed(seedInput));
+    const index = Math.floor(random() * items.length);
+
     return items[index];
   }
+
   /**
-   * Seleciona a citação principal ou uma das additionalQuotes
-   * usando uma seed interna determinística
-   * @param {Object} quoteObj
-   * @param {number} seed
-   * @returns {string} O texto da citação selecionada
+   * Achata as citações para que cada texto tenha o mesmo peso na seleção diária
+   * @returns {Array<Object>} Pool de citações individuais com metadados do item pai
    */
-  selectInnerQuote(quoteObj, seed) {
+  flattenQuotes() {
     const pool = [];
 
-    // Inclui sempre a citação principal
-    if (quoteObj.quote) {
-      pool.push(quoteObj.quote);
-    }
+    for (const quoteObj of this.quotesData) {
+      if (!quoteObj || typeof quoteObj !== 'object') {
+        continue;
+      }
 
-    // Tenta colocar citações adicionais, se estiverem presentes
-    if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
-      for (const aq of quoteObj.additionalQuotes) {
-        if (aq && aq.quote) {
-          pool.push(aq.quote);
+      if (quoteObj.quote) {
+        pool.push({
+          ...quoteObj,
+          selectedQuote: quoteObj.quote
+        });
+      }
+
+      if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
+        for (const aq of quoteObj.additionalQuotes) {
+          if (aq && aq.quote) {
+            pool.push({
+              ...quoteObj,
+              selectedQuote: aq.quote
+            });
+          }
         }
       }
     }
 
-    // Cria uma seed interna
-    const idComponent = quoteObj.id ? Number(quoteObj.id) : 0;
-    const innerSeed = Math.abs((seed * 7919 + idComponent * 104729) ^ (seed >>> 16)); 
-
-    const index = innerSeed % pool.length;
-    return pool[index];
+    return pool;
   }
 }
 
