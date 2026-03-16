@@ -6,6 +6,8 @@
  * DailyQuoteComponent - Responsável por renderizar a citação do dia
  */
 class DailyQuoteComponent {
+  static WORD_LIMIT = 100;
+
   constructor(container, contentManager) {
     this.container = container;
     this.contentManager = contentManager;
@@ -38,18 +40,42 @@ class DailyQuoteComponent {
    */
   generateQuoteHTML(quote) {
     const quoteUrl = this.generateQuoteURL(quote);
-    const quoteText = this.escapeHtml(quote.selectedQuote || 'Citação não disponível'); 
+    const { text, truncated } = this.truncateQuote(quote.selectedQuote || 'Citação não disponível');
+    const quoteText = this.escapeHtml(text);
     const author = quote.author ? this.escapeHtml(quote.author) : '';
+    const continuation = truncated ? ' <span class="daily-quote__more">... ler mais</span>' : '';
     
     return `
       <div class="daily-quote">
         <div class="daily-quote__label">citação do dia</div>
         <p class="daily-quote__text">
-          <a href="${quoteUrl}" class="daily-quote__link">${quoteText}</a>
+          <a href="${quoteUrl}" class="daily-quote__link">${quoteText}${continuation}</a>
         </p>
         ${author ? `<p class="daily-quote__author">— ${author}</p>` : ''}
       </div>
     `;
+  }
+
+  /**
+   * Limita a citação por quantidade de palavras para evitar cortes no meio de palavras
+   * @param {string} quoteText
+   * @returns {{ text: string, truncated: boolean }}
+   */
+  truncateQuote(quoteText) {
+    const normalizedText = typeof quoteText === 'string' ? quoteText.trim() : '';
+    const words = normalizedText ? normalizedText.split(/\s+/) : [];
+
+    if (words.length <= DailyQuoteComponent.WORD_LIMIT) {
+      return {
+        text: normalizedText,
+        truncated: false
+      };
+    }
+
+    return {
+      text: words.slice(0, DailyQuoteComponent.WORD_LIMIT).join(' '),
+      truncated: true
+    };
   }
 
   /**
@@ -75,7 +101,9 @@ class DailyQuoteComponent {
       // Remove hífens no começo/fim
       .replace(/^-+|-+$/g, '');
     
-    return `/quotes/${slug}/`;
+    const anchor = quote.selectedQuoteAnchor ? `#${quote.selectedQuoteAnchor}` : '';
+
+    return `/quotes/${slug}/${anchor}`;
   }
 
   /**

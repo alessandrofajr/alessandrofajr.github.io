@@ -456,6 +456,17 @@ img {
     text-wrap: balance;
 }
 
+.daily-quote__link {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.12em;
+}
+
+.daily-quote__more {
+    color: #5a5a5a;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
 .daily-quote__author {
     font-size: 1.1rem;
     color: #5a5a5a;
