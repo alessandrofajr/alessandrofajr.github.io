@@ -75,7 +75,9 @@ class DailyQuoteComponent {
       // Remove hífens no começo/fim
       .replace(/^-+|-+$/g, '');
     
-    return `/quotes/${slug}/`;
+    const anchor = quote.selectedQuoteAnchor ? `#${quote.selectedQuoteAnchor}` : '';
+
+    return `/quotes/${slug}/${anchor}`;
   }
 
   /**

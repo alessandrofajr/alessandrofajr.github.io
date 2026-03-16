@@ -110,11 +110,13 @@ class DailyContentManager {
       }
 
       if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
-        for (const aq of quoteObj.additionalQuotes) {
+        for (let index = 0; index < quoteObj.additionalQuotes.length; index++) {
+          const aq = quoteObj.additionalQuotes[index];
           if (aq && aq.quote) {
             pool.push({
               ...quoteObj,
-              selectedQuote: aq.quote
+              selectedQuote: aq.quote,
+              selectedQuoteAnchor: this.generateSubquoteAnchor(index)
             });
           }
         }
@@ -122,6 +124,15 @@ class DailyContentManager {
     }
 
     return pool;
+  }
+
+  /**
+   * Gera um ID estável para uma subcitação baseado em sua posição no array
+   * @param {number} index - Índice da subcitação
+   * @returns {string} ID do fragmento da URL
+   */
+  generateSubquoteAnchor(index) {
+    return `subquote-${index + 1}`;
   }
 }
 
