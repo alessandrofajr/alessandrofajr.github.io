@@ -14,7 +14,7 @@ class DailyContentManager {
    */
   getDailyQuote() {
     const brazilianDateKey = this.getBrazilianDateKey();
-    return this.selectRandomItem(this.flattenQuotes(), `${brazilianDateKey}:quote`);
+    return this.selectDailyQuoteByDateKey(brazilianDateKey);
   }
 
   /**
@@ -91,35 +91,156 @@ class DailyContentManager {
   }
 
   /**
-   * Achata as citações para que cada texto tenha o mesmo peso na seleção diária
-   * @returns {Array<Object>} Pool de citações individuais com metadados do item pai
+   * Seleciona a citação diária usando peso igual por página e evitando repetição em dias seguidos
+   * @param {string} dateKey - Data no formato YYYY-MM-DD
+   * @returns {Object|null} Citação selecionada ou null
    */
-  flattenQuotes() {
-    const pool = [];
+  selectDailyQuoteByDateKey(dateKey) {
+    const pages = this.buildQuotePages();
+
+    if (pages.length === 0) {
+      return null;
+    }
+
+    const previousDateKey = this.getPreviousBrazilianDateKey(dateKey);
+    const previousPage = previousDateKey
+      ? this.selectQuotePageForDate(previousDateKey, pages)
+      : null;
+
+    const selectedPage = this.selectQuotePageForDate(dateKey, pages, previousPage);
+
+    if (!selectedPage) {
+      return null;
+    }
+
+    return this.selectRandomItem(selectedPage.quotes, `${dateKey}:quote:item:${selectedPage.pageKey}`);
+  }
+
+  /**
+   * Monta a lista de páginas elegíveis, cada uma com sua própria lista de citações
+   * @returns {Array<Object>} Páginas com metadados e citações já normalizadas
+   */
+  buildQuotePages() {
+    const pages = [];
 
     for (const quoteObj of this.quotesData) {
       if (!quoteObj || typeof quoteObj !== 'object') {
         continue;
       }
 
-      if (quoteObj.quote) {
-        pool.push({
-          ...quoteObj,
-          selectedQuote: quoteObj.quote
-        });
+      const quotes = this.extractQuotesFromPage(quoteObj);
+      if (quotes.length === 0) {
+        continue;
       }
 
-      if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
-        for (let index = 0; index < quoteObj.additionalQuotes.length; index++) {
-          const aq = quoteObj.additionalQuotes[index];
-          if (aq && aq.quote) {
-            pool.push({
-              ...quoteObj,
-              selectedQuote: aq.quote,
-              selectedQuoteAnchor: this.generateSubquoteAnchor(index)
-            });
-          }
+      pages.push({
+        pageKey: this.getQuotePageKey(quoteObj, pages.length),
+        ...quoteObj,
+        quotes
+      });
+    }
+
+    return pages;
+  }
+
+  /**
+   * Extrai as citações válidas de uma página
+   * @param {Object} quoteObj
+   * @returns {Array<Object>} Pool de citações da página
+   */
+  extractQuotesFromPage(quoteObj) {
+    const pageQuotes = [];
+
+    if (quoteObj.quote) {
+      pageQuotes.push({
+        ...quoteObj,
+        selectedQuote: quoteObj.quote
+      });
+    }
+
+    if (Array.isArray(quoteObj.additionalQuotes) && quoteObj.additionalQuotes.length > 0) {
+      for (let index = 0; index < quoteObj.additionalQuotes.length; index++) {
+        const aq = quoteObj.additionalQuotes[index];
+        if (aq && aq.quote) {
+          pageQuotes.push({
+            ...quoteObj,
+            selectedQuote: aq.quote,
+            selectedQuoteAnchor: this.generateSubquoteAnchor(index)
+          });
         }
+      }
+    }
+
+    return pageQuotes;
+  }
+
+  /**
+   * Seleciona a página da data, removendo a do dia anterior quando possível
+   * @param {string} dateKey
+   * @param {Array<Object>} pages
+   * @param {Object|null} previousPage
+   * @returns {Object|null}
+   */
+  selectQuotePageForDate(dateKey, pages, previousPage = null) {
+    if (!Array.isArray(pages) || pages.length === 0) {
+      return null;
+    }
+
+    let candidatePages = pages;
+
+    if (previousPage && pages.length > 1) {
+      const filteredPages = pages.filter((page) => page.pageKey !== previousPage.pageKey);
+      if (filteredPages.length > 0) {
+        candidatePages = filteredPages;
+      }
+    }
+
+    return this.selectRandomItem(candidatePages, `${dateKey}:quote:page`);
+  }
+
+  /**
+   * Gera uma chave estável para a página da citação
+   * @param {Object} quoteObj
+   * @param {number} fallbackIndex
+   * @returns {string}
+   */
+  getQuotePageKey(quoteObj, fallbackIndex) {
+    if (typeof quoteObj.title === 'string' && quoteObj.title.trim()) {
+      return quoteObj.title.trim();
+    }
+
+    return `quote-page-${fallbackIndex}`;
+  }
+
+  /**
+   * Calcula a chave da data brasileira anterior
+   * @param {string} dateKey
+   * @returns {string|null}
+   */
+  getPreviousBrazilianDateKey(dateKey) {
+    if (typeof dateKey !== 'string') {
+      return null;
+    }
+
+    const parts = dateKey.split('-').map(Number);
+    if (parts.length !== 3 || parts.some(Number.isNaN)) {
+      return null;
+    }
+
+    const previousDate = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2] - 1));
+    return previousDate.toISOString().slice(0, 10);
+  }
+
+  /**
+   * Achata as citações para que cada texto tenha o mesmo peso na seleção diária
+   * @returns {Array<Object>} Pool de citações individuais com metadados do item pai
+   */
+  flattenQuotes() {
+    const pool = [];
+
+    for (const page of this.buildQuotePages()) {
+      for (const quote of page.quotes) {
+        pool.push(quote);
       }
     }
 
