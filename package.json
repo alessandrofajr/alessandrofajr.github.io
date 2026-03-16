@@ -6,7 +6,7 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "keywords": [],
   "author": "Alessandro Feitosa Jr. <alessandrofajr@protonmail.com>",
