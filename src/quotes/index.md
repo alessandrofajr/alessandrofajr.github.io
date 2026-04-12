@@ -1,6 +1,7 @@
 ---
 layout: default
 title: citações
+noindex: true
 templateEngineOverride: njk,md
 pagination:
   data: collections.quotes
